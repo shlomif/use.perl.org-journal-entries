@@ -1,0 +1,181 @@
+Your mission should you choose to accept it: get my homesite and Test::Run
+to run under perl-5.9.4, which is the latest development version of perl.
+
+Mission accepted!
+
+----------------------
+
+Downloading perl-5.9.4.
+
+    Bug: in http://www.cpan.org/src/README.html the latest is mentioned as
+    perl-5.9.3 while perl-5.9.4 is already available.
+
+----------------------
+
+Unpacking.
+
+----------------------
+
+Building.
+
+<<<<<<<<<<<
+$ cat conf/build/perl-5.9.4.sh
+#!/bin/sh
+rm -f config.sh Policy.sh
+sh Configure -de -Dprefix=$HOME/apps/perl/perl-5.9.4 -Dusedevel
+>>>>>>>>>>>>
+
+make
+
+make test
+
+Failed 1 test out of 1208, 99.92% okay.
+        ../ext/POSIX/t/sysconf.t
+### Since not all tests were successful, you may want to run some of
+### them individually and examine any diagnostic messages they produce.
+### See the INSTALL document's section on "make test".
+### You have a good chance to get more information by running
+###   ./perl harness
+### in the 't' directory since most (>=80%) of the tests succeeded.
+### You may have to set your dynamic library search path,
+### LD_LIBRARY_PATH, to point to the build directory:
+###   setenv LD_LIBRARY_PATH `pwd`; cd t; ./perl harness
+###   LD_LIBRARY_PATH=`pwd`; export LD_LIBRARY_PATH; cd t; ./perl harness
+###   export LD_LIBRARY_PATH=`pwd`; cd t; ./perl harness
+### for csh-style shells, like tcsh; or for traditional/modern
+### Bourne-style shells, like bash, ksh, and zsh, respectively.
+u=4.94  s=1.51  cu=273.09  cs=35.48  scripts=1208  tests=170757
+
+-----------------
+
+Tried again with bleadperl - worked this time.
+
+-----------------
+
+Ran "perl -MCPAN -e shell". 
+
+It configured itself except for the urllist.
+
+Tried to "install Test::Reporter". This asked me whether to follow the
+pre-requisites.
+
+Meanwhile, trying to install Term::ReadLine::Gnu
+    - installation failed because libncurses.a was not present.
+        - urpmi ncurses-devel
+        - urpmi libreadline-devel
+
+    - Fails with the following errors:
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<
+[cpan@localhost Term-ReadLine-Gnu-1.16]$ make test
+PERL_DL_NONLAZY=1 /home/cpan/apps/perl/perl-5.9.4/bin/perl5.9.4 "-MExtUtils::Command::MM" "-e" "test_harness(0, 'blib/lib', 'blib/arch')" t/*.t
+t/callback....Use of uninitialized value in pattern match (m//) at t/callback.t line 37.
+t/callback....ok
+t/history.....Use of uninitialized value in pattern match (m//) at t/history.t line 74.
+Use of uninitialized value in numeric eq (==) at t/history.t line 86.
+Use of uninitialized value in numeric eq (==) at t/history.t line 88.
+Use of uninitialized value in numeric eq (==) at t/history.t line 90.
+Use of uninitialized value in string eq at t/history.t line 92.
+Use of uninitialized value in string eq at t/history.t line 94.
+Use of uninitialized value in string eq at t/history.t line 96.
+Use of uninitialized value $version in numeric gt (>) at t/history.t line 98.
+Use of uninitialized value in string eq at t/history.t line 105.
+Use of uninitialized value in numeric eq (==) at t/history.t line 109.
+Use of uninitialized value $history_length in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $history_base in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $i in numeric lt (<) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $history_length in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $history_base in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $i in numeric lt (<) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $history_length in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $history_base in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $i in numeric lt (<) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $history_length in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $history_base in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $i in numeric lt (<) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value in numeric eq (==) at t/history.t line 148.
+Use of uninitialized value in numeric eq (==) at t/history.t line 156.
+Use of uninitialized value in numeric eq (==) at t/history.t line 162.
+Use of uninitialized value in numeric eq (==) at t/history.t line 169.
+Use of uninitialized value in numeric eq (==) at t/history.t line 175.
+Use of uninitialized value $history_length in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $history_length in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $history_length in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $history_length in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $history_length in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $history_length in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $history_length in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $history_length in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $history_length in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+t/history.....FAILED tests 5, 8-10, 12, 16-19, 21-24, 26, 63-67, 80
+        Failed 20/82 tests, 75.61% okay
+t/readline....Compilation failed in require at t/readline.t line 27.
+BEGIN failed--compilation aborted at t/readline.t line 27.
+t/readline....dubious
+        Test returned status 9 (wstat 2304, 0x900)
+DIED. FAILED tests 1-104
+        Failed 104/104 tests, 0.00% okay
+Failed Test  Stat Wstat Total Fail  List of Failed
+-------------------------------------------------------------------------------
+t/history.t                82   20  5 8-10 12 16-19 21-24 26 63-67 80
+t/readline.t    9  2304   104  207  1-104
+Failed 2/3 test scripts. 124/193 subtests failed.
+Files=3, Tests=193,  0 wallclock secs ( 0.13 cusr +  0.02 csys =  0.15 CPU)
+Failed 2/3 test programs. 124/193 subtests failed.
+make: *** [test_dynamic] Error 9
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+forced install.
+
+-----------------------------------------------------------------------------
+
+Installed Test::Reporter and enabled it.
+    - Installation went fine.
+
+o conf init prerequisites_policy
+    - set to follow.
+
+------------------------------------------------------------------------
+
+install Task::Sites::ShlomiFish
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Failed during this command:
+  INGY/IO-All-0.35.tar.gz                      : make_test NO
+  PAJAS/XML-LibXSLT-1.61.tar.gz                : writemakefile NO '/home/cpan/apps/perl/perl-5.9.4/bin/perl5.9.4 Makefile.PL' returned status 512
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Patched IO-All after receiving access from Ingy - the patched version
+passes all tests.
+
+Trying "install Task::Sites::ShlomiFish" again.
+
+    - I'm keep getting asked the installation questions of XML::Twig.
+    Trying to install it manually.
+    - Failed:
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Please add this information to bug reports (you can run t/zz_dump_config.t to get it)
+
+t/zz_dump_config....................ok
+Failed Test         Stat Wstat Total Fail  List of Failed
+-------------------------------------------------------------------------------
+t/test_additional.t    0    11   647   16  640-647
+t/test_errors.t                  110    1  98
+Failed 2/87 test scripts. 9/2066 subtests failed.
+Files=87, Tests=2066, 19 wallclock secs (17.02 cusr +  1.55 csys = 18.57 CPU)
+Failed 2/87 test programs. 9/2066 subtests failed.
+make: *** [test_dynamic] Error 255
+  /usr/bin/make test -- NOT OK
+Running make install
+  make test had returned bad status, won't install without force
+Failed during this command:
+  MIROD/XML-Twig-3.26.tar.gz                   : make_test NO
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+* Seems like perl5.9.4 segfaults with 
+
+    perl5.9.4 -I blib/lib/ t/test_additional.t  | grep '^not'
+
+    in the XML::Twig distribution.
+

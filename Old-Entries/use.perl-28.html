@@ -1,0 +1,97 @@
+<p>
+I noticed that at the moment, 
+<a href="http://search.cpan.org/dist/XML-RSS/">XML-RSS</a> has 
+<a href="http://rt.cpan.org/Public/Dist/Display.html?Name=XML-RSS">over 30 open
+    bugs</a>. So trying to help with this important module, I started to
+write patches for it.
+</p>
+
+<p>
+At first I imported the files into 
+<a href="http://svn.berlios.de/svnroot/repos/web-cpan/">the 
+    web-cpan repository</a>
+, and patched it there. Then I wrote a few patches by working on
+the working copy of a checkout from 
+<a href="http://svn.perl.org/modules/XML-RSS/">the svn.perl.org repository</a>,
+but that turned out not to scale too well. Eventually I decided to use
+<a href="http://svk.bestpractical.com/">svk</a> instead, and wrote two patches
+using it.
+</p>
+
+<p>
+I kept some notes in a text file about my progress. Here they are:
+</p>
+
+<p><b>Bugs covered:</b></p>
+
+<ul>
+<li><a href="http://rt.cpan.org/Ticket/Display.html?id=21740">Bug #21740</a><br />
+<ul>
+<li>has a test</li>
+<li>has a patch.</li>
+<li>not in repos</li>
+
+</ul></li>
+<li><a href="http://rt.cpan.org/Ticket/Display.html?id=19420">Bug #19420</a><br />
+<ul>
+<li>has a test.</li>
+<li>has a patch.</li>
+<li>in repos.</li>
+
+</ul></li>
+<li><a href="http://rt.cpan.org/Public/Bug/Display.html?id=21048">http://rt.cpan.org/Public/Bug/Display.html?id=21048</a><br />
+<ul>
+<li>same as http://rt.cpan.org/Ticket/Display.html?id=19420</li>
+
+</ul></li>
+<li><a href="http://rt.cpan.org/Ticket/Display.html?id=21046">Bug #21046</a><br />
+<ul>
+<li>works for me.<ul><li>should test on Windows.</li></ul></li>
+<li>works for the author.<ul><li>TODO: should be closed.</li></ul></li>
+
+</ul></li>
+<li><a href="http://rt.cpan.org/Ticket/Display.html?id=7325">Bug #7325</a><br />
+<ul>
+<li>works for me.<ul><li>cannot confirm.</li></ul></li>
+<li>very old bug.</li>
+<li>suggest to close.</li>
+
+</ul></li>
+<li><a href="http://rt.cpan.org/Ticket/Display.html?id=19640">Bug #19640</a><br />
+<ul>
+<li>invalid<ul><li>should be closed.</li></ul></li>
+
+</ul></li>
+<li><a href="http://rt.cpan.org/Ticket/Display.html?id=19417">Bug #19417</a><br />
+<ul>
+<li>works with a simple script.</li>
+<li>problem is there is a different date format.</li>
+<li>Fixed as a patch.<ul><li>TODO : Apply.</li></ul></li>
+
+</ul></li>
+<li><a href="http://rt.cpan.org/Ticket/Display.html?id=18755">Bug #18755</a><br />
+<ul>
+<li>Patch sent</li>
+<li>TODO : Apply.</li>
+
+</ul></li>
+<li><a href="http://rt.cpan.org/Ticket/Display.html?id=18907">Bug #18907</a><br />
+<ul>
+<li>I don&#39;t understand it too well - skipping.</li>
+
+</ul></li>
+<li><a href="http://rt.cpan.org/Ticket/Display.html?id=5024">Bug #5024</a><br />
+<ul>
+<li>Wrote a patch for it:</li>
+<li>TODO : Apply.</li>
+
+</ul></li>
+
+</ul>
+
+<p>
+Ask Bjørn Hansen (the XML::RSS maintainer) has already applied a patch, but
+there are more in the Request Tracker. And there are still a lot of bugs
+to cover.
+</p>
+

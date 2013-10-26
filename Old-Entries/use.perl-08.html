@@ -1,0 +1,33 @@
+<p>
+Well, after <a href="http://use.perl.org/~Shlomi+Fish/journal/29151">my 
+    previous post about Error.pm</a>, I took the advice of some of the 
+people who commented, and started my own development line where I fixed some
+bugs that I found in the Error.pm request tracker. A few days ago I contacted
+Graham Barr (who originated Error.pm) informed him of my branch and the 
+original discussion and asked him to make me a co-maintainer. Yesterday, he 
+replied, and said he did exactly that.
+</p>
+
+<p>
+So I uploaded 
+<a href="http://search.cpan.org/dist/Error-0.15005/">Error-0.15005</a> to
+CPAN, and it now can be found in search.cpan.org. Initially there was a problem,
+where Barr made me a co-maintainer only of the "Error" package and not of 
+"Error::Simple", and "Error::subs", which are also supplied by the
+distribution, but he remedied that. (Distribution authors should make sure to
+make their co-maintainers have co-maintainership of all the packages that
+are contained in the CPAN distribution, to prevent such problems).
+</p>
+
+<p>
+I'll release Error-0.16 after a few more Error-0.15\d\d\d releases, which will
+fix the remaining problems as reported in 
+<a href="http://rt.cpan.org/NoAuth/Bugs.html?Dist=Error">the Error.pm 
+    request tracker queue</a>. I hope there won't be any problems for me to
+close the bugs there. If you have any bug reports or suggestions for new
+features don't hesitate to put it there and I'll deal with it.
+</p>
+
+<p>
+Happy Erroring!
+</p>

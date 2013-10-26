@@ -1,0 +1,128 @@
+<p>
+While 
+<a href="http://use.perl.org/~Shlomi+Fish/journal/30039">I'm working with PHP
+    now at work</a>, I still like to do some Perl hacking once in a while. As
+it turned out, this weekend (an extended one due to the fact we were given
+Thursday off because of
+<a href="http://www.hebcal.com/holidays/tzom-tammuz.html">Tzom Tammuz</a>.),
+I spent a lot of time working on Perl and Perl-related projects. This entry
+aims to summarise what I've done so far, and what I'd like to do in the remains
+of the weekend and the upcoming days.
+</p>
+
+<p>
+I uploaded 4 modules to the CPAN this weekend:
+</p>
+
+<ol>
+    <li>
+    <p>
+    <a href="http://search.cpan.org/dist/WWW-Search-MSN/">WWW-Search-MSN</a> 
+    (version 0.0102). This fixed a small Build.PL bug where Encode was not
+    mentioned in the dependencies, which caused "./Build test" to silently
+    fail on perl 5.6.1 and below. (I always thought Encode was part of the
+    core since perl 5.6.0, but I guess I had been wrong).
+    </p>
+    <p>
+    This bug was reported by <a href="http://search.cpan.org/~purdy/">purdy</a>
+    who's now credited in the Changes file (but not in the POD yet). There's
+    another bug in the RT, but I may have fixed it in the process of getting
+    W-S-MSN to recognise <tt>https://</tt> URLs.
+    </p>
+    </li>
+    <li>
+    <p>
+    <a href="http://search.cpan.org/dist/HTML-Latemp-GenMakeHelpers/">HTML-Latemp-GenMakeHelpers</a> - this 
+    <a href="http://web-cpan.berlios.de/latemp/">Latemp</a>-assisting module
+    was enhanced a bit. I used to use the wml interpreter with redirection 
+    (<tt>&gt; $@</tt>) but this had a tendency to create empty files upon 
+    failure. Now it's more robust. While the make commands are written in
+    shell, I had to use a <tt>File::Spec-&gt;rel2abs()</tt> invocation for
+    getting the absolute location. Maybe there's a better way to do it in
+    pure bash.
+    </p>
+    </li>
+    <li>
+    <p>
+    <a href="http://search.cpan.org/dist/Error/">Error</a> has been updated
+    to version 0.17. A lot of the enhancements in it are the work of 
+    <a href="http://www.leonerd.org.uk/">LeoNerd</a>, which was given commit
+    access to the Subversion repository. Other enhancements include
+    an examples directory with some useful examples. (by LeoNerd and me).
+    </p>
+    </li>
+    <li>
+    <p>
+    Last but not least is 
+    <a href="http://search.cpan.org/dist/File-Find-Object/">File-Find-Object</a>,
+    version 0.0.3,
+    which as mentioned in this journal earlier is a File::Find replacement with
+    some advantages like being instantiable and the fact that the directory 
+    tree traversal scan can be stopped in the middle. This version has 
+    some cleanups, a more comprehensive test suite (with some meta-tests for 
+    the testing API ;-)), etc. 
+    </p>
+    <p>
+    It aims to be the last release before we convert the code to use
+    File::Spec, as well as clean up the internals. At the moment
+    File::Find::Object::internal is derived from File::Find::Object, and
+    each of them contain one of the other. I told
+    <a href="http://search.cpan.org/~nanardon/">the original
+        maintainer</a> that I'd like to convert it into one class and
+    one object, possibly with some helper objects of completely different
+    classes.
+    </p>
+    </li>
+</ol>
+
+<p>
+But CPAN was not the only thing I worked on this weekend. I also started
+working on the site of 
+<a href="http://web-cpan.berlios.de/Fullperl/">a top-secret Perl 
+    distribution</a> (ssshh! Don't tell anyone). I don't mind sharing this
+idea, because ideas are cheap, but I'd like to make a more official
+announcement when I have something to show for. (such as packages for one
+Linux distribution).
+</p>
+
+<p>
+I also did some wiki work on 
+<a href="http://perl.net.au/">http://perl.net.au/</a> and the Wikipedia. Another
+plan of mine was to start seriously learning Common Lisp this weekend. However,
+<a href="http://common-lisp.net/project/lispbox/">Lisp in a Box</a> refused to 
+build cleanly on my Linux machine. I guess I'll have to install XEmacs, SLIME 
+and CLisp or SBCL the "hard way". I wonder if SLIME and one of Emacs' 
+vi-emulation modes can play together well.
+</p>
+
+<p>
+Finally, what would be a weekend without IRC? On #perlcafe we discussed
+Politics, religion, Julian Jaynes' Theory of the emergence of Human sentience,
+history and archaelogy and everything in between. Someone there seemed to
+have understood what I wanted to say (about animals not being sentient and
+about humans not having sentience until roughly ~1,000 B.C.) almost right
+away. Either he's more open for this, or I'm getting better at explaining
+this. 
+</p>
+
+<p>
+On #perl, we discussed many things with most of the regulars. One thing we
+touched upon was whether C has its place (buu does not seem to think so, but
+trying to convince him is futile), and also whether the fact that in perl
+doing <tt>$myobj-&gt;method_name()</tt> without knowing anything about 
+<tt>$myobj</tt> and the interpreter just does the "right" thing is good 
+or not. In C++, for example, it's impossible, yet some people feel it's 
+better from "software engineery" point-of-view.
+</p>
+
+<p>
+Finally, sili, mjl69 and I have decided to form the 
+perl-lovers-who-are-forced-to-use-PHP-against-their-will support group:<br />
+-- "Hi! My name is Shlomi, and I'm getting paid to write PHP code." <br/>
+-- "Hello Shlomi! We all love you!"<br />
+</p>
+
+<p>
+In any case - cheers!
+</p>
+

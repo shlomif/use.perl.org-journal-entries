@@ -1,0 +1,5292 @@
+<!-- vim: set indentexpr=:   -->
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE
+    html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US">
+<head>
+<title>use.perl.org Blog</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+div.entry
+{
+    border: darkgreen solid medium;
+    padding: 0.5em;
+    margin: 0.5em;
+}
+</style>
+</head>
+<body>
+
+
+<div class="entry">
+
+<h2>2007-01-11: Yet Another XML-RSS Update</h2>
+
+<p>
+I received several emails about the XML-RSS grant - nothing that I have a lot
+to tell about. Ask has commited the rest of the changes that were present
+in my repository (leading to an empty diff) and then I asked him for a commit
+bit on the XML-RSS master repository. He set it up yesterday's night, but
+because of several difficulties, I could only commit this morning. I really
+needed this because I wanted to move files from one place to another, which
+isn't handled properly by unified diffs.
+</p>
+
+<p>
+Today I've not felt very well, so I stayed at home, and spent some time
+working on XML::RSS. I've made 20 commits so far, which involved:
+</p>
+
+<ol>
+<li>
+Moving the files from under <tt>examples</tt> to under <tt>t/data</tt>.
+</li>
+<li>
+Some other build system tweaks.
+</li>
+<li>
+Made all files that were left executable in the repository non-executable
+as there's no reason for them to be so.
+</li>
+<li>
+Added better test coverage, according to the input of 
+<a href="http://search.cpan.org/dist/Devel-Cover/">Devel::Cover</a>.
+</li>
+<li>
+While I was in the neigbourhood, I also fixed some bugs and made some of the
+code more correct.
+</li>
+</ol>
+
+<p>
+All the changes are at the moment 
+<a href="http://svn.perl.org/modules/XML-RSS/trunk/">in the trunk</a>. Thus,
+my work after receiving the grant is off to a start. Friday and Saturday are
+the weekend in Israel, so hopefully I can get even more work done. Happy
+RSSing!
+</p>
+
+</div>
+
+<div class="entry">
+
+<h2>2007-01-11: Reading and Reviewing &quot;Perl Hacks&quot;</h2>
+
+<p>
+I recently received a copy of <a href="http://www.amazon.com/exec/obidos/ASIN/0596526741/ref=nosim/shlomifishhom-20">Perl Hacks</a>
+in the mail from O'Reilly, as a gift for my contributions to the recent 
+<a href="http://perladvent.pm.org/">Perl calendar advent</a>. It arrived
+very quickly from the time I announced my desired book - only a few days. I
+was told that I should post a review of the book somewhere. So I've been
+thinking that after I finish reading it, I'll write one review and publish
+it on several places. Places I have in mind at the moment:
+</p>
+
+<ul>
+<li>
+<a href="http://wiki.perl.org.il/index.php/Book_Reviews">The Book Reviews
+section of wiki.perl.org.il</a> - the wiki of the Israeli Perl Mongers.
+</li>
+<li>
+<a href="http://www.shlomifish.org/philosophy/books-recommends/">My Technical
+Book Recommendations Page</a>
+</li>
+<li>
+<a href="http://amazon.com/">Amazon.com</a>
+</li>
+<li>
+<a href="http://www.oreilly.com/catalog/perlhks/">The O'Reilly Book Page</a>
+</li>
+<li>
+<a href="http://use.perl.org/~Shlomi+Fish/journal/">This Journal at 
+use.perl.org</a>
+</li>
+<li>
+<a href="http://shlomif.livejournal.com/">My LiveJournal blog (?)</a>
+</li>
+</ul>
+
+<p>
+I'm open for other suggestions. I started reading the book, and so far it
+seems like a fun book. I think I'm already at the third chapter.
+</p>
+
+</div>
+
+
+
+
+<div class="entry">
+
+<h2>2007-01-12: New CPAN Module: Math::GrahamFunction</h2>
+
+<p>
+I uploaded the first release of 
+<a href="http://search.cpan.org/dist/Math-GrahamFunction/">Math-GrahamFunction</a>
+to the CPAN. It is used to calculate <a href="http://search.cpan.org/dist/Math-GrahamFunction/">the Graham 
+Function</a> of a natural number, and is based on code I wrote
+<a href="http://article.gmane.org/gmane.comp.lang.perl.qotw.quiz-of-the-week/51/">for 
+this Perl Quiz-of-the-Week</a>, after a lot of OOP and refactoring.
+</p>
+
+<p>
+The code has polynomial complexity, as opposed to many of the solutions
+originally posted for the quiz. I'm not aware of any practical applications
+of Graham's function, but the code is there for your use and abuse, under
+the MIT X11 licence. I already received several CPAN testing reports, 
+including one (and only one) 
+<a href="http://nntp.x.perl.org/group/perl.cpan.testers/397523">failure</a>. 
+</p>
+
+<p>
+That's it I suppose - just wanted to let you know.
+</p>
+
+</div>
+
+
+
+<div class="entry">
+
+<h2>2007-01-18: search.cpan.org is (somewhat) Broken</h2>
+
+<p>
+Yesterday, I was trying to look for the modules of Paul Evans who has the
+"PEVANS" CPAN handle. <a href="http://search.cpan.org/">search.cpan.org</a> 
+<a href="http://search.cpan.org/search?query=pevans&amp;mode=all">could not
+find him</a>, but <a href="http://search.cpan.org/~PEVANS/">he's there</a>.
+</p>
+
+<p>
+Furthermore, today
+<a href="http://use.perl.org/comments.pl?sid=34314&amp;cid=52763">melo tried
+to search for "cvn"</a>. Indeed, it 
+<a href="http://search.cpan.org/search?query=cvn&amp;mode=all">returns 
+no results</a>, but the <a href="http://search.cpan.org/dist/cvn/">module "cvn"
+exists</a>.
+</p>
+
+<p>
+<a href="http://search.cpan.org/search?query=navmenu&amp;mode=all">Some
+queries are fine, however</a>. So something is strange there. Can the powers
+that be, please investigate it?
+</p>
+
+</div>
+
+
+
+
+<div class="entry">
+
+<h2>2007-01-20: XML::RSS Update: Full Test Coverage</h2>
+
+<p>
+<a href="http://flickr.com/photos/shlomif/363258995/">Read it and weep</a>: 
+XML::RSS now has full test coverage - 
+<a href="http://svn.perl.org/modules/XML-RSS/trunk/">in the Subversion 
+trunk</a> at least, but
+coming to a CPAN mirror near you. On the day after
+<a href="http://use.perl.org/~Shlomi+Fish/journal/32121">my last update</a>,
+I spent some time increasing the test coverage, and ran into a few dillemas
+with which I had to consult <a href="http://www.askbjoernhansen.com/">Ask</a>.
+He indeed provided some useful advice.
+</p>
+
+<p>
+Yesterday (and a bit before) I spent some time on further increasing the 
+test coverage - this time mainly in the parsing stage. I had to modify the
+core code slightly to allow for better coverage, and to fix some bugs that
+were caused by that. Here are some things I discovered in the process that
+may prove useful:
+</p>
+
+<ul>
+<li>
+<p>
+It is actually possible to have an XML element of an undefined 
+<a href="http://www.w3.org/TR/REC-xml-names/">XML namespace</a>
+inside a document with a default defined namespace. To do that one can use
+the attribute <tt>xmlns=""</tt> on an element. 
+</p>
+<p>
+XML::RSS had a check for such a case and I needed to verify that it is
+actually possible.
+</p>
+</li>
+<li>
+<p>
+One can update a 
+<a href="http://search.cpan.org/dist/Devel-Cover/">Devel::Cover</a> database
+incrementally by using the following pattern:
+</p>
+<ecode>
+# Run the test script.
+# You can also use prove instead of runprove
+
+HARNESS_PERL_SWITCHES="-MDevel::Cover" runprove --blib t/0.9-strict.t
+
+# Update the display.
+
+cover
+</ecode>
+<p>
+From some reason, however, Devel::Cover sometimes forced me to use "cover
+-delete" and run all the test scripts through it again, but still this pattern
+can sometimes be a huge time saver.
+</p>
+</li>
+</ul>
+
+<p>
+The script <tt>items-are-0.t</tt> which I wrote when I started to bug-fix the
+"values equal 0" bug, and continued to implement various RSS generation tests
+there, itself yields a total coverage of 88.5%. And it is larger and has
+more line than the XML::RSS .pm module itself.
+</p>
+
+<p>
+I initially wanted to give some statistics about the code and the tests, but
+I think it would be a waste of time, and you can always calculate them by
+checking out the code from the repository. Next on my agenda is to refactor
+the code, fix rt.cpan.org bugs, and possibly also enhance it a bit. XML::RSS
+uses a lot of hard-coded maps implemented as hash tables and I'd like to 
+make them more customisable.
+</p>
+
+<p>
+Cheers everybody!
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-02-02: XML::RSS Update: Refactoring</h2>
+
+<p>
+After we got XML::RSS to 
+<a href="http://use.perl.org/~Shlomi+Fish/journal/32214">a stage where it has
+100% test coverage</a>, it was possible to refactor things with more assurance
+that we don't break anything. So I did exactly that and gave XML::RSS a
+facelift. 
+</p>
+
+<p>
+Among the things I did were:
+</p>
+
+<ol>
+<li>
+Extracted many methods, including some that appeared several times.
+</li>
+<li>
+Instead of the <tt>$output .= "&lt;tag&gt;"...</tt> pattern, converted 
+everything to append to a buffer that is stored in an object property,
+and using <tt>$self-&gt;_out($mystring)</tt> calls and many methods on top
+of it for outputting entire tags, and higher-level abstractions.
+</li>
+<li>
+Made sure all tags end with one newline and not two as was the case for some
+of them. This enabled an easier refactoring.
+</li>
+<li>
+Got rid of the AUTOLOAD method, which was only used for accessors, and instead
+wrote several such accessors manually using the _handle_accessor() method.
+This should eliminate many obscure errors in using XML::RSS and also make
+things somewhat faster.
+</li>
+<li>
+Converted many direct member retrievals (<tt>-&gt;{'channel'}...</tt>) to
+their accessor versions.
+</li>
+<li>
+Made many methods common to all RSS versions with the differences encapsulated
+in checks for the current <tt>_rss_out_version()</tt> object parameter, which 
+is assigned at the beginning of the rendering process.
+</li>
+<li>
+Converted several if-elsif-else-constructs to dispatches.
+</li>
+</ol>
+
+<p>
+Meanwhile, Ask ran perltidy on the "lib/XML/RSS.pm" module itself to make
+its style more consistent. (Which I may have broken somewhat since then, but
+since the perltidy configuration file is in the repository, we can run it
+again.) With all of these changes, the code looks much better, than it used
+to before I started working on it.
+</p>
+
+<p>
+I still have some changes I'd like to make in the pipe, like converting each
+RSS output version into a class and using the
+<a href="http://www.refactoring.com/catalog/replaceConditionalWithPolymorphism.html">convert 
+conditional to polymorphism refactoring</a>, and making the XML parsing
+functions accept the XML::RSS object handle as an argument, so we can use
+true methods there instead of just functions inside the same namespace. I'm
+still waiting for Ask to approve these changes as he didn't reply to my
+email about it yet.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-02-03: Ideal Setup for Testing an ANSI C Library</h2>
+
+<p>
+This post is not strictly about Perl, but it is technical and about automated 
+testing, which is a hot topic nowadays in the Perl world, so I decided to post
+it here.
+</p>
+
+<p>
+I have written <a href="http://fc-solve.berlios.de/">an ANSI C library called
+"Freecell Solver"</a>, which solves several variants of card solitaire. Now,
+the problem is that it doesn't have any automated tests yet, and I'd like to
+add some before I hack on it further. 
+</p>
+
+<p>
+Now, having attended <a href="http://www.osdc.org.il/2006/talk.html?id=66">Ori 
+Peleg's presentation "Thoughts on Testing"</a> on three different occassions,
+I became convinced that testing can only be done with dynamic languages, and
+writing complex test logic in C or Java should be avoided. Now, I may still be
+able to use perl for generating some simple C code for unit tests, that will 
+then be compiled, or for system tests of the solver. However, it will probably
+not be very suitable for more complex unit or integration tests, because of
+its complex C extension API. So I'm looking for a better alternative.
+</p>
+
+<p>
+One thing I've decided is that all my tests will produce <a href="http://perl-qa.yi.org/index.php/TAP">TAP</a> 
+output, so I can use a good TAP analyser like Test::Run or TAPx::Parser, to
+process all the test scripts or a subset of them. If necessary, I will write
+a rudimentary TAP-outputting test framework in the language I choose.
+</p>
+
+<p>
+Let me enumerate the options I see and what I think of them:
+</p>
+
+<ol>
+
+<li>
+<p>
+Perl with XS - like I said - too complex and will require a lot of coding.
+</p>
+</li>
+
+<li>
+<p>
+Perl with <a href="http://search.cpan.org/dist/Inline/">Inline::C</a>. This 
+could hide away some of the complexity but I believe some complexity will
+still remain, as it still requires writing some code using XS.
+</p>
+</li>
+
+<li>
+<p>
+I could use <a href="http://www.swig.or">SWIG</a> to write my bindings. My
+former experience with SWIG, however, was not entirely positive as it doesn't 
+handle pointers meaning arrays and other Cisms well, and often necessitates 
+writing some glue code. By using SWIG, I could still write my unit tests in
+Perl.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://www.python.org/">Python</a> - I'm not entirely fond of it and
+think I'd like Ruby better.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://www.ruby-lang.org/en/">Ruby</a> - I was told it has an even 
+better extensibility API than Python, and it's also more similar to Perl. I
+do not intend any normal end-user to run the test suite so I can rely on Ruby
+being around.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://www.tcl.tk/">Tcl</a> - should have a good extensibility API,
+but from what I know strings are null-terminated, and I dislike it quite a bit,
+so if at all - Ruby would be preferable. I mentioned it here for completeness'
+sake.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://www.lua.org/">Lua</a> - small and with a good extensibility
+API. I don't think it's as rich as Ruby or Perl, but it probably won't matter
+too much for testing.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://www.iolanguage.com/">The Io Language</a> - similar to Lua
+in size. It's very interesting as a language, but I had some problems
+deploying it properly on my system, and I dislike its syntax for its
+"<b>[object]</b>[space]<b>method</b>" convention and other mis-conventions
+like that.
+</p>
+</li>
+
+<li>
+<p>
+<a href="http://en.wikipedia.org/wiki/Smalltalk">Smalltalk</a> - the Squeak
+Virtual machine has a mind of its own, but there's 
+<a href="http://www.gnu.org/software/smalltalk/smalltalk.html">GNU Smalltalk</a>
+which works better with C. However, I dislike the Smalltalk syntax, and GNU
+Smalltalk is still a bit buggy, and I would probably prefer Ruby or Lua.
+</p>
+</li>
+
+<li>
+<p>
+Haskell and O'Caml are strongly typed and which will be an obstacle for
+testing.
+</p>
+</li>
+
+<li>
+<p>
+Scheme - I could use 
+<a href="http://www.gnu.org/software/guile/guile.html">Guile</a> or 
+<a href="http://tinyscheme.sourceforge.net/">TinyScheme</a>. However, Scheme
+tends to be overly verbose and to lack a lot of nice syntactic sugar. The
+same can be said of Common Lisp, but there there's also a lack of a decent
+ubiquitous implementation.
+</p>
+</li>
+</ol>
+
+<p>
+Maybe I missed a few players, but I think I covered the most prominent ones.
+Like I said, all the tests will emit TAP so their results can be analysed and 
+summarised with the Perl TAP tools. At the moment, I'm leaning towards using
+either Ruby or Lua, but would love to hear what you think about all this.
+</p>
+
+<p>
+Note that I don't need Unicode or Localisation or an interface to any 
+third-party library, as my library relies exclusively on the ANSI C library.
+But I do need to handle binary data (with '\0' and all) properly.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-02-09: Review of &quot;Perl Hacks&quot;</h2>
+
+<p>
+This is a review of the O'Reilly book 
+<a href="http://www.amazon.com/exec/obidos/ASIN/0596526741/ref=nosim/shlomifishhom-20">Perl 
+Hacks</a> by chromatic, Damian Conway and Curtis "Ovid" Poe.
+</p>
+
+<p>
+I received this book as a token of appreciation for my contributions to
+<a href="http://perladvent.pm.org/2006/">the 2006 Perl Advent Calendar</a>.
+It's the first book I read as part of the
+<a href="http://www.oreilly.com/store/series/hacks.csp">O'Reilly Hacks' series
+of books</a>, and it proved to be a light yet informative and entertaining
+read.
+</p>
+
+<p>
+The book covers various useful "hacks" or small tricks that allow one to
+achieve a lot of cool tasks when working with Perl. These tricks are unorthodox
+and stretch the limit of one's Perl knowledge. Since they require an advanced
+knowledge and understanding of Perl, I would recommend this book only for Perl
+experts. Some of the B:: using modules were even too high-level for me to
+understand how they worked internally. However, I understood the purpose of the
+code in all cases, even if I didn't understand the code itself.
+</p>
+
+<p>
+So it is a recommended read for people who've worked with Perl a lot, 
+and wish to learn many new and useful tricks. Perl Hacks for Perl hackers, 
+indeed!
+</p>
+
+<p>
+<b>Note:</b> this review was also posted 
+<a href="http://wiki.perl.org.il/index.php/Book_Review_-_Perl_Hacks_-_reviewed_by_Shlomi_Fish">on 
+the Perl-IL wiki</a>, 
+<a href="http://www.shlomifish.org/philosophy/books-recommends/#perl_hacks">on 
+my web-site</a>, <a href="http://www.amazon.com/exec/obidos/ASIN/0596526741/ref=nosim/shlomifishhom-20">on
+the Amazon.com page</a>, and on the <a href="http://www.oreilly.com/catalog/perlhks/">O'Reilly page</a> (where it will appear shortly).
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-02-10: Automating Setting up a CPAN Smoking Environment</h2>
+
+<p>
+CPAN Smoking involves downloading the recently added versions of CPAN modules,
+testing them and reporting the results to the CPAN Testers mailing list.
+</p>
+
+<p>
+A long time ago, <a href="http://use.perl.org/~gabor/journal/">szabgab</a>
+asked me whether I can work on setting up a sort of "CPAN Smoking in a Box"
+archive to smoke CPAN. Later on, when I dubbled a bit in CPAN smoking, I wanted
+a way to easily automate setting up such an environment under an
+underprivileged account and on a prefix that will not pollute the rest of the
+system.
+</p>
+
+<p>
+I started writing some scripts to do it, but hit some obstacles and neglected
+it. The past two weeks, I returned to it and was able to bring it into a usable
+state.
+</p>
+
+<p>
+So I present to you: 
+<a href="https://svn.berlios.de/svnroot/repos/web-cpan/CPAN-Smoke-AutoSetup/trunk/first-rev/">SmokeAuto</a>.
+It is a Perl module that enables one to automatically setup a Perl smoking 
+environment. To use it:
+</p>
+
+<ol>
+
+<li>
+Under an under-privileged UNIX account, create an empty directory to put the
+scripts and build Perl inside.
+</li>
+
+<li>
+"svn export" or "svn checkout" <a href="https://svn.berlios.de/svnroot/repos/web-cpan/CPAN-Smoke-AutoSetup/trunk/first-rev/">the URL</a>.
+</li>
+
+<li>
+cd to first-rev and Copy <tt>sample-SmokeConf.pm</tt> to 
+<tt>SmokeConf.pm</tt>. Edit <tt>SmokeConf.pm</tt> using your editor and
+adapt it to your liking. (Especially specify more localised URLs for
+the primary and secondary CPAN mirrors).
+</li>
+
+<li>
+Run <tt>perl -MSmokeAuto -e "SmokeAuto::install_all()"</tt> to setup the 
+environment.
+</li>
+
+<li>
+It is recommended to <tt>cp -a</tt> the directories to which you installed 
+perl (by default <tt>~/apps/perl-5.8.8</tt>) to a backup so you can later 
+<tt>cp -a</tt> the backup copy to the original location and thus start
+from a pristine state without having to compile perl again.
+</li>
+
+<li>
+Run <tt>perl -MSmokeAuto -e "SmokeAuto::smoke()"</tt> to start the smoking 
+process.
+</li>
+
+</ol>
+
+<p>
+Please let me know if you encounter any problems. Smoke yourself
+senseless!
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-02-23: Installing Plagger on Mandriva from RPMs</h2>
+
+<p>
+I decided to install <a href="http://plagger.org/">Plagger</a> in order to 
+play with it and create an aggregated blog for myself. I was looking for a 
+better way to install it than directly with CPAN or CPANPLUS, and found
+its RPM packages for Fedora Core. Installing it on my Mandriva 2007.1 system
+was not straightforward, but I was able to do it.
+</p>
+
+<p>
+See 
+<a href="http://www.shlomifish.org/open-source/projects/Plagger/mandriva/">the
+resource I prepared about it</a> for some potential guidance if you'd like to
+do the same.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-02-24: Test::Run Update</h2>
+
+<p>
+<a href="http://mail.pm.org/pipermail/melbourne-pm/2007-February/thread.html#2240">This
+Melbourne.PM post</a> piqued my interest to test doing exactly that using
+<a href="http://web-cpan.berlios.de/modules/Test-Run/">Test::Run</a>'s runprove
+and it surprisingly failed. As it turned out it <a href="http://mail.pm.org/pipermail/melbourne-pm/2007-February/002252.html">was a bug with runprove</a>
+(and not Test::Run itself) which I fixed. While I was in the neighbourhood,
+I decided to work a bit more on Test::Run.
+</p>
+
+<p>
+After I installed the latest TAPx::Parser, I ran into 
+<a href="http://www.nntp.perl.org/group/perl.qa/2007/02/msg7880.html">a 
+regression which I reported</a>. Apparently, the behaviour in the trunk
+has diverted from the more traditional (but according to Ovid - wrong)
+Test::Harness semantics. Now, I'll need to wait until a new stable
+version of TAPx::Parser is on CPAN, and adapt the tests, while 
+requiring only that version or upwards. Oh well.
+</p>
+
+<p>
+Next I worked on a plugin that allows specifying 
+<a href="http://use.perl.org/~Ovid/journal/32092">alternate 
+interpreters to test scripts</a>. However, it already accepts regular 
+expressions as conditions, and can be extended to accept more sophisticated
+ones. Writing this plugin required a small refactoring of the code. I did not
+put this plugin on the CPAN yet, because I haven't written the 
+Test::Run::CmdLine frontend for it yet.
+</p>
+
+<p>
+Writing this plugin required writing some simple TAP-emitting interpreters for 
+it in Perl, which was fun. 
+</p>
+
+<p>
+I also fixed some bugs in the core that were discovered in the course of
+testing. Two of them involved adding an empty "PL_FILES" key to Makefile.PL,
+so ExtUtils::MakeMaker won't invoke Build.PL, and fixed the number of skipped
+tests in a script I inherited from Test::Harness due to
+<a href="http://www.nntp.perl.org/group/perl.cpan.testers/2007/02/msg417040.html">a 
+failed report on perl-5.6.2</a>. 
+</p>
+
+<p>
+Next on my short-term plans is to finish the configurable interpreters plugin.
+Then I think I'll work on a statistics' collecting plugin, and an XML report
+one.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-03-03: Creating Mandriva Packages for XML::Feed</h2>
+
+<p>
+<a href="http://en.wikipedia.org/wiki/Mandriva_Linux">Mandriva Linux</a> is
+the new name of the Linux distribution formerly known as "Mandrake", and is my
+distribution of choice. I'm using it as a desktop both at home, and at work. 
+</p>
+
+<p>
+For a long time, I've been an <a href="http://www.rpm.org/">RPM</a> hacker and 
+tinkered with RPMs: fixing problems, creating new ones, or updating them. Now,
+however, I decided to take a more active role within Mandriva and become a
+first-class packager. I was referred 
+<a href="http://wiki.mandriva.com/Development/Howto/Submitter">to 
+this resource</a> on the Mandriva wiki, and realised that before I ask for
+the packager bit, I should upload some packages.
+</p>
+
+<p>
+Now, since I've lately been playing 
+<a href="http://use.perl.org/~Shlomi+Fish/journal/32478">with Plagger</a>,
+I decided to get some of its dependencies into Mandriva. Starting with 
+XML::Feed, I created packages for its Perl modules suitable for inclusion into
+Mandriva. I did not use cpan2rpm, 
+<a href="http://search.cpan.org/dist/Ovid/">Ovid</a> (the CPAN Module not 
+Curtis "Ovid" Poe) or friends, but rather started from an existing RPM .spec
+file and tweaked it.
+</p>
+
+<p>
+One thing I realised was that I shouldn't have tweaked an XS-enabled module's
+.spec into a pure-Perl one, because there are several fundamental differences
+in the packaging. I ended up fixing some modules I prepared, one after the
+other.
+</p>
+
+<p>
+As it turned out, XML-Feed did not have too many dependencies that were not 
+already present in the Mandriva pool of packages. Now, I should probably work
+on the rest of Plagger. (If I disappear for a few weeks, you know I'll be
+buried in hacking on RPM .specs).
+</p>
+
+<p>
+The packages are available in 
+<a href="ftp://ftp.mandriva.com/incoming/cooker/">the incoming directory</a>
+but as far as I know were not included in the pool yet.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-03-17: Perl Frappr Maps</h2>
+
+<p>
+I was chatting on Freenode's #perl yesterday when someone said it would be
+a good idea to have a map with all the #perl'ers on it as pins. I told him
+that what <a href="http://www.frappr.com/">Frappr</a> was all about, and after
+mucking a little with the interface created 
+<a href="http://www.frappr.com/freenodeperl/">this
+map for the Freenode #perl'ers</a>. If you frequent Freenode's #perl or
+otherwise feel you're part of the community, please add yourself there.
+</p>
+
+<p>
+Today I also noticed someone set up <a href="http://www.frappr.com/perl">a 
+map for Perl</a>, but it's hardly populated. So it is a good idea to add
+yourself there, so people won't think there are only 6 Perlers worldwide.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-03-18: Oh no, it's Another Test::Run Update!</h2>
+
+<p>
+A lot of work has been done on 
+<a href="http://web-cpan.berlios.de/modules/Test-Run/">Test-Run</a> since
+the <a href="http://use.perl.org/~Shlomi+Fish/journal/32493">last update</a>
+and I'd like to summarise it here.
+</p>
+
+<p>
+I discovered that when running 
+<a href="http://search.cpan.org/dist/Test-Run-CmdLine/bin/runprove">runprove</a>
+(the Test::Run prove counterpart), without any command line arguments then 
+it barfed with weird and confusing errors. I fixed it to exit gracefully
+without any message in a similar manner to prove.
+</p>
+
+<p>
+Next, on 12 March, I converted the code to make use of 
+<a href="http://www.nntp.perl.org/group/perl.qa/2007/03/msg8255.html">TAP::Parser 0.51</a>,
+which is the new release of TAPx::Parser, that broke some compatibility with
+older versions. Then I released Test-Run 0.0105.
+</p>
+
+<p>
+I also did a lot of refactoring: removing unused variables, putting classes
+in their own .pm modules, extracting methods, moving methods to specialised
+classes (instead of passing data from one method to the other) and converting
+arguments to instance properties.
+</p>
+
+<p>
+I mentioned the <a href="http://search.cpan.org/dist/Test-Run-Plugin-AlternateInterpreters/">alternate 
+interpreters plugin</a> in my previous entry. Well, I
+continued to work on it, and released the first few versions on the CPAN. The
+first two releases were broken, and I received automated smoking failure
+reports for them despite the fact I quickly uploaded newer packages.
+</p>
+
+<p>
+This weekend (Friday and Saturday) I was sick, but I guess every cloud has
+a silver lining because I was able to get a lot of work done. During these
+two days I've done 68 commits to the repository, and had a diff in which
+I added 2,602 lines and removed (or replaced) 431 lines. (Many of the added
+lines are copy-and-paste, template-generated, moves and renames, or otherwise
+small tweaks, though). It's been a while since I felt I was so productive.
+</p>
+
+<p>
+I also worked and released 
+<a href="http://search.cpan.org/dist/Test-Run-Plugin-CollectStats/">Test-Run-Plugin-CollectStats</a>,
+which collects and stores data and statistics from the entire test run. I
+initially feared it was hard, but it turned out to be easier than I expected.
+Doing it properly involved documenting the meaning of the fields of some of the 
+struct-like classes I stored there.
+</p>
+
+<p>
+I did some work on <a href="http://web-cpan.berlios.de/modules/Test-Run/">the
+Test-Run homepage</a> and made it somewhat less embarrassing. Then I 
+<a href="http://freshmeat.net/projects/test-run/">added it to Freshmeat</a>
+and <a href="http://freshmeat.net/projects/test-run/?branch_id=68853&amp;release_id=249395">announced a release</a>.
+</p>
+
+<p>
+I joined irc.perl.org's #parrot to witness the fun of 
+<a href="http://www.oreillynet.com/onlamp/blog/2007/03/parrot_bug_day_on_17_march_200.html">the 
+Parrot bug day</a>,
+and while I was in the neighbourhood decided to write a patch for Parrot
+to have an option of making use of Test::Run to run its tests. It took me
+some time to find out what to change, but after I did, the coding itself
+was very easy. I submitted 
+<a href="http://rt.perl.org/rt3/Public/Bug/Display.html?id=41877">a 
+patch</a> to the bug tracker, and it was applied less than an hour later. Gee,
+I love open source!
+</p>
+
+<p>
+After guiding one of the people who chatted there on how to get Test::Run
+configured and to output in colour, he asked how to get the verdicts of the
+individual test files ("ok", "NOK", "dubious", etc.) in colour as well. I
+told him one will have to write a plugin for that, and then decided
+to do it myself. This involved more refactoring to the core Test::Run code,
+and I'm still working on it. While I did, I refactored on of the methods
+to be this:
+</p>
+
+<ecode>
+sub _get_dubious_message_components
+{
+    my $self = shift;
+
+    return 
+    [
+           $self->_get_dubious_message_ml()
+        ,  $self->_get_dubious_verdict_message()
+        ,  $self->_get_dubious_message_line_end() 
+        ,  $self->_get_dubious_status_message_indent_prefix()
+        ,  $self->_get_dubious_status_message()
+    ];
+}
+</ecode>
+
+<p>
+While <tt>_get_dubious_message_line_end</tt> and 
+<tt>_get_dubious_status_message_indent_prefix</tt> to read:
+</p>
+
+<ecode>
+sub _get_dubious_message_line_end
+{
+    return "\n";
+}
+
+sub _get_dubious_status_message_indent_prefix
+{
+    return "\t";
+}
+
+</ecode>
+<p>
+
+<p>
+Don't look at me - it seemed like the right thing to do!
+</p>
+
+<p>
+Next on my agenda is:
+</p>
+
+<ol>
+
+<li>
+Finish the plugin that colours the test file components, and release it.
+</li>
+
+<li>
+Write a freshmeat.net announcement with all the new stuff.
+</li>
+
+<li>
+Write a plugin based on <tt>::CollectStats</tt> that serialises the data
+to XML. Write an XSLT stylesheet to transform it into 
+<a href="http://www.docbook.org/">DocBook/XML</a>.
+</li>
+</ol>
+
+<p>
+That's all folks! Have a lot of fun!
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-04-01: EE Studies in the Technion</h2>
+
+<p>
+There's a 
+<a href="http://www.shlomifish.org/philosophy/computers/education/opinion-on-the-technion/">new Essay about my impressions from EE Studies in the Technion</a>
+(and may also be relevant to other universities and departments). No, it's not
+an April Fool's Joke.
+</p>
+
+<p>
+Comments and corrections are welcome.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-04-01: Larry Wall Facts</h2>
+
+<p>
+In addition to the Chuck Norris facts, the 
+<a href="http://geekz.co.uk/schneierfacts/">Bruce Schneier facts</a> and
+the <a href="http://geekz.co.uk/esrfacts/">Eric S. Raymond facts</a>, I decided
+to start writing some "Larry Wall facts":
+</p>
+
+<ul>
+
+<li>
+Larry Wall can understand the Perl code he wrote last year.
+</li>
+
+<li>
+Larry Wall gets the colon.
+</li>
+
+<li>
+There are at least 137 Larry Walls in the U.S. but only one that matters.
+</li>
+
+<li>
+Larry Wall applies a patch manually quicker than GNU patch.
+</li>
+
+<li>
+Larry Wall dreams in Perl.
+</li>
+
+<li>
+Larry Wall can program in his sleep.
+</li>
+
+<li>
+Larry Wall is lazy, impatient and full of hubris.
+</li>
+
+<li>
+Larry Wall has more dollars in the bank than in his Perl code.
+</li>
+
+</ul>
+
+<p>
+More additions are welcome.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-04-17: The &quot;Knowledge in the Ether&quot; Anti-Pattern</h2>
+
+<p>
+One anti-pattern I noted in a previous workplace was what I called 
+"Knowledge in the Ether": most of the instructions for getting the application
+up and running, and a lot of the collective knowledge were not written down
+in a collective place. 
+<a href="http://tddpirate.livejournal.com/">TDDPirate</a> said he was familiar
+with it and called it the 
+<a href="http://en.wikipedia.org/wiki/Oral_Torah">"Oral Torah" syndrome</a>.
+</p>
+
+<p>
+The solution for this is simple: set up a wiki for the company, and instruct
+people to write a note there whenever they need to explain to someone how
+to do it (or give a link to a previous note), <b>instead of</b> guiding him
+how to do it. While this requires some discipline and getting used to, it can
+also be done after the fact.
+</p>
+
+<p>
+Obviously the amount of knowledge in people's head and in the Ether can never
+be completely eliminated. But it should be kept down to a minimum.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-04-19: The Topic List on use.perl.org</h2>
+
+<p>
+I believe the topics' list on "use Perl;" is heavily out of date. Maybe it
+was good enough when use Perl; started, but it's no longer up-to-date.
+Here are some missing topics:
+</p>
+
+<ol>
+<li>
+Software Testing - automated testing, quality assurance, 
+<a href="http://testanything.org/wiki/index.php/Main_Page">TAP</a>, etc.
+</li>
+
+<li>
+<a href="http://www.ruby-lang.org/">Ruby</a>
+</li>
+
+<li>
+Apple and Macintosh.
+</li>
+
+<li>
+Dynamic Languages in General.
+</li>
+
+<li>
+Scheme and Lisp - 
+</li>
+
+<li>
+Golf, Obfuscation, JAPHs - possibly all under Perl Culture or "Fun with Perl".
+</li>
+
+<li>
+Perl Humour.
+</li>
+
+<li>
+Haskell.
+</li>
+
+<li>
+General Philosophy.
+</li>
+
+<li>
+Functional Programming and Object Oriented Programming.
+</li>
+
+<li>
+Extreme Programming.
+</li>
+
+</ol>
+
+<p>
+I'd appreciate any additions, but the point is that it needs some love. Well,
+since I complained about it, then I'd like to help remedy this. I can prepare
+some images for representing these topics. My 
+<a href="http://www.shlomifish.org/art/">artistic skills</a> are close to zero,
+but I know how to use the GIMP and Inkscape, and can search for usable work
+online. I cannot add them myself without being made an admin of course.
+</p>
+
+<p>
+So any more topics? Any comments? Any suggestions for graphics?
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-04-21: What is the Best Introductory Language?</h2>
+
+<p>
+I wrote <a href="http://www.shlomifish.org/philosophy/computers/education/introductory-language/">a 
+new essay</a> about what I believe is the best language for beginning . As not 
+unusual, the final conclusion is not as important as the insights along the
+way. There are still some parts of it that I now find sub-optimal (especially
+the description on Perl), but I prefered to 
+<a href="http://www.catb.org/~esr/writings/cathedral-bazaar/cathedral-bazaar/ar01s04.html">Release Early and Often</a>. 
+</p>
+
+<p>
+Also see <a href="http://www.shlomifish.org/philosophy/computers/education/introductory-language/#coverage">the 
+Coverage</a> on the web, with some comments by other people.
+</p>
+</div>
+
+
+<div class="entry">
+
+<h2>2007-04-22: Back in the Habit</h2>
+
+<p>
+I've gotten somewhat excited lately, and had lots of great ideas for essays,
+articles, etc. As a result, most of what I could get myself to write was
+text rather than code, and the code I wrote was relatively small shell or Perl
+code for my own use. However, a few days ago, I decided to return
+to <a href="http://web-cpan.berlios.de/modules/Test-Run/">Test-Run</a>, and
+hack on it a bit.
+</p>
+
+<p>
+At first I wrote
+<a href="http://www.hexten.net/pipermail/tapx-dev/2007-April/000337.html">an
+email message</a> that made the case for converting the core Test::Run module
+from the GPL+Artistic licence to the MIT X11 licence. Now, since the
+GPL+Artistic combo is recursive, this involves a gradual rewrite. I started
+working on doing that for Test::Run::Plugin::CmdLine::Output, which I
+since have completely rewritten. In the course of this, I was able to
+heavily refactor and improve the quality of the code, which was a nice
+by-product of the rewrite.
+</p>
+
+<p>
+In the middle, I got a bit tired of doing that, and instead went on to refactor
+and extend the functionality of the command line modules. I added a 
+more generalised and re-usable environment variables handling for handling
+reading data structures from YAML files, or for specifying a hash mapping 
+in LS_COLORS style. 
+</p>
+
+<p>
+As it turns out, I eventually found a use for 
+<a href="http://use.perl.org/~Shlomi+Fish/journal/31704">Text-Sprintf-Named</a>
+in Test:Run, although not in the original context, but rather to allow
+some refactoring of the <tt>::Output</tt> plugin. Since I wanted to call
+some methods on an object reference, instead of accessing the variables 
+themselves, I had to release a new version of the module (version 0.02).
+</p>
+
+<p>
+The Berlios.de Subversion server is down at the moment, so if you want
+to try it for yourself, you'll have to download
+<a href="http://www.shlomifish.org/Files/files/code/perl/Test/Test-Run/Test-Run-trunk-2007-04-22.tar.bz2">the temporary snapshot of my working copy</a>.
+</p>
+
+<p>
+Writing code again feels really good. 
+</p>
+
+</div>
+
+<div class="entry">
+
+<h2>2007-05-01: New Essay: The End of Info-Tech Slavery</h2>
+
+<p>
+From my new essay:
+</p>
+
+<blockquote>
+<p>
+This is Shlomi Fish, <b>a good hacker</b>, where hacker is a good enthusiastic
+programmer, not necessarily a computer intruder. And I have an announcement to
+make: <b>I refuse to be an IT slave</b>. Moreover: if you want to employ
+people like me (and you do), you should not give us only good conditions - you 
+<b>should give us exceptional ones [= conditions]</b>. Otherwise, we'll 
+probably leave, or be fired, much to your misfortune.
+</p>
+</blockquote>
+
+<p>
+More about it <a href="http://www.shlomifish.org/philosophy/computers/software-management/end-of-it-slavery/">in my new essay</a> "The End of Info-Tech 
+Slavery".
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-05-09: XML::RSS : Grant Completed and Future Plans</h2>
+
+<p>
+As 
+<a href="http://news.perl-foundation.org/2007/05/xmlrss_cleanup_grant_completed.html">I 
+wrote on the TPF blog</a>, the XML::RSS grant was officially completed. Most
+of what we set to achieve in the scope of the grant has been achieved -
+the upcoming XML::RSS 1.30 has close to full test coverage, a much more
+modular codebase, and much fewer bugs. The grant being successful and all,
+I'm going to receive the money as a cheque in the mail.
+</p>
+
+<p>
+A few people whom I talked with about the grant congratulated me for it,
+or expressed some interest in it in its technicalities.
+</p>
+
+<p>
+So what's next? Ask told me that he'd like to see a unified interface for
+all versions supported by XML::RSS. However, that would mean having some
+keys that affect all of them, and possibly an option to trigger this
+unified API on and off. Plus, this exact functionality is provided by 
+<a href="http://search.cpan.org/dist/XML-Feed/">XML-Feed</a>.
+While XML-Feed also does other things like fetching feeds or handling
+Atom feeds, which it is possible that should be abstracted out, I would still
+rather not duplicate its functionality. So I think that when I'm in the
+mood, I'll contribute to XML-Feed.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-05-16: The Tale of XML-Grammar-Screenplay</h2>
+
+<p>
+Being a creative writer, I recently started working on 
+<a href="http://www.shlomifish.org/humour/Star-Trek/We-the-Living-Dead/">a
+screenplay titled "Star Trek: We the Living Dead"</a>. I wrote it in a certain
+well-formed text, using vim, and planned on creating a way to translate it
+into HTML. Eventually it resulted in the newly released 
+<a href="http://search.cpan.org/dist/XML-Grammar-Screenplay/">XML-Grammar-Screenplay</a> distribution on CPAN. Here's how I got it.
+</p>
+
+<p>
+I decided that I first translate the well-formed text into a custom XML 
+format, and from that into DocBook/XML and in the future possibly other 
+formats. The well-formed text had XML-style tags, descriptions (<tt>[David
+walks to Goliath.]</tt>), paragraphs and other elements, and so I looked at
+<a href="http://search.cpan.org/dist/Parse-RecDescent/">Damian's 
+Parse-RecDescent</a> for help in parsing it. Working with P::RD on something
+so complex proved to be very time-consuming. I was again bitten by the fact
+P::RD skipped various stuff based on <tt>$Parse::RecDescent::skip</tt>,
+and had to assign a "" to it. (After banging my hand for several hours.)
+</p>
+
+<p>
+I also found out it only reported that it failed to parse, and not why 
+exactly, at least with the rudimentary logic that I built for it. While at 
+first, I tried to use the <tt>$::RD_TRACE</tt> display, I eventually found
+it that it is often more effective to binarily isolate the offending text
+until one finds the problem. Sometimes I found I had a syntax error. 
+And in other cases, I found out that the grammar I defined for P::RD was
+lacking, including in many regular expression problems.
+</p>
+
+<p>
+After a lot of trying, I could get the parser to work. Then I wrote an XSLT
+stylesheet to translate the resultant XML to DocBook/XML. That was very
+easy considering, but I got stomped on doing 
+<tt>&lt;xsl-apply-templates match="*" /&gt;</tt> instead of 
+"xsl:apply-templates" without any arguments, which caused the textnodes not
+to render. Having solved that, everything worked fine.
+</p>
+
+<p>
+As a bit of sugar, I created two <tt>XML::Grammar::Screenplay::App::</tt>
+modules that can be used by <tt>perl -M</tt> and then 
+<tt>-e 'run()' -- [ARGS]</tt> to process files from the command line. 
+</p>
+
+<p>
+I already discovered one <tt>:utf8</tt> bug in it since I uploaded it, which I 
+fixed in the trunk. 
+</p>
+
+<p>
+On other news, I've received and cashed in my cheque for the XML::RSS grant. 
+I'm planning to spend some of the money on
+extending the 
+<a href="http://web-cpan.berlios.de/offers/o-and-m-2006-08/">Web-CPAN 
+T-shirts offer to have one T-shirt of choice from "Think Geek"</a> as well as 
+the "Ozy&amp;Millie" T-shirt. And I also spent quite a lot of time working on
+<a href="http://web-cpan.berlios.de/modules/Test-Run/">Test::Run</a>.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-05-18: Bad Usability of the Parrot Bug Tracker</h2>
+
+<p>
+So I wanted to submit a small patch to Parrot. Where do I start? Possibly
+<a href="http://rt.perl.org/rt3/">its Bug Tracker</a>. However, there isn't
+any link there on how to post bugs. None whatsoever. Not even a link to an
+explanation. None.
+</p>
+
+<p>
+So I had to ask the #parrot channel. They referred me to 
+<a href="http://www.parrotcode.org/docs/submissions.html">this document</a>.
+After reading it, it said to prepare the patch, and send it to 
+"parrotbug at parrotcode dot org" (a spam-obfuscated email "address" of 
+<a href="mailto:parrotbug@parrotcode.org">parrotbug@parrotcode.org,
+which is the address for sending patches to parrot</a>).
+However, since I could not press the link in my browser to invoke the email
+client (or right-click+copied it), I had to type it from memory. So I typed
+it as parrotbug@parrot.org which is the incorrect address. I received a
+bounce which I didn't notice, and naturally the mail did not arrive there.
+</p>
+
+<p>
+Eventually, after the patch recipient complained that the email did not
+arrive, I sent it again while CCing her. She received the email but the
+patch was not received again.
+</p>
+
+<p>
+I see several usability problems here:
+</p>
+
+<ol>
+<li>
+The bug tracker, which is where people expect to be able to submit bugs
+doesn't have a link to submit them, or at least explaining how to.
+</li>
+<li>
+The email address is spam-obfuscated, and so people mistake it for something
+else.
+</li>
+</ol>
+
+<p>
+I hope both these issues will be corrected.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-05-29: Why I Sometimes Really Hate Wiki'ing</h2>
+
+<p>
+As part of the Hackers-IL wiki, I started writing 
+<a href="http://www.hackers.org.il/mediawiki/index.php/A_Brief_History_of_Linux_in_Israel">a brief history of Linux in Israel</a>. Now at first the opening 
+paragraph <a href="http://www.hackers.org.il/mediawiki/index.php?title=A_Brief_History_of_Linux_in_Israel&amp;oldid=1568">read</a>:
+</p>
+
+<blockquote>
+<p>
+Israel has been a Capitalistic, prosperous country for a long time. While it
+has many problems (such as heavy taxation, irrational and abundant regulations,
+quite a lot of terrorist activity, etc.), it is relatively peaceful, has an
+abundant food supply...
+</p>
+</blockquote>
+
+<p>
+At a point someone was unhappy with it and 
+<a href="http://www.hackers.org.il/mediawiki/index.php?title=A_Brief_History_of_Linux_in_Israel&amp;diff=1572&amp;oldid=1568">changed 
+it</a> to read only "quite a lot of terrorist activity"). Now, having seen, it
+I felt that it was then inaccurate and misleading, because Israel has much
+more serious problems than the occassional act of terrorism, despite what
+many people have been misled to believe by the International media. So I
+completely removed the "such as" parenthesis. 
+</p>
+
+<p>
+Why am I telling you all this? Because this convergence to mediocricity and 
+Political-Correctness of wikis happened again, this time at 
+<a href="http://perl.net.au/">PerlNet</a>. Read on for the details.
+</p>
+
+<p>
+I have a copy of the Linux Journal that a friend bought me when he was
+abroad. Its focus was on blogs, wikis, audiocasts, etc. One of the most amusing
+articles there was a rant by an editor about why he hates wikis. And in it,
+one keeps seeing edits and re-edits of the text by the surfers, as if it were
+a wiki article. Paul Graham also 
+<a href="http://www.paulgraham.com/web20.html">wrote about it</a> in a 
+different context:
+</p>
+
+<blockquote>
+<p>
+My experience of writing for magazines suggests an explanation. Editors. They
+control the topics you can write about, and they can generally rewrite whatever
+you produce. The result is to damp extremes. Editing yields 95th percentile
+writing—95% of articles are improved by it, but 5% are dragged down. 5% of the
+time you get "throngs of geeks."
+</p>
+
+<p>
+On the web, people can publish whatever they want. Nearly all of it falls short
+of the editor-damped writing in print publications. But the pool of writers is
+very, very large. If it's large enough, the lack of damping means the best
+writing online should surpass the best in print. [3] And now that the web has
+evolved mechanisms for selecting good stuff, the web wins net. Selection beats
+damping, for the same reason market economies beat centrally planned ones.
+</p>
+</blockquote> 
+
+<p>
+Now a wiki gives the power of editing to the masses, so it may get worse. Often
+you'll see a state of
+<a href="http://en.wikipedia.org/wiki/Deadlock#Livelock">livelock</a>, where
+two or more people keep changing one another's content. Or alternatively to
+satisfy everybody, the wiki converges to a commonly acceptable 
+pseduo-"politically-correct" content.
+</p>
+
+<p>
+I admit I've been guilty of such abuse as well. For example I once edited the
+<a href="http://en.wikipedia.org/wiki/Iberians">Wikipedia article about the
+Iberians</a> to say that they were an Afro-Asian people, while they in fact
+were not. This eventually got reverted, and the article as it stands now is
+otherwise much richer than what was there when I first read it.
+</p>
+
+<p>
+Now for PerlNet. The 
+<a href="http://perl.net.au/wiki/Freenode_Sharp_Perl_FAQ">Freenode 
+#perl FAQ</a> is hosted there because I'd like it to be a wiki page,
+and perl.net.au is my favourite "central" Perl wiki. One of the sections there
+describes the channel regulars. I wrote this in the about "beth" there:
+</p>
+
+<blockquote>
+<p>
+beth, also known as 
+<a href="http://loxosceles.org/">Beth Skwarecki</a> is a Biology graduate from 
+Ithaca, New York, the United States, who studied Perl in order to deal with 
+Bio-Informatics. Surprisingly, she knows her Perl (and UNIX) pretty well. Due 
+to her knowledge and 
+<a href="http://www.shlomifish.org/Files/files/images/Friends/freenode/beth/beth-in-waterfall.jpg">good looks</a>, she had been unofficially considered as the 
+channel diva.
+</p>
+</blockquote>
+
+<p>
+Now, Jarich (an admin of perl.net.au) <a href="http://perl.net.au/wiki/?title=Freenode_Sharp_Perl_FAQ&amp;diff=7449&amp;oldid=7448">changed it</a> to read:
+</p>
+
+<blockquote>
+<p>
+beth, also known as Beth Skwarecki is a Biology graduate from Ithaca, 
+New York, the United States, who studied Perl in order to deal with 
+Bio-Informatics.  Beth is the unofficial #perl channel diva.
+</p>
+</blockquote>
+
+<p>
+Now, while the original version probably left somethings to be desired, I feel
+that the new version as it stands now, is much lamer, lost most of its colour,
+and is much more cryptic. (Why is Beth the unofficial #perl channel diva?)
+</p>
+
+<p>
+When talking with Jarich on the IRC, she asked me if I had rights to put
+beth' waterfall photo on my website. I told her that I originally found this
+photo on beth' site, and downloaded it to my machine so it was temporarily
+used as a wallpaper for one of my virtual workspaces. Then I uploaded it
+to my site because it was a great photo and I could no longer find it on the
+site of beth, and Flickr and Google weren't any help. (And in case you're
+wondering and haven't clicked on the photo yet, Beth is fully groomed there.)
+</p>
+
+<p>
+She also said that I was patronising the fact that she surprisingly knows Perl 
+very well just because she's a woman. However, the reason I said that was
+because Perl is the first language Beth has learned (and so far only one), and 
+she hasn't been working with it too much, and because she otherwise hasn't
+been a computer geek for too long. (And has many other interests and talents 
+besides computing.). So I'm not patronising her because of her sex, but rather 
+say she is surprisingly doing very well. I indeed did not specifically
+mention it in what I wrote, but would rather see such an explanation added than
+the sentence deleted.
+</p>
+
+<p>
+And naturally the new paragraph does not explain why she is considered the
+unofficial channel diva. And Jarich told me she further believed that the 
+other paragraph that gives a link to most of the other "real-life" interests 
+of Beth is patronising, just because one of them happens to be knitting
+and sewing. Beth has chosen to put all her life online on her home site, blog
+and Flickr stream. I'm pretty sure she wouldn't mind those two paragraphs
+on the Freenode #perl FAQ.
+</p>
+
+<p>
+I've ranted about this for a long time now, disproportionally to the length of 
+the original text, and the time it would take me to reach a compromise. I was
+trying to illustrate a point about wikis and collaborative work in general:
+while it is important that everyone will have access and possibly even
+modification rights to every aspect of the project, one should make sure that
+people don't step on each other toes. Even if something is shared, there is
+the concept of propriety. 
+</p>
+
+<p>
+As Paul Graham notes later on in his articles, the top 1% of blogs, due to the
+fact they are un-edited and written by the top 1% of bloggers, eventually 
+achieve or exceed the quality of the articles in the magazine, who due to 
+their heavy editing, often lose a lot of their edge. Wikis suffer from a
+similar problem.
+</p>
+
+<p>
+I still think wikis are a great concept, and have proven and will probably
+prove to have a huge potential. However, I think that there are some temporary
+growing pains for some wikis, in which many people misbehave or abuse their
+power. And what I described here is not the only problem faced by wikipedia
+and other popular wikis. I hope that the text of the wikis of the future, won't 
+fall to the Paul Graham "95%-high-quality" syndrome, and instead will be 
+better than that.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-06-02: Update Regarding the Wiki, IRC Conversations, and Client/Server Web Feed Readers</h2>
+
+<p>
+The purpose of this entry is three fold. As you may know from 
+<a href="http://shlomif.livejournal.com/39215.html">the old adage</a>,
+a person's "doing mode" and his "complaining mode" are mutually exclusive. My
+<a href="http://use.perl.org/~Shlomi+Fish/journal/33364">previous entry</a>
+was probably interpreted as a complaint, even though my main intention was
+to philosophically discuss a certain pattern with online, public wikis. I
+admit it had an element of a rant in it, but most of the other post,
+were nothing except complaints, which saddened me.
+</p>
+
+<p>
+Well, I decided to do something about the original motivation for the post.
+After waking up early (not by purpose), I placed 
+<a href="http://perl.net.au/wiki/?title=User:Shlomif/Beth_Freenode&amp;action=history">the 
+problematic section</a> on the wiki, and discussed it interactively with the 
+(mostly Australian) editors of perl.net.au on IRC.
+Together we have reached a phrasing that we were both (more-or-less) happy with
+it, and decided to keep it there. So that was a "doing".
+</p>
+
+<p>
+I still think this solution is not always applicable. perl.net.au is still
+relatively small, and trying to do that for an international wiki the scope 
+of the English wikipedia, where there's much more red-tape is going to be 
+much harder. This is one reason I think MediaWiki needs better ways to manage
+threaded conversations, with good interface controls.
+</p>
+
+<p>
+The second issue is that I also 
+<a href="http://perl.org.il/pipermail/perl/2007-June/008727.html">Israel.pm'ed</a>
+and <a href="http://mail.pm.org/pipermail/kc/2007-June/thread.html#726">KansasCity.pm'ed</a> a few
+IRC conversations I found amusing. You can comment about them here, in the
+not-entirely-unlikely situation that you have something to say.
+</p>
+
+<p>
+The third issue is that I'm trying to get myself to write a specification
+for a client/server protocol for a web feed reader. As you may know, there are
+web-based readers, but their interface tend to suck, and they are not as
+convenient as GUI ones. Now, I've been thinking of having a remote server for
+storing the feeds' collection, and any number of clients (that could be a web 
+application or a GUI client or anything else you want), that will interact
+with it, login there and manage the feeds. This is similar to the
+<a href="http://en.wikipedia.org/wiki/Internet_Message_Access_Protocol">what
+the IMAP Protocol is for email</a> only for web feeds. The state of all
+the feeds is maintained on the server, so you can access it from any where.
+</p>
+
+<p>
+I'd like to start working on a functional spec and technical spec for the
+protocol. I'd like to start with something very basic and with many perlisms ,
+but enough to raise some interest. So far the people I told them about it
+either thought it was a great idea, or alternatively gave me motivational
+complaints, which indicated they could not understand why it would be useful.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-06-06: Silly Trick: Split a String into Lines</h2>
+
+<p>
+Wow! I have a lot to blog about Perl here, so let's start. First of all,
+a really trivial trick that I wondered about and that <tt>avar</tt> on 
+Freenode taught me (thanks!): how to split a string into lines while 
+preserving the trailing "\n". It's very simple: <tt>my @a = 
+split(/^/, $text)</tt>. One thing I wonder is why I don't get an empty
+line at the beginning of the string, because:
+</p>
+
+<code>
+perl -le 'my @a=split(/p/,"pillow pillow on the pall");print join(",",@a)
+</code>
+
+<p>
+Gives me an empty string as the first argument. I also wonder if using 
+<tt>split(/^/, $text, -1)</tt> instead, will do any difference.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-06-08: What I Learned from Writing a Custom Parser</h2>
+
+<p>
+I
+<a href="http://use.perl.org/~Shlomi+Fish/journal/33293">blogged 
+about XML-Grammar-Screenplay</a> here before. Right now, seeing that 
+Parse::RecDescent is on the slow side, and that it's error reports are 
+non-existent, I've decided that I want to write my own custom 
+("Quick-and-Dirty") parser. So I <tt>svk cp</tt>'ed my main test file, that
+tests the conversion of the proto-format to XML and validates the XML,
+and started testing it with the custom parser.
+</p>
+
+<p>
+Now, since I could not write the custom parser at once, I decided to
+incrementally add more tests as I implement them. For this, I used the 
+following:
+</p>
+
+<ecode>
+# TEST:$num_texts=6
+@tests = splice(@tests, 0, 6);
+</ecode>
+
+<p>
+This is the first time I recall using <tt>splice()</tt> in production. I 
+needed it so
+the tests' counter (that makes use of 
+<a href="http://search.cpan.org/dist/Test-Count/">Test-Count</a>) will
+be easily capable of being synchronised with the actual number. This is
+while not using something ugly like <tt>@tests = @tests[0 .. (6-1)]</tt>.
+<tt>splice()</tt>'s substr()-like semantics made it ideal in this case.
+</p>
+
+<p>
+Anyway, I gradually added more tests and implemented them in the custom
+parser. When planning it I wanted to write a parser that was
+event based, with a dedicated user-land stack, and without functions calling
+each other arbitrarily. However, I found it comfortable to implement it using
+functions calling each other for each logical unit of the text, and it still
+stayed this way. Thus, you can say it's a classic ad-hoc Recursive-Descent
+parser, although a non-backtracking one.
+</p>
+
+<p>
+One of the objectives for the parser was to make sure it does not 
+backtrack. That's because it's completely unnecessary with my defined 
+syntax, and because it is a possible reason for Parse::RecDescent's slowness
+(especially on a slightly invalid syntax, which causes it to frantically
+try different options).
+</p>
+
+<p>
+The parser is now parsing a subset of the functionality and is getting there.
+It indeed feels very "quick-and-dirty" and raw. Perhaps a better design would
+be to use some kind of a state machine or a decision tree. I also found a use
+for <tt>redo</tt> in the first time in a long while, as I had a 
+<tt>while ... continue { $self-&gt;next_line() }</tt> construct, and was 
+trying to avoid executing the <tt>continue {...}</tt> block.
+</p>
+
+<p>
+One catch is that I split the text into lines, and handle one line at the 
+time. Due to the sytnax, it sometimes complicates matters and sometimes
+facilitates them.
+</p>
+
+<p>
+It may actually be harder than having written the P::RD-based parser, and is
+time consuming. I often find that I have to take rests in between and do
+something which is more straightforward to do. But it is a fun, in a 
+rather braindead way. At least when it's done, I (and others) would be able
+to work on my screenplays with less frustrations and with more style, which 
+is why I'm doing it.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-06-11: Wiki Patterns</h2>
+
+<p>
+I've <a href="http://use.perl.org/~Shlomi+Fish/journal/33364">blogged 
+about wiki-ing anti-Patterns</a> here before, and then when I went for a walk
+came up with several wiki-ing patterns and anti-patterns (which I cannot 
+readily recall). But I decided to see if there was a previous effort. And 
+indeed there is: <a href="http://www.wikipatterns.com/">Wiki Patterns -
+the meta-wiki for wiki-ing patterns</a>.
+</p>
+
+<p>
+It's not perfect. While browsing it, I noticed that they have a 
+<a href="http://www.wikipatterns.com/display/wikipatterns/Vandal">one big 
+"Vandal" anti-pattern</a>. However, I would separate Vandalism into several
+different anti-patterns instead of treating it collectively:
+</p>
+
+<ul>
+
+<li>
+<b>Spamming</b> - standard wiki link spamming, usually done by bots. 
+</li>
+
+<li>
+<b>Good-intentions' Disinformation</b> - a person who thinks he's adding or
+correcting information that he thinks is right (like me thinking that the 
+Iberians were an Afro-Asian people), while it is not in fact.
+</li>
+
+<li>
+<b>Bad-intentions' Disinformation</b> - adding misleading information
+malevolently.
+</li>
+
+<li>
+<b>Adding Inappropriate Remarks</b> - a person adds annoying or inappropriate
+remarks about the text, into the main text of the article. This is instead of
+using the discussion page. In some wikis such as 
+<a href="http://c2.com/cgi/wiki">the original WikiWikiWeb</a>, where there
+is no discussion page, some types of these comments may be more tolerated.
+</li>
+
+</ul>
+
+<p>
+While they are all vandalism, they all require different ways of dealing with.
+</p>
+
+<p>
+I may end up contributing to wikipatters.com as it is world-editable, but
+requires registration.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-06-11: Plugins for Helper Objects</h2>
+
+<p>
+In this entry, I'd like to discuss an OOP technique of having a class with
+plugins, where the plugins specify plugins for the objects used ("has-a")
+by instances of the class. 
+</p>
+
+<p>
+This occured to me in 
+<a href="http://web-cpan.berlios.de/modules/Test-Run/">Test-Run</a>, where
+I implemented several classes which I called "Structs" (like in C) which
+wrapped around a hash ref using accessors. The instances of these classes
+were referenced by the main class ("Test::Run::Core"). I graudually moved 
+more and more methods into the helper classes, if I saw they only referred 
+to their own data.
+</p>
+
+<p>
+Now, I have some plugins of the Test::Run::Core class. It happened to me
+at least once now, that after I moved a few methods to the helper classes,
+the plugin broke, because the method in question was no longer present in
+the main class. I had to find a way to <b>extend the helper 
+classes</b>, and it made me thinking that I'd like to have some plugins 
+for it too.
+</p>
+
+<p>
+Plugins in Perl, at least as implemented by Catalyst and Test-Run, are done
+by creating an empty class (let's say <tt>MyPluggableClass</tt>), adding all 
+the plugins, in front to <tt>@MyPluggableClass::ISA</tt>, and adding the master
+class which the plugins enhance at the end. So <tt>@MyPluggableClass::ISA</tt>
+will look something like:
+</p>
+
+<ecode>
+( qw(Plugin::Foo Plugin::Bar Plugin::Quux MasterClass) )
+</ecode>
+
+<p>
+Now, I'd like a way for plugins of the Test::Run main class, to add plugins
+to its helper classes. I already have some code to traverse the inheritance
+tree and collect an array from the individual methods (shamelessly borrowed
+from a similar paradigm in <tt>Class::Std</tt>). Using it, I can collect
+all the plugins, append the master class at the end, and initialise a new
+instance of the helper class.
+</p>
+
+<p>
+I can even abstract this functionality into its own meta class. So my questions
+are:
+</p>
+
+<ol>
+
+<li>
+Was this done before?
+</li>
+
+<li>
+Is there a better way to do it?
+</li>
+
+<li>
+Does <a href="http://search.cpan.org/dist/Moose/">Moose</a> support a
+similar paradigm?
+</li>
+
+<li>
+Should I rethink my strategy?
+</li>
+
+</ol>
+
+<p>
+I think one big monolithic class is not the way to go, so I'd appreciate any
+comments.
+</p>
+
+</div>
+
+
+
+<div class="entry">
+
+<h2>2007-06-15: Another perl5 Bug</h2>
+
+<p>
+I found 
+<a href="http://rt.perl.org/rt3/Public/Bug/Display.html?id=43207">another
+perl5 bug</a> by accident. It can be reproduced with perl-5.8.8 like this:
+</p>
+
+<ecode>
+$ perl -le ' $a = "Hello"; for ("$a") { lc $_; print }'
+hello
+</ecode>
+
+<p>
+It happens only if a variable is given within the quotes.
+</p>
+
+<p>
+I discovered it by writing <a href="http://svn.berlios.de/svnroot/repos/web-cpan/Test-Harness-NG/trunk/build/enable-runtest-in-distro/module-build-test-runify.pl">a support
+script to convert a standard Module::Build distribution to 
+Test-Run-Builder</a>. In this context, I needed to add another entry to the
+MANIFEST file, and used <tt>sort { lc($a) cmp lc($b) }</tt> on the existing
+lines and an extra line placed in quotes. And then when I ran
+<tt>svn diff</tt> I found out it was in lowercase.
+</p>
+
+<p>
+On a slightly different note, I also spent a lot of time isolating 
+<a href="http://qa.mandriva.com/show_bug.cgi?id=31355">a hard-to-isolate
+vim bug on Mandriva</a>. It turns out to have been an incompatibility between
+the vim source and the compilation flags, that surfaces only when using
+the vcscommands.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-06-20: XML-RSS-1.30</h2>
+
+<p>
+Whoo whoo! <a href="http://search.cpan.org/dist/XML-RSS-1.30/">XML-RSS version
+1.30</a> has now been uploaded to the CPAN, thanks to
+<a href="http://www.askbjoernhansen.com/">Ask Bjørn Hansen</a>. As 
+<a href="http://news.perl-foundation.org/2007/05/xmlrss_cleanup_grant_completed.html">noted in the XML::RSS grant summary</a>, this version incorporates
+all the improvements done as part of the TPF grant.
+</p>
+
+<p>
+Now it's up to you to test it on your system, make sure it passes all the
+built-in tests there, and check whether it breaks any of your XML-RSS
+production code.
+</p>
+
+<p>
+Have fun!
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-07-01: Tip: Debugging Perl XS Code with Module::Build</h2>
+
+<p>
+As part of <a href="http://opensvn.csie.org/shlomif/documents/perl/trunk/perl5/ext-embed-internals/docbook/examples/">my 
+top-secret project</a> (more about it later), I needed to debug some Perl/XS
+code I wrote as part of a Module::Build module. But I could not figure out 
+how to add the debugging flags to the .so file.
+</p>
+
+<p>
+Well, after I read the source code, and perldocs, I figured it out:
+</p>
+
+<ecode>
+./Build code extra_compiler_flags="-g"
+</ecode>
+
+<p>
+extra_compiler_flags can contain any other flag you need depending on your
+compiler. The flags are passed to 
+<a href="http://search.cpan.org/dist/ExtUtils-CBuilder/">ExtUtils-CBuilder</a>,
+which uses it to invoke the C compiler.
+</p>
+
+<p>
+Now for the gdb part. Put this into a <tt>cmds.gdb</tt> file, and type <tt>gdb 
+--command=cmds.gdb /usr/bin/perl</tt>:
+</p>
+
+<ecode>
+set breakpoint pending on
+set args -Mblib t/07-assign-string-to-ref.t
+b XS_XSTest_assign_string_to_ref
+r
+</ecode>
+
+<p>
+"set breakpoint pending on" makes gdb not ask for "Make breakpoint pending on 
+future shared library load? (y or [n])", which is assumed to be "n" in
+the context of the --command script. <tt>-Mblib</tt> is for using the files
+installed under blib/. <tt>t/07...</tt> is the test file (You wrote one, 
+right?), os substitute it to the correct location. 
+</p>
+
+<p>
+Finally, <tt>XS_XSTest_assign_string_to_ref</tt> is the XS function to
+be debugged, whose name can be found at the <tt>lib/*.c</tt> that is generated
+from the .xs file.
+</p>
+
+<p>
+I couldn't find this information anywhere else on the Intarwebs, so I hope
+you find it useful.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-07-03: New Release of XML-SemanticDiff</h2>
+
+<p>
+I have uploaded a new release of <a href="http://search.cpan.org/dist/XML-SemanticDiff/">XML-SemanticDiff</a> 
+(0.96) yesterday, after a long time of neglect by its originators. Here's the 
+complete story.
+</p>
+
+<p>
+<a href="http://search.cpan.org/dist/XML-SemanticDiff/">The 
+XML-SemanticDiff module</a> has been unmaintained for over 5 years now. 
+Lately, I've noticed that its algorithm generated some false negatives and 
+false positives and as a result fixed it in my personal copy, as I've been
+using this module indirectly via
+<a href="http://search.cpan.org/dist/Test-XML/">Test-XML</a>. I later 
+uploaded my modified version to 
+<a href="http://svn.berlios.de/svnroot/repos/web-cpan/XML-SemanticDiff/">a 
+Subversion repository</a>.
+</p>
+
+<p>
+The <a href="http://search.cpan.org/~khampton/">author</a> has been missing in 
+action, and after 
+<a href="http://www.nntp.perl.org/group/perl.modules/2007/06/msg54811.html">I
+tried to contact him</a> (and was not successful), 
+<a href="http://www.nntp.perl.org/group/perl.modules/2007/07/msg55158.html">I
+requested 
+to become a co-maintainer on Monday</a>, and
+<a href="http://www.nntp.perl.org/group/perl.modules/2007/07/msg55167.html">has
+been granted the co-maintainer status</a>. 
+</p>
+
+<p>
+Thus, I uploaded a new version that incorporates all of my changes. The
+distribution still has some issues which I hope to address in the not-so-far
+future, but it should still be usable.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-07-10: Test::Run Regression Bug</h2>
+
+<p>
+After I released 
+<a href="http://web-cpan.berlios.de/modules/Test-Run/">Test-Run</a> version 
+0.0111, and made some related Test-Run-CmdLine 
+releases, I noticed that Test-Run-CmdLine got broken. As it turned out,
+a regression was introduced into Test-Run which, due to inadequate testing
+in the core distribution, was only discovered in the Test-Run-CmdLine tests.
+I could have discovered it on my machine, if only I had ran my script to build
+all the Test-Run-related distributions. 
+</p>
+
+<p>
+Namely, in my continuous work on converting the legacy GPL and (original) 
+Artistic code that I inherited from Test::Harness to an MIT-X11 Licensed 
+code, while refactoring it in the process, I broke the "leaked directory" 
+(which indicates which files inside it were leaked). After I added a regression
+test for it in the core Test-Run distribution, I found out that I had about
+three bugs in the new code, which was about 20 lines. (Reminds of
+<a href="http://www.xbox-linux.org/wiki/The_Hidden_Boot_Code_of_the_Xbox">"How
+to fit 3 bugs in 512 bytes of security code"</a>). After I fixed them,
+Test-Run-CmdLine did not complain. 
+</p>
+
+<p>
+There are several lessons here. One is that one should also test modules that
+are based on the core module before releasing it. The other is that if bugs 
+are discovered by testing a derived module, then regression tests should also 
+be added to the test of the core module. And finally, that it is a good idea
+to have a good test coverage before refactoring.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-09-09: The Perl Apps as Modules Paradigm</h2>
+
+<p>
+Back at the time when I was uploading new versions of Test::Run::CmdLine, I 
+found out that 
+<a href="http://www.nntp.perl.org/group/perl.qa/2007/06/msg8747.html">some
+CPAN testers report were failing</a> because one of the scripts that was
+supposed to be installed by a dependency, and was used in a test, was not
+available in the path.
+</p>
+
+<p>
+My solution to this was to make sure the script just called the "run()" 
+function of a module, and then to invoke the module in the tests from the 
+command line like this:
+</p>
+
+<ecode>
+perl -MApp::MyApp -e 'run()' -- --name "Sophie"
+</ecode>
+
+<p>
+<tt>App::MyApp</tt> can be something like:
+</p>
+
+<ecode>
+package App::MyApp;
+
+use strict;
+use warnings;
+
+use base 'Exporter';
+
+our @EXPORT=(qw(run));
+
+use Getopt::Long;
+
+sub run
+{
+    my $name = "World";
+
+    GetOptions("name=s" => \$name);
+
+    print "Hello, $name!\n";
+}
+
+1;
+</ecode>
+
+<p>
+It's also useful to be able to run such programs without needing to
+install scripts and with just dependence on the Perl module's path. 
+</p>
+
+<p>
+On my homepage makefile, I have the following rules to handle the
+Screenplays:
+</p>
+
+<ecode>
+lib/docbook/xml/%.xml: lib/screenplay-xml/xml/%.xml
+	perl -MXML::Grammar::Screenplay::App::ToDocBook -e 'run()' -- \
+	-o $@ $<
+
+lib/screenplay-xml/html/%.html: lib/screenplay-xml/xml/%.xml
+	perl -MXML::Grammar::Screenplay::App::ToHTML -e 'run()' -- \
+	-o $@ $<
+
+lib/screenplay-xml/xml/%.xml: lib/screenplay-xml/txt/%.txt
+	perl -MXML::Grammar::Screenplay::App::FromProto -e 'run()' -- \
+	-o $@ $<
+
+</ecode>
+
+<p>
+This solves me the problem of depending on the scripts being in the path.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-09-29: The MediaWiki Parser Grant</h2>
+
+<p>
+As you may know by reading the Perl Foundation blog,
+<a href="http://news.perlfoundation.org/2007/09/perlbased_mediawiki_syntax_par.html">I 
+was awarded a grant to work on a MediaWiki parser</a>. Now, I knew about this
+grant a long time before it was announced, because it took a long time from
+the time the committee decided to give me the grant, until it was announced on 
+the foundation's blog.
+</p>
+
+<p>
+I've started working on some 
+<a href="http://svn.berlios.de/svnroot/repos/web-cpan/MediaWiki-Parser/">working
+code</a>. However, as I've made only slow progress. There are several reasons 
+for it:
+</p>
+
+<ol>
+
+<li>
+<p>
+Recently, I've been relatively lethargic. Being out of job, and without 
+motivation to do anything, I don't seem to have the will to get things
+done. Most of the time, I just rest, play games, read emails and RSS, etc.
+but not really code.
+</p>
+
+<p>
+The prospect of getting the money in return is not enough of a motivation to 
+work on the parser. 
+</p>
+</li>
+
+<li>
+<p>
+This is an annoying task. So far the code I wrote, handles only a small
+subset of the syntax, but is already very complicated, monolithic, and "ugly".
+The MediaWiki syntax is highly irregular and I find that handling all the
+edge cases while outputting a well-formed stream of tokens, is hard.
+</p>
+</li>
+
+<li>
+<p>
+It's complicated. Like I said, the syntax is highly irregular, which makes
+it a hard task. So I may feel intimidated by it, and as such 
+de-motivated even more.
+</p>
+</li>
+</ol>
+
+<p>
+So to sum up - I've neglected working on it. There's still a substantial
+amount of code I've written with many extensive tests, but it still covers
+only a very small subset of the syntax. If someone wishes to help with this
+work, I'll be grateful to help him by giving him a commit access to the
+repository. But I don't feel very motivated to work on it myself.
+</p>
+
+<p>
+I've been thinking of doing something to compensate for that. I'd like
+to <a href="http://rt.cpan.org/Public/Dist/Display.html?Name=Archive-Zip">help
+squash Archive::Zip bugs</a>, but still need repository access. I'll also like
+to resume work on 
+<a href="http://web-cpan.berlios.de/modules/Test-Run/">Test-Run</a>, but
+may possibly need to re-implement it more directly above TAP::Parser and 
+TAP::Harness. I've also been neglecting work on File::Find::Object, and can
+resume it. This was an alternative grant proposal that I submitted along with
+the MediaWiki parser grant.
+</p>
+
+<p>
+I can also help resolve random bugs from rt.cpan.org, or, unrelated to
+Perl, dedicate more time to be a Linux kernel janitor. (Which I'm trying to
+do also because I hope it will help me find a job.).
+</p>
+
+<p>
+In any case, I hope you're not too disappointed from my lack of willingness 
+to work on the MediaWiki parser. I guess you can't always be successful at
+what you're trying to do.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-10-18: Transcripting the Perlcast Interview with Tom Limoncelli</h2>
+
+<p>
+I started
+<a href="http://perl.net.au/wiki/Perlcast_Transcript_-_Interview_with_Tom_Limoncelli">writing 
+the transcript</a> for 
+<a href="http://perlcast.com/2006/02/09/interview-with-tom-limoncelli/">this 
+Perlcast interview with Tom Limoncelli</a>. I could use some help, in either
+transcripting more of the interview, or going over what was already
+transcripted, and correcting it. 
+</p>
+
+<p>
+I marked words that I could not understand with <tt>*FILL IN*</tt> and words 
+that I was not sure if they are correct with <tt>[?]</tt>. Be bold and edit,
+but please log in to the wiki first.
+</p>
+
+</div>
+
+<div class="entry">
+
+<h2>2007-10-28: MySQ-Hate!</h2>
+
+<p>
+Various sucky aspects of 
+<a href="http://en.wikipedia.org/wiki/MySQL">MySQL</a> are a common theme 
+around use Perl. I recently started 
+<a href="http://www.shlomifish.org/open-source/anti/mysql/">a page on my
+home-site collecting Links that speak against MySQL</a>, and I ask the
+collective wisdom of the use Perlers for learning about more.
+</p>
+
+<p>
+So if you know of such links, please mention them in the comments below, or
+<a href="mailto:shlomif@iglu.org.il">email me about it</a>.
+</p>
+
+<p>
+(Note that the purpose of the page is just to collect these links, not to
+necessarily imply that MySQL is, as a whole, bad.)
+</p>
+
+</div>
+
+<!--
+    - adventures in perl-5.005-land:
+        - getting it to compile
+            - http://www.nntp.perl.org/group/perl.perl5.porters/2006/11/msg117739.html
+        - compiled - make and make test passed.
+        - building Scalar::Util
+            - perl5.005 Makefile.PL vs. perl5.005 -d Makefile.PL
+            - (retrospectively) requires an up-to-date Test::Harness.
+        - warnings-compat.
+            - requires Test-More
+        - Test-Simple
+            - requires Test-Harness-2.64
+        - Test-Harness
+            - works fine!
+        - backtracking.
+        - Now to Error.pm
+            - fixed the open I, ">", "Changes" to open I, ">Changes";
+            - still doesn't work
+                - one bug in 05text-errors-with-file-handles which works
+                fine in perl-5.8.8
+                - problems in t/08warndie.t which is something 
+                LeoNerd wrote.
+                - I gave up.
+                    - If
+
+-->
+
+<div class="entry">
+
+<h2>2007-10-28: A Blast from the Past - perl-5.005</h2>
+
+<p>
+After uploading Error-0.17010, I received several installation failures from
+testers who tested using perl-5.005. I wanted to simply deprecate perl-5.005,
+but I talked with my co-maintainer to see what he thinks about it. From what
+I understood, he wanted me to fix the problems that caused the failures on
+perl-5.005 and then to upload it again to see if it helps.
+</p>
+
+<p>
+I didn't want to upload something without making sure the tests pass, because
+otherwise it will take a while to get it working. So I decided to install 
+perl-5.005.
+</p>
+
+<p>
+After downloading perl-5.005, the first thing I noticed was that running "make"
+failed immediately. This was due to a gcc-4.2 regression which can be fixed 
+using
+<a href="http://www.nntp.perl.org/group/perl.perl5.porters/2006/11/msg117739.html">this fix</a>. Apparently it also affects more recent versions of perl5.
+</p>
+
+<p>
+After applying the fix, everything compiled, and "make test" passed.
+</p>
+
+<p>
+Error.pm requires Scalar::Util so I had to build it. As it turns out 
+"perl5.005 Makefile.PL" does not work there properly for some reason,
+while "perl5.005 -d Makefile.PL" (and then "c" in the debugger) works fine.
+</p>
+
+<p>
+Retrospectively I learned that it requires an up-to-date Test::Harness.
+</p>
+
+<p>
+Error.pm also made use of the warnings module so I need to install 
+<a href="http://search.cpan.org/dist/warnings-compat/">warnings-compat</a>. This
+in turn required Test-More, which is part of the Test-Simple distribution.
+This in turn required Test-Harness so I had to install Test-Harness-2.64, whose
+building worked. Then I backtracked until I had everything installed.
+</p>
+
+<p>
+Now to Error.pm. I changed an <tt>open I, "&gt;", "Changes"</tt> 
+to <tt>open I, "&gt;Changes"</tt>. However, it still didn't work. There's
+one bug in the script <tt>05text-errors-with-file-handles.t</tt> which
+works fine in perl-5.8.8. There were also failures in a script that my
+co-maintainer originally wrote, which I didn't understand.
+</p>
+
+<p>
+So after all this work, I gave up. I told the co-maintainer that if he wanted
+to have Error working with perl-5.005, he should do the work himself. 
+Otherwise, I'll just bump the minimum version to perl-5.6.x.
+</p>
+
+<p>
+Triaging Error.pm with perl-5.005 made me realise how much the more modern
+perls are better to work with. I pity the people who still have to work with
+such old versions of perl.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-12-18: Happy 20th Birthday, Perl!</h2>
+
+<p>
+Today, <a href="http://use.perl.org/~brian_d_foy/journal/35125">Perl has
+its 20th Birthday</a>. I'd like to thank Larry Wall and the rest of the perl
+and CPAN developers for actively developing such wonderful technology. Happy
+Birthday!
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-12-21: Making Websites Behave using Perl - The yjobs-proxy Story</h2>
+
+<p>
+Here is another cool use for Perl: pre-processing the HTML/JS/CSS markup of
+poorly-written sites before it reaches the web browser. In this post, I'll
+tell the story of how I ended up writing the
+<a href="http://www.shlomifish.org/open-source/projects/yjobs-on-mozilla/">yjobs-proxy
+markup-transforming proxy</a> using CPAN's 
+<a href="http://search.cpan.org/dist/HTTP-Proxy/">HTTP-Proxy</a> to make
+www.yjobs.co.il work with Firefox on my Linux system.
+</p>
+
+<p>
+It all started when I was job-hunting, and was dismayed to discover
+that there were much fewer Info-Tech job ads in the newspaper's "Wanted Ads"
+section than there used to be. The section proudly announced that now it has
+an Internet counterpart - 
+<a href="http://www.yjobs.co.il/">www.yjobs.co.il</a>. But much to my
+disappointment, it didn't work in my Linux-based, open-source browsers.
+</p>
+
+<p>
+I almost immediately thought of writing a 
+<a href="http://www.greasespot.net/">Greasemonkey</a> script to whip the
+JavaScript code there into a shape where it can work with Firefox. Eventually,
+I started writing it, and looked for a way to inject new declarations of
+JavaScript functions into the page, to replace the existing and broken 
+ones. <a href="http://groups.google.com/group/greasemonkey-users/browse_frm/thread/9b6c33e3e3cf5bbd/6d9cd1a4fa556ca6?lnk=gst&amp;q=shlomi+fish#6d9cd1a4fa556ca6">I
+found a way to do that</a>, but it turned out to have some limitations due
+to the architecture of Greasemonkey and the way it interacts with the page.
+</p>
+
+<p>
+After thinking about it for a moment, I realised I could achieve the same
+thing by transforming the code that Firefox receives from the site into
+a more agreeable version. So I thought of a transforming proxy. Someone here
+on use.perl.org mentioned HTTP::Proxy in one of his posts, so I went to check
+it out and see if it can solve my problems.
+</p>
+
+<p>
+Meanwhile, I was distracted and delayed a bit by
+investigating <a href="https://bugs.freedesktop.org/show_bug.cgi?id=13750">this
+X Server bug</a>. But then I resumed to work on the proxy. HTTP-Proxy turned
+out to be a great way to implement what I had in mind, but I still ran into
+a few problems. (Which weren't HTTP-Proxy's fault.).
+</p>
+
+<p>
+The first one from what I recall was that it refused to filter JavaScript code.
+As it turned out yjobs sent the "Content-Type:" of the JavaScript code either
+as "application/x-javascript" or an undefined one, while I used 
+"text/javascript". I ended up filtering them by the <tt>.js</tt> extension in
+the path, and by specifying a mime filter of "undef".
+</p>
+
+<p>
+Then I ran into a problem where a variable called "Data" was assigned
+to, but not used anywhere else. As it turned out, my logging proxy, which I
+used to dump all the traffic, did not log the particular script where it was
+made use of. Maybe Firefox cached it. After that, I found out where it was
+used and used the Venkman JavaScript debugger to the problem I had getting
+it displayed on the page. It was fixed using a JavaScript transformation
+specific to that particular script. 
+</p>
+
+<p>
+Another problem I encountered was an original function was called despite
+the fact I overrided it in the bottom. As it turned out, this was caused
+because it was invoked before the JS interpreter reached the 
+definition at the end. Like this code:
+</p>
+
+<code>
+&lt;html&gt;<br />
+&lt;body&gt;<br />
+&lt;script&gt;<br />
+function mytest()<br />
+{<br />
+    return &quot;FirstFoo&quot;;<br />
+}<br />
+<br />
+var myvar = mytest();<br />
+&lt;/script&gt;<br />
+<br />
+&lt;h1 id=&quot;put_here&quot;&gt;Put Here&lt;/h1&gt;<br />
+<br />
+&lt;script&gt;<br />
+document.getElementById(&quot;put_here&quot;).innerHTML = myvar;<br />
+&lt;/script&gt;<br />
+<br />
+&lt;script&gt;<br />
+function mytest()<br />
+{<br />
+    return &quot;Second&quot;;<br />
+}<br />
+&lt;/script&gt;<br />
+&lt;/body&gt;<br />
+&lt;/html&gt;<br />
+</code>
+
+<p>
+This was resolved by transforming the JS code in the original function.
+</p>
+
+<p>
+Eventually, I got it working enough. Then I cleaned up the proxy code, and
+<a href="http://www.shlomifish.org/open-source/projects/yjobs-on-mozilla/">released 
+it</a> for the world's consumption.
+</p>
+
+<p>
+My future plans for this proxy, is to investigate a way to implement it as
+a Firefox extension that will be transform the markup from within Firefox.
+</p>
+
+<p>
+A fellow Perl programmer I talked with on AIM that I pointed to the download 
+page, said that "that's nucking futs, man" and then that "oh, it's cool.  I just
+mean, that's pretty crazy.  A proxy to make a site work...  crazy.  and
+awesome.". :-)
+</p>
+
+<p>
+So this is one way Perl has given Power to the People. Hack on! 
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2007-12-26: Israeli Perl Workshop Next Week</h2>
+
+<p>
+This is a reminder that <a href="http://act.perl.org.il/ilpw2007/">Israeli Perl
+Workshop for 2007</a> will take place next week on Monday, 31 Decemeber 2007.
+If you're planning to attend, please register at the site, and make the
+payment. 
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2008-01-01: Line Count Benchmark</h2>
+
+<p>
+OK, first of all, Happy New (Civil) Year to everybody. Then, I'd like to note
+that I enjoyed the <a href="http://act.perl.org.il/ilpw2007/">Israeli 2007
+Perl Workshop</a> that I attended yesterday a lot, and would like to thank
+all the organisers for making it happen. I posted 
+<a href="http://perl.org.il/pipermail/perl/2007-December/009338.html">some 
+notes from topics we discussed in the conference</a> to the mailing list, so
+you may find it interest to read them. I may post a more thorough report
+later on.
+</p>
+
+<p>
+Now, to the main topic of this post. I've been on Freenode's #perl
+the other day, when we were discussing how to count the number of lines in a
+file. Someone suggested opening the files, and then using <tt>&lt;$fh&gt;</tt>
+and counting the number of lines. Someone else suggested trapping the output
+of <tt>wc -l</tt>. Then someone argued that trapping the output of 
+<tt>wc -l</tt> is non-portable and will cost one in a costy fork. But is it
+slower?
+</p>
+
+<p>
+To check, I created a very large text file using the following command:
+</p>
+
+<code>
+locate .xml | grep '^/home/shlomi/Backup/Backup/2007/2007-12-07/disk-fs' | \<br />
+xargs cat &gt; mega.xml<br />
+</code>
+
+<p>
+Here, I located all the files ending with .xml in my backup and concatenated
+them together into a file "mega.xml". The statistics for this file are:
+</p>
+
+<code>
+$ LC_ALL=C wc mega.xml<br />
+   195594  1704386 17790746 mega.xml<br />
+</code>
+
+<p>
+Then I ran the following benchmark using it:
+</p>
+
+<code>
+#!/usr/bin/perl <br />
+<br />
+use strict;<br />
+use warnings;<br />
+<br />
+use Benchmark ':hireswallclock';<br />
+<br />
+sub wc_count<br />
+{<br />
+    my $s = `wc -l mega.xml`;<br />
+    $s =~ /^(\d+)/;<br />
+    return $1;<br />
+}<br />
+<br />
+sub lo_count<br />
+{<br />
+    open my $in, "&lt;", "mega.xml";<br />
+    local $.;<br />
+    while(&lt;$in&gt;)<br />
+    {<br />
+    }<br />
+    my $ret = $.;<br />
+    close($in);<br />
+    return $ret;<br />
+}<br />
+<br />
+if (lo_count() != wc_count())<br />
+{<br />
+    die "Error";<br />
+}<br />
+<br />
+timethese(100,<br />
+    {<br />
+       'wc' =&gt; \&amp;wc_count,<br />
+        'lo' =&gt; \&amp;lo_count,<br />
+    }<br />
+);<br />
+</code>
+
+<p>
+The results?
+</p>
+
+<code>
+shlomi:~/Download$ perl ../time-various-line-counts.pl<br />
+Benchmark: timing 100 iterations of lo, wc...<br />
+        lo: 18.0495 wallclock secs (16.72 usr +  1.17 sys = 17.89 CPU) @  5.59/s (n=100)<br />
+        wc: 3.70755 wallclock secs ( 0.00 usr  0.03 sys +  1.77 cusr  1.91 csys =  3.71 CPU) @ 3333.33/s (n=100)<br />
+</code>
+
+<p>
+The <tt>wc</tt> method wins and is substantially faster. It's probably
+because <tt>wc</tt> is written in optimised C, and so counts the lines
+faster, despite the fact it had forked earlier.
+</p>
+
+<p>
+For small files, the pure-Perl version wins. But for large files, <tt>wc</tt>
+is better. But naturally, it's not portable, which may be a deal-breaker in
+some cases.
+</p>
+
+<p>
+The lesson of this is that <a href="http://perl.plover.com/yak/12views/samples/notes.html#sl-3">forking processes or calling external is sometimes a 
+reasonable thing to do</a>. (as MJD noted earlier in the link).
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2008-01-18: Transcription of the Perlcast Interview with Tom Limoncelli has Been Finished</h2>
+
+<p>
+I'd like to announce that I finished transcribing 
+<a href="http://perl.net.au/wiki/Perlcast_Transcript_-_Interview_with_Tom_Limoncelli">the 
+Perlcast Interview with Tom Limoncelli</a>, with some help in correcting 
+mis-transcribed phrases from "fax". There are still some phrases I'm uncertain
+of in the document, which are marked with "[?]" or "FILL IN" (and I could use
+some help in correcting), but as a general rule, the transcript should be
+usable. 
+</p>
+
+<p>
+I've sent an email about it to Josh McAdams (who publishes Perlcast), but he 
+didn't return to me yet. But you may still enjoy the transcript as it is on
+the perl.net.au wiki. 
+</p>
+
+<p>
+On a similar note, I was referred to 
+<a href="http://linuxhelp.blogspot.com/2008/01/getting-things-done-two-aspects-of-self.html">this 
+talk about "Getting things done"</a> (which I did not watch yet) by a friend, 
+and "Getting Things Done" is mentioned in the Tom Limoncelli interview.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2008-01-18: Imported Symbols Trouble</h2>
+
+<p>
+After I udpated my Mandriva Cooker system a few days ago (after the perl 
+package there had been upgraded to 5.10.0), I noticed that SpamAssassin's 
+"spamd" and "spamassassin" started generating the following warnings:
+</p>
+
+<ecode>
+Constant subroutine IO::Socket::INET6::AF_INET6 redefined at
+/usr/lib/perl5/5.10.0/Exporter.pm line 66.
+ at /usr/lib/perl5/vendor_perl/5.8.8/IO/Socket/INET6.pm line 16
+Prototype mismatch: sub IO::Socket::INET6::AF_INET6 () vs none at
+/usr/lib/perl5/5.10.0/Exporter.pm line 66.
+ at /usr/lib/perl5/vendor_perl/5.8.8/IO/Socket/INET6.pm line 16
+Constant subroutine IO::Socket::INET6::PF_INET6 redefined at
+/usr/lib/perl5/5.10.0/Exporter.pm line 66.
+ at /usr/lib/perl5/vendor_perl/5.8.8/IO/Socket/INET6.pm line 16
+Prototype mismatch: sub IO::Socket::INET6::PF_INET6 () vs none at
+/usr/lib/perl5/5.10.0/Exporter.pm line 66.
+ at /usr/lib/perl5/vendor_perl/5.8.8/IO/Socket/INET6.pm line 16
+</ecode>
+
+<p>
+After investigating, I found out that there was a "use Socket6;" call
+there, which imported the <tt>AF_INET6</tt> and <tt>PF_INET6</tt> symbols,
+which were already imported into the <tt>IO::Socket::INET6</tt> package by
+previous <tt>Socket</tt> and <tt>IO::Socket</tt> calls. 
+</p>
+
+<p>
+In order to get rid of the warnings, I eventually decided to only selectively
+import symbols from <tt>Socket6</tt>, and imported the necessary symbols
+minus <tt>AF_INET6</tt> and <tt>PF_INET6</tt>. In order to get 
+<tt>IO::Socket::INET6</tt> to pass its tests, I had to fix its tests, which
+had been broken before any modifications to it started.
+<a href="http://www.leonerd.org.uk/">LeoNerd</a> helped me with that,
+so thanks!
+Then I 
+<a href="http://qa.mandriva.com/show_bug.cgi?id=36889">submitted a modified 
+SRPM to Mandriva</a> with a patch and went to sleep happy. 
+</p>
+
+<p>
+Today, when I woke up and checked my email, I was surprised to discover that
+about 20 spam mails landed at my inbox. As it turned out, they didn't have
+the SpamAssassin headers. Running <tt>spamc</tt> from the command line, 
+yielded an unmodified message, while the standalone <tt>spamassassin</tt> 
+program worked perfectly. So I started to investigate why spamc and spamd 
+failed.
+</p>
+
+<p>
+I ran into some trouble trying to point <tt>spamd</tt> to a modified 
+<tt>IO::Socket::INET6</tt> module, because it was tainted, and won't read
+the <tt>PERL5LIB</tt> environment variable (it's documented in 
+<a href="http://perldoc.perl.org/perlrun.html">perlrun</a>. I had to 
+modify the sources and use "use lib".
+</p>
+
+<p>
+I also had a lot of trouble trying to see why <tt>IO::Socket::INET6</tt> 
+fails and where. This eventually was resolved by running spamd like this:
+</p>
+
+<ecode>
+perl  -T blib/script/spamd -c -m5 -H --syslog="stderr info"
+</ecode>
+
+<p>
+Then I could see the error clearly. Apparently I missed importing 
+<tt>inet_ntop()</tt> from the Socket6 module, which was called by some
+functions that were not ran in the unit tests, and so it was only detected 
+when spamd ran. This is one disadvantage of dynamic, symbolic languages such as
+Perl, and can be prevented in statically compiled languages such as C and
+as far as I know, Java as well.
+</p>
+
+<p>
+Well, but since the code in question was Perl, I just added tests for the
+functions calling <tt>inet_ntop()</tt> and added it to the imports. After
+installing the modified module, spamd worked again, and 
+<a href="http://qa.mandriva.com/show_bug.cgi?id=36952">I submitted a new
+patch for inclusion into Mandriva</a>. So the enhancements now are that
+the warnings have been removed, the tests passing and the test suite made
+more robust.
+</p>
+
+<p>
+As these modifications, may be useful for other platforms besides Mandriva,
+<a href="http://www.nntp.perl.org/group/perl.module-authors/2008/01/msg6187.html">I
+sent a message to the maintainer and other designated parties regarding
+resuming the maintenance of IO::Socket::INET6</a>.
+</p>
+
+<p>
+Some other lessons from this:
+</p>
+
+<ol>
+
+<li>
+<tt>use MyModule ()</tt> is your friend. <tt>use MyModule;</tt> and then
+using the symbols that are exported by default is more evil.
+</li>
+
+<li>
+If you can use the symbols from the original package. If you can't, import
+them selectively.
+</li>
+
+<li>
+Make sure you have a comprehensive test suite with good (preferabaly 100%)
+test coverage. Test-Driven Development is your friend.
+</li>
+
+</ol>
+
+<p>
+Right now I'm cranky and happy at the same time, because I've spent
+half-a-day on this bug.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2008-02-06: Continuation of the IO-Socket-INET6 Story</h2>
+
+<p>
+As a continuation to 
+<a href="http://use.perl.org/~Shlomi+Fish/journal/35423">my previous entry
+about IO-Socket-INET6</a>, I'd like to note that I received several
+responses to 
+<a href="http://www.nntp.perl.org/group/perl.module-authors/2008/01/msg6187.html">my 
+message</a> about resuming its maintenance. Eventually, the original author 
+replied too and agreed to give me a co-maintainer status on PAUSE.
+</p>
+
+<p>
+So I wrapped things up and uploaded a new version of 
+<a href="http://search.cpan.org/dist/IO-Socket-INET6/">IO-Socket-INET6</a> 
+to the CPAN, and it indeed got indexed properly. I already received several
+error reports from CPAN testers, but I'm not sure I can do anything about
+them, because the end-hosts don't seem to support IPv6 well.
+</p>
+
+<p>
+Next I'd like to increase the module's kwalitee and to look at
+<a href="http://rt.cpan.org/NoAuth/Bugs.html?Dist=IO-Socket-INET6">bug
+reports</a>.
+</p>
+
+<p>
+Now I can be proud that there's now a small part of me in SpamAssassin.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2008-03-07: Perl-IL Meeting on 16 March 2008</h2>
+
+<p>
+<a href="http://www.perl.org.il/">The Israeli Perl Mongers</a> will hold
+<a href="http://www.perl.org.il/meetings/2008/20080316.html">their
+first meeting for this year</a> on Sunday, 16 March, 2008at 18:30, in 
+Screiber 008 in Tel Aviv University.
+</p>
+
+<p>
+The meeting agenda is not final, but includes a presentation by 
+<a href="http://search.cpan.org/~eilara/">Ran Eilam</a> on 
+"Config::* - The Alenby St. of CPAN", and a fallback "There are too many
+ways to do it" presentation.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2008-03-17: Has-a as Is-a</h2>
+
+<p>
+Recently I've encountered a modularity issue in my code, I had a function like 
+the following
+</p>
+
+<ecode>
+sub _is_event_pass
+{
+        return ($self->_event->is_ok() ||
+                $self->_event->is_skip() ||
+                $self->_event->is_todo()
+               );
+}
+</ecode>
+
+<p>
+As you can see all I'm doing is calling methods on the _event. The right thing 
+to do would have been to move it as method to the class of the _event() that 
+will then use the object's instance itself. Now the problem is that the 
+_event() field can be any of 
+<a href="http://search.cpan.org/dist/Test-Harness/">the 
+TAP::Result:: hierarchy of classes</a>
+</p>
+
+<p>
+And it wouldn't be a good idea to sub-class and re-bless all of them.
+</p>
+
+<p>
+So what to do?
+</p>
+
+<p>
+What I eventually did is create an EventWrapper class, that has a field which 
+is the actual object. Then I'm delegating all the methods of the TAP::Result 
+classes that I use to that field. I.e:
+</p>
+
+<ecode>
+sub is_ok
+{
+        my $self = shift;
+
+        return $self->_tp_result()->is_ok();
+}
+
+sub is_todo
+{
+        my $self = shift;
+
+        return $self->_tp_result()->is_todo();
+}
+</ecode>
+
+<p>
+(only I'm auto-generating these methods of-course).
+</p>
+
+<p>
+And then I defined the is_pass function there like this:
+</p>
+
+<ecode>
+sub is_pass
+{
+        my $self = shift;
+
+        return ($self->is_ok() || $self->is_todo() || $self->is_skip());
+}
+</ecode>
+
+<p>
+Which works because these methods are delegated.
+</p>
+
+<p>
+So ::EventWrapper behaves like TAP::Result ("is-a") while actually only 
+containing it ("has-a"). It's a useful technique.
+</p>
+
+<p>
+Of course, I made a good use of the fact that Perl is dynamically-typed and 
+evaluates methods at run-time. If I wanted to do the same in strongly-typed 
+OO languages, then I would have needed to figure out a way to delegate to all 
+the methods of the various different classes in the hiearachy. Perhaps using 
+run-time classes.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2008-04-03: How to Best Process the Directory Components of a Path</h2>
+
+<p>
+This is cross-posted here from <a href="http://perl.org.il/pipermail/perl/2008-April/009505.html">Israel.pm</a> where I have yet to receive an answer.
+</p>
+
+<p>
+I'm trying to process the directory components of a path (as an array) so 
+that:
+</p>
+
+<ol>
+<li>
+It will be portable. (Work on Unix, Windows, VMS, etc.)
+</li>
+<li>
+It will keep the rest of the path components (if any) identical.
+</li>
+<li>
+It will work on both relative and absolute paths.
+</li>
+</ol>
+
+<p>
+If the processing is to keep only the directories after "long-dir" then:
+</p>
+
+<ecode>
+UNIX : /hello/there/long-dir/another/myfile.txt ==> another/myfile.txt
+DOS : C:\Hello\There\Long-Dir\Another\myfile.txt ==> another\myfile.txt
+
+UNIX: ./hi/long-dir/another/myfile.txt ==> another/myfile.txt
+DOS: .\hi\long-dir\another\myfile.txt ==> another\myfile.txt
+</ecode>
+
+<p>
+To do this I turned to File::Spec and File::Basename and wrote the following 
+code which seems insanely complicated. I marked the place where I do the 
+actual processing using a callback:
+</p>
+
+<ecode>
+use File::Spec;
+use File::Basename;
+
+sub _process_filename_dirs
+{
+    my ($self, $fn, $callback) = @_;
+
+    my $basename = basename($fn);
+    my $dirpath  = dirname($fn);
+
+    my ($volume, $directories, $filename) = File::Spec->splitpath($dirpath, 
+1);
+
+    # The actual manipulation.
+    my $dirs = $callback->([File::Spec->splitdir($directories)]);
+
+    my $final_dir =
+        File::Spec->catpath(
+            $volume, File::Spec->catdir(@$dirs), $filename
+        );
+
+    if ($final_dir eq "")
+    {
+        return $basename;
+    }
+    else
+    {
+        return File::Spec->catfile(
+            $final_dir, $basename
+        );
+    }
+}
+
+</ecode>
+
+<p>
+And so far I checked it works only on UNIXes (Linux in my case) and on 
+relative paths.
+</p>
+
+<p>
+So my questions are:
+</p>
+
+<ol>
+<li>
+Is there a simpler way to do it?
+</li>
+
+<li>
+Do <a href="http://search.cpan.org/dist/Path-Class/">Path-Class</a> or 
+<a href="http://search.cpan.org/dist/File-Fu/">File-Fu</a> or a 
+different abstraction provide an easier way to do it?
+</li>
+
+<li>
+Is it still buggy?
+</li>
+</ol>
+
+<p>
+I should note that this hairiness is not limited to Perl. Common Lisp has a 
+built-in portable path-manipulation abstraction that's also relatively 
+complicated. See 
+<a href="http://www.gigamonkeys.com/book/files-and-file-io.html">the 
+"File and File I/O Chapter"</a> and the
+<a href="http://www.gigamonkeys.com/book/practical-a-portable-pathname-library.html">a Portable Pathname library chapter</a>
+</p>
+
+</div>
+
+
+<div class="entry" >
+
+<h1>2008-04-01: The Problem with the &quot;Same Terms as Perl&quot; 
+Licensing</h1>
+
+<p>
+This entry was adapted from 
+<a href="http://use.perl.org/~Aristotle/journal/36022">some 
+comments I wrote</a> for a different, mostly orthogonal, journal post. I
+hope it's not too flamebait. If you have something to say, please try to
+be civil and good-natured. Here goes nothing:
+</p>
+
+<p>
+Most modules on CPAN carry a licensing blurb saying something like
+<a href="http://search.cpan.org/search?query=%22same%20terms%20as%20perl%22&amp;mode=all">"you can distribute this software under 
+the same terms as Perl itself"</a>. This obviously begs the question what
+does it mean. Here is what it means for different Perl versions:
+</p>
+
+<ul>
+
+<li>
+<p>
+Early versions of perl, before it adopted the <a href="http://en.wikipedia.org/wiki/GNU_General_Public_License">GPL</a> were under a very restrictive 
+loosely-defined licence.
+</p>
+</li>
+
+<li>
+<p>
+After a while perl adopted the GPL exclusively.
+</p>
+</li>
+
+<li>
+<p>
+Eventually, seeing that some people and companies had problems with the GPL,
+Larry Wall phrased the so-called <a href="http://en.wikipedia.org/wiki/Artistic_License">"Artistic License"</a>, which was supposed to be more permissive than 
+the GPL, but purposely phrased vaguley, and as such was found to be 
+<a href="http://www.fsf.org/licensing/licenses/index_html#ArtisticLicense">non-free</a> 
+and ergo GPL-incompatible.
+</p>
+
+<p>
+In any case, the perl implementation was dual-licensed under the "Artistic 
+License" (version unspecified) and the GPL version 2 or any later version.
+perl5 is still licensed under these terms.
+</p>
+</li>
+
+<li>
+<p>
+For Parrot and for future work on Perl 6, the Artistic License 2.0 was created
+based on the original Artistic License. This license has been approved as
+a free software licence by the Free Software Foundation and found to be 
+compatible with the GPL version 2 or Later. Parrot now carries this licence.
+</p>
+
+<p>
+There's also the Clarified Artistic License which is an earlier effort
+to correct the original Artistic License and is the minimal set of 
+changes to make it FSF-free and GPL-compatible. I suppose that now the Artistic
+License 2.0 would be preferable.
+</p>
+</li>
+</ul>
+
+<p>
+The problem is that perl up to and including perl-5.10.0 and bleadperl 
+(which were licensed under the GPL version 2 
+<b>or above</b> but only the "Artistic License" not the "Artistic License
+version 1.0 or above". I've already noted that the Artistic License is
+problematic, but the GPL has 
+<a href="http://en.wikipedia.org/wiki/GNU_General_Public_License#Criticism">its
+own share of potential problems</a> (see also 
+<a href="http://www.gnu.org/licenses/gpl-faq.html">its FAQ</a>), and is
+otherwise widely mis-understood, over-hyped (both positively and negatively)
+and disputed. For example, unlike the Artistic License, it does not allow
+(at least by linking or normal function calls) non-GPL-compatible code,
+including all non-open-source code, to make use of it.
+</p>
+
+<p>
+Now, since both the "GPL version 2 or above" and the original 
+"Artistic License" are problematic, and the term "under the same terms as
+Perl" may probably mean just that if it's a perl5 module (although who knows
+what it would means if someone would ever write a compatible Perl 5 
+implementation under a different software licence), then licensing a module
+as such is probably no longer such a good idea. There are several alternatives: 
+</p>
+
+<ol>
+
+<li>
+Explicitly allow the Artistic License 2.0 (or possibly above) in the
+licensing.
+</li>
+
+<li>
+License as Artistic 2.0 or above exclusively. Without the GPL as it is
+generally no longer needed.
+</li>
+
+<li>
+Use a more permissive, 
+<a href="http://en.wikipedia.org/wiki/Copyleft">non-copyleft</a> licence,
+that allows re-licensing into different licences. The MIT X11 licence 
+explicitly allows "sub-licensing" by third-parties and as such is a good 
+choice. By doing that you are making the licence more permissive than the
+GPL or the Artistic licences, so you have been warned.
+</li>
+</ol>
+
+<p>
+So my suggestion is that you use one of these licensing phrasings for your
+future work, and to re-license your old CPAN or Perl work 
+(copyright ownership permitting) under such phrasings. It remains to be seen
+what will happen with perl5 itself which has 
+<a href="http://search.cpan.org/src/RGARCIA/perl-5.10.0/AUTHORS">905 authors 
+as of perl-5.10.0</a> many bringing in their own ownerships of the code.
+The Linux kernel now faces a similar problem if it would wish to adopt
+a different licence than the GPL version 2 (and no later version).
+</p>
+
+<p>
+I suppose you can still make most use of perl5-like licensed code, in
+your own open-source, proprietary or in-house code, without getting sued, so I 
+wouldn't worry too much. But it would still be a good
+idea to convert newer code (and code that can be easily converted) to 
+licensing terms that are less ambigious, more usable, and that would play
+better with future versions of Perl.
+</p>
+
+
+<p>
+For the record, most of my Perl and non-Perl open-source code is either
+Public Domain or MIT X11-licensed (which are both extremely permissive and
+allow sub-licensing), or if it is derived from a different code, then
+under the same licensing terms, but while disclaiming my explicit or implicit
+ownership (to allow the originator to relicense future versions of the code).
+The latter policy applies to my (relatively limited) contributions to perl5 
+where I am listed in the AUTHORS file.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2008-04-18: Test-Run Tests Breakage on BSD Systems</h2>
+
+<p>
+OK, as I expected <a href="http://use.perl.org/~Shlomi+Fish/journal/36050">my 
+previous entry</a> sparked an active discussion - nothing like a good 
+licences war to liven things up. But it was more civil than I expected.
+Here's a much more technical entry.
+</p>
+
+<p>
+As I discovered, <a href="http://cpantesters.perl.org/show/Test-Run.html#Test-Run-0.0115">Test-Run-0.0115 
+consistently failed to pass "./Build test" on all BSD systems</a>, while doing
+mostly fine on Linux. Inspecting the logs of the failure
+yielded a "File name too long" error. What happened was that I created a
+filename that was artificially very long (<tt>../t/../t/../t/</tt>), but still 
+well within the limits of my Linux system's 4096 bytes limit for file paths. 
+However, as I discovered the POSIX standard defined a minimum of 256 bytes
+for maximal paths which is what BSD is supporting.
+</p>
+
+<p>
+The reason I had this long path in the first place was to make sure long paths
+are handled properly by the harness output after some customisations. This
+in turn was inspired by a problem I found when using Test-Run at my workplace
+for some internal test suite, which inspired me to write the
+<a href="http://search.cpan.org/dist/Test-Run-Plugin-TrimDisplayedFilenames/">Trim-displayed-Filenames plugin</a>.
+</p>
+
+<p>
+So after I received all these failure reports, I added some logic to
+<tt>t/output.t</tt> that makes use of POSIX::PATH_MAX() to keep the
+path at bay. A bit convulted, but it now 
+<a href="http://cpantesters.perl.org/show/Test-Run.html#Test-Run-0.0116">passes
+on BSD systems (as well as Linux and Solaris)</a>, with a two isolated
+failures on Linux, which I have not looked into yet. I'd like to thank apeiron
+from Freenode for testing the pre-release in Mac OS X and verifying it
+works there.
+</p>
+
+<p>
+In any case, I'm a bit tired of doing unknowledgable UNIX programming, and
+therefore would like to read <a href="http://www.amazon.com/Programming-Environment-Addison-Wesley-Professional-Computing/dp/0201433079">the 
+2nd edition of Stevens' book</a> (which is considered the Bible of UNIX
+programming). The book is kinda costy, and big (960 pages), so I think I'll
+renew my <a href="http://safari.oreilly.com/">Safari subscription</a> and
+see if I can read it there effectively. If I can't I'll just use it for
+something else, and order a paper-copy of the book.
+</p>
+
+<p>
+And finally, I wonder how a 256-octets path limit can ever be enough. In this
+day and age of long filenames and UTF-8 ones (which require several bytes), 
+one can expect that a path with a few especially long components
+will quickly overflow such a short limit. Can any BSD users comment?
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2008-05-06: New Essay: &quot;What Makes Software High-Quality&quot;</h2>
+
+<p>
+I wrote <a href="http://www.shlomifish.org/philosophy/computers/high-quality-software/">a new Essay about what makes software applications high-quality</a>,
+as well as which parameters and methods, while desirable and quality-enhancing,
+are not exactly quality. It was inspired by a post on a public mailing list 
+I set up, and Perl and perl 5 are mentioned there a few times, as are
+many other open-source projects.
+</p>
+
+<p>
+It is available in several formats: HTML to read online (on Page), DocBook/XML
+source (which can in turn render other formats), PDF (please don't print it
+even though you are legally allowed to). The licence is CC-by-2.5. Comments
+are welcome.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2008-05-08: Looking for a Good Personal Blog Engine</h2>
+
+<p>
+Dear Lazyweb,
+</p>
+
+<p>
+I'm looking for a recommendation for a good personal blog engine that I'd
+install on my site. It should be Free Software (preferably GPL-compatible);
+it should be Perl, Python or PHP (Perl is preferable), possibly also Ruby; it 
+should be able to use PostgreSQL as a backend; and it should be 
+<a href="http://www.shlomifish.org/philosophy/computers/high-quality-software/">good</a>:
+easy to install, mostly works out of the box, easy to extend, with an active
+developer community, readable (not necessarily too modular) code,
+good security practices, etc.
+</p>
+
+<p>
+Here's what I tried so far:
+</p>
+
+<ol>
+<li>
+<p>
+MovableType - has a weirdo HTML caching system, and ended up putting a lot
+of world-writable files on my hard disk. Also doesn't work out of the box with
+recent PostgreSQL's (which is easy to fix).
+</p>
+</li>
+<li>
+<p>
+WordPress - from using it elsewhere I had at least three occassions where it 
+ate my comments and refused to allow me to repost them. Also, it has many
+bad defaults like non-threaded comments, A single "Submit" button with no
+preview, no pure-HTML input, and these weird ?id=$INDEX URLs which I hate.
+All of them can be fixed using Plugins, but it's still an extra hassle.
+</p>
+<p>
+It also had a very poor security record, and 
+<a href="http://www.catonmat.net/">pkrumins</a> said he isn't content with
+it for his blog, and working on something from scratch.
+</p>
+</li>
+</ol>
+
+<p>
+There are many other <a href="http://www.weblogmatrix.org/">blog engines 
+out there</a>, but I'm looking for a personal recommendation from
+experience. Comment below or 
+<a href="http://www.shlomifish.org/me/contact-me/">drop me a line</a>. I'll
+probably blog here about what my final verdict is.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2008-05-09: Why People Are Passionate About Perl</h2>
+
+<p>
+Well, Per <a href="http://use.perl.org/~brian_d_foy/journal/36356">brian 
+d foy's blog post</a>, I'd like to answer the question "Why I'm Passionate
+About Perl". First of all, I should note my 
+<a href="http://www.shlomifish.org/philosophy/computers/perl/joy-of-perl/">"The 
+Joy of Perl"</a> 
+essay, which I wrote back in 2004. It gave a lot of good reasons why
+I like Perl so much and am still passionate about it. But now to answer brian's
+questions:
+</p>
+
+<p>
+<b>The person who introduced me to Perl showed me that...</b> - I still
+remember him (Ran) telling me that one can write a TCP/IP client in 4 lines, and
+a TCP/IP server in 10 lines. (Or something like that). I ended up not
+understanding what regular expressions were all about and he explained that
+they matched patterns in texts. Back then, I had to learn perl 5 from
+perl*.pod (what are now the perldocs). 
+</p>
+
+<p>
+<b>I first started using Perl to...</b> -  had to learn Perl (and Unix) 
+because I wanted the job working for Ran's company. I liked both Perl and Unix
+so much that I understood why I had not been content with all the technologies
+I encountered previously. (DOS and Windows 3.11). 
+</p>
+
+<p>
+<b>I kept using Perl because...</b> that was what I knew and I was comfortable
+writing it, and found that most various techniques were readily available
+in some form or another. For example, after reading 
+<a href="http://mitpress.mit.edu/sicp/">SICP</a> I was able to easily
+implement the closure-based techniques shown there in Perl. Then after I
+learned Object-Oriented Programming in Perl, I found out how nice it was,
+and how much better it was than C++. (Which if you ask me now supports 
+Object-Oriented Programming roughly as much as COBOL supports Functional
+Programming.)
+</p>
+
+<p>
+I later on learned how to effectively use the CPAN, use accessors, and many
+other tricks and techniques. I got involved in the Local and International
+Perl community, which was also a lot of fun. 
+</p>
+
+<p>
+I'm not a Perl fanatic and see myself sometimes using, learning or
+experimenting with other technologies. But I still like Perl 5 the most.
+</p>
+
+<p>
+<b>I can't stop thinking about Perl...</b> - actually I often can. The amount
+of time I spend coding is small, and Perl is even less than that.
+</p>
+
+<p>
+<b>I get other people to use Perl by</b> quietly telling them how Perl is
+important and how it is enlightening and useful, and also telling them about
+the things I'm doing with Perl.
+</p>
+
+<p>
+<b>I also program in</b> Bash, C/C++, PHP and a little Python (and small 
+experimental stuff in many other languages) <b>but I like Perl better
+since</b>: 1. It's a real, and safe programming language unlike Bash. 
+2. It's much more easier to write than C, C++ or Bash. 3. It's more
+comfortable to me than Python due to the TMTOWTDY, use strict
+and other factors. (Though I can understand why Python has its appeal
+to some people.) 4. It's much less hacky than Bash and PHP. 5. The Perl
+community is great, and has a very healthy attitude.
+</p>
+
+<p>
+Note that I'm still using bash for the command line and for some really
+minimal scripts, and am happy with it, and prefer it over Perl.
+</p>
+
+<p>
+Comments are welcome. (I leave the comments open, as I almost always do).
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2008-05-07: PerlBuildSystem (PBS) is now FOSS</h2>
+
+<p>
+<a href="http://community.livejournal.com/shlomif_tech/7034.html">Got no
+Google</a>, got no email, got no love - gotta blog!
+</p>
+
+<p>
+I met <a href="http://search.cpan.org/~nkh/">Nadim (NKH)</a> on Freenode's 
+#perl, and he seemed very pleasant. I told him how I heard everybody got a 
+kick out of his App::Asciio graphics app. Then when visiting his CPAN page,
+I noticed that he's the author of 
+<a href="http://search.cpan.org/dist/PerlBuildSystem/">PerlBuildSystem</a>,
+which had been released under a problematic "not-for-military-use" licence,
+which sparked an active discussion on module-authors back at the time.
+</p>
+
+<p>
+I asked Nadim if he can make it non-restricted, and he said that he could. So
+he uploaded a new version under the Artistic License 2.0, which is the Parrot
+licence, is FOSS, and is GPL-compatible. W00t! Nadim++.
+</p>
+
+<p>
+He also said that he is working on a heavily improved version, for which he
+uses git, and should be released sometimes. I'm contemplating converting
+my homepage from a really-funky GNU make configuration to something more
+decent, and now that PBS is unrestricted I may take a look.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2008-05-22: Perl vs. Ruby on Two Idioms</h2>
+
+<p>
+I've been meaning to blog about it for a few weeks, so here goes. In
+<a href="http://groups.google.com/group/israelrb/browse_frm/thread/4ddcd8a303ce14c5">a 
+Ruby-Israel thread</a> someone asked how to convert an array to a hash 
+that contains all of its keys as members (and "true" as a value). They
+came up with:
+</p>
+
+<ecode>
+a = [1, 2, 3, 'other']
+h = a.inject({}) {|h, v| h[v] = true; h } 
+</ecode>
+
+<p>
+In Perl, it's:
+</p>
+
+<ecode>
+@a = (1,2,3, 'other');
+my %h = (map { $_ => 1 } @a);
+</ecode>
+
+<p>
+Much cleaner. I also though of a way to do a flat concatenation of an
+array of array references. Like 
+<tt>[[1,2,3],[4,5,6],[7,["One", "Two",],9]]</tt> into 
+<tt>[1,2,3,4,5,6,7,["One", "Two",],9]</tt>. In Ruby it is:
+</p>
+
+<ecode>
+[[1,2],[3,4],[5,6,["Hello","There"],7]].inject([]) { |a,e| a+e }
+</ecode>
+
+<p>
+While in Perl it is:
+</p>
+
+<ecode>
+(map { @$_ } ([1,2],[3,4],[5,6,["Hello","There",],7]))
+</ecode>
+
+<p>
+Both of these are caused by the fact that lists are not references in Perl,
+and that one can initialise arrays and hashes from them. This is while in 
+Ruby or Python (and most Lisps) they are references. That or Ruby lacks
+more primitives.
+</p>
+
+</div>
+
+<div class="entry">
+
+<h2>2008-06-03: Next OSDClub Tel Aviv Meetings</h2>
+
+<p>
+On Tuesday, 3-June-2008 (tomorrow or today depending how you look on it),
+on 18:30, the OSDClub of Tel Aviv, which is a joint venture of 
+<a href="http://www.cs.tau.ac.il/telux/">the Tel Aviv Linux club</a>,
+and <a href="http://www.perl.org.il/">Perl-Israel</a> (and some other
+FOSS clubs who want to join the fun), will hold a social meeting. It
+will take place at the Café of Tel Aviv University near the junction
+of Einstein and Haim Levanon Streets. This social was scheduled because Zvi
+is in Israel. (If you don't know who he is, then come to meet him.)
+</p>
+
+<p>
+Much later, on Sunday, 15-June-2008, OSDClub Tel Aviv will meet to share
+some Vim/gvim (= the text editor) Tips and Tricks. We'll meet in Schreiber 
+(Math &amp; CS) building in Tel Aviv University. We have more meaty 
+presentations planned for July, but we hope these two meetings will be a
+a useful start after a long neglect.
+</p>
+
+</div>
+
+
+<div class="entry">
+
+<h2>2008-06-03: Nominating szabgab for the White Camel Award</h2>
+
+<p>
+I alread sent it to jose-at-pm.org and advocacy-at-perl.org, but here it is
+just in case:
+</p>
+
+<p>
+I'd like to nominate Gábor Szabó (the Hugarian-Israeli Perl programmer, not 
+the Jazz musician) for his contributions to the Israeli and Global Perl 
+Communities. See:
+</p>
+
+<ul>
+<li>
+<a href="http://www.szabgab.com/">http://www.szabgab.com/</a>
+</li>
+<li>
+<a href="http://search.cpan.org/~szabgab/">http://search.cpan.org/~szabgab/</a>
+</li>
+</ul>
+
+<p>
+Gabor Szabo is responsible for the fact that the Israeli Perl community, and
+that of other dynamic languages has took off. So far he:
+</p>
+
+<ol>
+
+<li>
+Set up an alternate mailing list, which proved to be more active - 
+perl@perl.org.il.
+</li>
+
+<li>
+Set up a tradition of monthly Israeli Perl meetings, which have turned out 
+to be popular.
+</li>
+
+<li>
+Organised 3 YAPC::Israel conferences - YAPC::Israel::2003, 
+YAPC::Israel::2004 and YAPC::Israel::2005 and an OSDC::Israel conference - 
+OSDC::Israel::2006.
+</li>
+
+<li>
+He helped organise the Hungarian Perl Workshops in Hungary, and a Hungarian 
+YAPC.
+</li>
+
+<li>
+He set up <a href="http://www.cpanforum.com/">CPAN Forum</a> - as a way to get 
+help and  ask questions with individual CPAN distributions. Also allows users 
+to tag  their modules using delicious-like tags.
+</li>
+
+<li>
+His commmercial venture - <a href="http://www.pti.co.il/">http://www.pti.co.il/</a> - has been responsible for 
+training material and sessions for Perl and other FOSS technologies, as well 
+as general FOSS development and support. Some of its material has been made 
+available online free-of-charge.
+</li>
+
+<li>
+He has written many weblog entries, comments, emails and other material about 
+communal and technical issues.
+</li>
+
+</ul>
+
+<p>
+Aside from all that, he has done numerous contributions of code, and 
+documentation.
+</p>
+
+</div>
+
+
+<div class="entry" id="xml-grammar-fortune-1">
+
+<h2>2008-06-11: XML-Grammar-Fortune</h2>
+
+<p>
+One of my many computerised passions is to collect quotes in <a href="http://en.wikipedia.org/wiki/Fortune_(Unix)">UNIX-like
+fortune format</a>. Throughout the years, I have formed 
+<a href="http://www.shlomifish.org/humour/fortunes/">a moderately large 
+collection of them</a> in several files. As time went on, I noticed a few
+problems. First of all, they were all in large plaintext files, and pointing
+someone to a quote involved giving a link to the fortune, and saying 
+"search for Foobar". Moreover, since they were just chunks of text, they
+couldn't hold any meta-data.
+</p>
+
+<p>
+At one time, I heard of someone who created an XML grammar to describe Unix
+fortunes, but a Google search was no help in finding that. And I also have
+the grand <a href="http://www.shlomifish.org/philosophy/ideas/fortunes-mania/">"Fortunes 
+Mania"</a> vision for a community site that for collecting and sorting 
+quotes. This vision was very intimidating, but recently, I decided to take
+a small baby step by defining a grammar for fortunes as XMLs. So I present
+to you the <a href="http://svn.berlios.de/svnroot/repos/web-cpan/XML-Grammar-Fortune/">XML-Grammar-Fortune</a> distribution.
+</p>
+
+<p>
+I've taken quite a lot of time to think about what I wanted there. One
+thing I concluded was that there are several different types of
+fortune cookies: run-of-the-mill quotes, IRC conversations, excerpts
+from screenplays, structured plaintext, HTML, etc. Therefore, the XML grammar 
+should be able to have several different types of sub-nodes, which each
+corresponds to a certain class of fortune cookies
+</p>
+
+<p>
+Until now I've used <a
+href="http://en.wikipedia.org/wiki/Document_Type_Definition">DTDs</a> for
+defining my XML schemas, but for XML-Grammar-Fortune, I decided to learn
+<a href="http://relaxng.org/">Relax NG</a>, which I was told was easier
+than the W3C XML Schemas. I was very impressed from Relax NG - it's easy,
+it's fun, and it's powerful. One problem I've encountered was that, when
+validating a document using it, XML::LibXML (version
+<tt>perl-XML-LibXML-1.66-1mdv2008.1</tt>), does not give the line number
+where the validation error has occured. To overcome such problems, one needs
+to look at the diffs or bisect the document.
+</p>
+
+<p>
+Anyway, I defined a 
+<a href="http://svn.berlios.de/svnroot/repos/web-cpan/XML-Grammar-Fortune/trunk/XML-Grammar-Fortune/module/extradata/fortune-xml.rng">Relax
+NG Schema for the documents</a>, and made sure that some basic examples will
+validate (test-driven-development-style). Then I worked on 
+<a href="http://svn.berlios.de/svnroot/repos/web-cpan/XML-Grammar-Fortune/trunk/XML-Grammar-Fortune/module/extradata/fortune-xml-to-html.xslt">an XSLT 
+stylesheet to convert them to XHTML</a>.
+</p>
+
+<p>
+When I started, I only had one fortune type - <tt>&lt;raw&gt;</tt>, which
+is a gigantic <tt>&lt;pre&gt;</tt> block with some meta-data. I gradually
+implemented more fortune types: <tt>irc</tt>, <tt>quote</tt>
+and <tt>screenplay</tt>, whose RNG and XSLT were based on 
+<a href="http://search.cpan.org/dist/XML-Grammar-Screenplay/">XML-Grammar-Screenplay</a>,
+with a lot of ugly copying-and-pasting.
+</p>
+
+<p>
+I gradually converted more and more fortunes to have a richer XML semantics.
+The XML grammar requires an id for each fortune, and also allows specifying
+a title-element, and some fields in the <tt>&lt;info&gt;</tt> tag, like
+"author" or "work". For example 
+<a href="http://www.shlomifish.org/humour/fortunes/friends.html">all 
+the "Friends" fortunes</a> were converted to XML by first normalising the
+screenplay and then using a script I wrote to convert them to XML.
+</p>
+
+<p>
+So I had all the fortunes as XMLs, but now the plaintext versions went
+out of sync. So I coded 
+<a href="http://svn.berlios.de/svnroot/repos/web-cpan/XML-Grammar-Fortune/trunk/XML-Grammar-Fortune/module/lib/XML/Grammar/Fortune/ToText.pm">a 
+Perl module to convert them from XML to plaintext</a>.
+</p>
+
+<p>
+I should note that due to 
+<a href="http://rt.cpan.org/Ticket/Display.html?id=35781">a 
+problem with XML-LibXSLT and perl-5.10.0</a>, I didn't upload it to CPAN
+yet, because I do not want to receive so many failure reports.
+</p>
+
+<p>
+On a different note: my former co-worker has read 
+<a href="http://www.shlomifish.org/lecture/Perl/Newbies/">"Perl 
+for Perl Newbies"</a> in order to learn Perl, liked it a lot, and told me I
+should add more to it. That also feels good.
+</p>
+
+</div>
+
+
+<div class="entry" id="closed-books-so-19th-cent">
+
+<h2>2008-06-19: New Essay about Open-sourcing Books</h2>
+
+<p>
+A <a href="http://www.askbjoernhansen.com/2008/05/16/javascript_the_good_parts.html">conversation 
+on Ask Bjørn Hansen's blog</a> (famous for being an administrator of perl.org 
+and involved in other Perl-related projects) prompted me to write
+<a href="http://www.shlomifish.org/philosophy/philosophy/closed-books-are-so-19th-century/">this 
+essay</a>, which talks about why it is unwise and harmful not to make
+one's books publically available online. Perl is mentioned there and so is
+Ruby and git and other technologies.
+</p>
+
+<p>
+Comment here or 
+<a href="http://community.livejournal.com/shlomif_hsite/8407.html">on 
+the announcement of the essay on my homepage's blog</a>, where no registration
+is required for commenting.
+</p>
+
+</div>
+
+
+<div class="entry" id="dealing-with-approval-addiction">
+
+<h2>2008-06-26: Dealing with Approval Addiction (and the Stress Periods it Causes)</h2>
+
+<p>
+Well, despite the fact that I hardly publicised my <a 
+href="http://use.perl.org/~Shlomi+Fish/journal/36730">last essay
+about the "Closed Books"</a>, it <a 
+href="http://use.perl.org/~chromatic/journal/36732">has 
+been chromatic'd</a>. Rumours are that all the bloggers whose
+blog posts/essays were deprecated on chromatic's blog are now rich, famous and
+the object of the affection of many attractive members of the appropriate sex.
+<b>Memo to self:</b> prepare a limited edition T-shirt: 
+"My blog post was chromatic'd. I pwn you as a blogger."
+</p>
+
+<p>
+Seriously now, while the publicity was probably good for me, I was indeed
+a bit overwhelmed with what chromatic said, and felt down. It's not
+because I believed I was wrong, but because I respected chromatic, because
+he's a good programmer, a good author, a good editor (with whom I collaborated
+on several articles on O'Reilly-Net), an interesting blogger, and a good
+guy. (And yes - these are all compliments). I'm not sure he's really a friend
+of mine, but I certainly respect him.
+</p>
+
+<p>
+Now <a href="http://www.paulgraham.com/hs.html">Paul Graham says in
+"What you'll wish you'd known" (footnote 4)</a> that:
+</p>
+
+<blockquote>
+<p>
+The second biggest regret was caring so much about unimportant things. And
+especially about what other people thought of them.
+</p>
+
+<p>
+I think what they really mean, in the latter case, is caring what random people
+thought of them. Adults care just as much what other people think, but they get
+to be more selective about the other people.
+</p>
+
+<p>
+I have about thirty friends whose opinions I care about, and the opinion of the
+rest of the world barely affects me. The problem in high school is that your
+peers are chosen for you by accidents of age and geography, rather than by you
+based on respect for their judgement.
+</p>
+</blockquote>
+
+<p>
+Now in my case, I may be somewhat immature because I tend to sometimes care
+about what many people think of me, rather than just my close friends (offline
+or online). Now being down (or "depressed") because someone disapproves of
+you, is perfectly natural and normal. However, since I have <a 
+href="http://en.wikipedia.org/wiki/Bipolar_disorder">Bipolar disorder</a>,
+it threw me into the so-called "hypomania" (= "below-mania"), which is not
+healthy, and disrupts my functionality.
+</p>
+
+<p>
+Hypomanias are a variation of "Clinical Depressions" or "Clinical anxieties".
+Dealing with the latter is described in the highly recommended book
+<a href="http://www.shlomifish.org/philosophy/books-recommends/#feeling_good">"Feeling Good"</a>, 
+which I believe is a necessary read even for non-depressive people, in order to
+understand how people think, and as a preventitive measure.
+</p>
+
+<p>
+I don't accuse chromatic of making me hypomanic. I've received my share of
+past criticism in the past, and will receive again. I also was often criticised
+for insulting people myself, due to the fact I tend to be tactless. How you
+deal with criticism is ultimately the responsibility of the receiving end, as
+even for me, most criticism will not affect me.
+</p>
+
+<p>
+In any case, Feeling Good mentions four general "addictions" that can make
+one clinically depressed (or Hypomanic):
+</p>
+
+<ol>
+
+<li>
+<b>Approval Addiction.</b>
+</li>
+
+<li>
+<b>Productivity Addiction</b> - you care about your work, how productive you are,
+how much you achieve, etc. (Much more common among men.)
+</li>
+
+<li>
+<b>Love addiction</b> - you want to be loved a lot. More common among women.
+</li>
+
+<li>
+<b>Perfectionism</b> - you want to be perfect in everything you do.
+</li>
+</ol>
+
+<p>
+Now based on reading the descriptions in the book, I believe I have been
+having Approval Addiction and Productivity Addiction, and neither of the
+other two.
+</p>
+
+<p>
+I used to get into clinicial depressions and anxieties (due to approval, etc.)
+which are even worse to deal with than hypomanias are. And during Manias,
+which I also had, but must avoid at all costs from now on, I lose most control
+of myself.
+</p>
+
+<p>
+I started writing <a 
+href="http://www.shlomifish.org/philosophy/psychology/hypomanias/">an 
+essay titled "Dealing with Hypomanias"</a>. It is not professional 
+Psychological advice, as I am not a qualified therapist, but it is given
+as a way to dispense my advice from the Point-of-View of a Bipolar person,
+who's learned a little about it. It's still very rough on the edges, as
+it started from a plain-text email, but any constructive comments would be
+welcome.
+</p>
+
+<p>
+While I may be a bit immature due to my approval addiction, I'm still mature
+enough to learn from my mistakes. At one time, a prominent member of the 
+Linux-IL mailing list said there that one should not take the advice I've 
+given in 
+<a href="http://www.shlomifish.org/philosophy/computers/software-management/end-of-it-slavery/">the 
+"End of Info-Tech Slavery"</a> (an essay I still mostly stand by, but am 
+about to update with a sequel/correction), and rather take the advice in my
+links. I was offended from it. Then I understood he was over-generalising and
+not criticising any of the points I raised in my essay, or explaining why
+he disliked them, and realised that he was very intelligent, but nevertheless
+what people call an "idiot". So when he said he doesn't think <a 
+href="http://www.shlomifish.org/random-tweakers/about/">my Random Tweakers
+idea for a startup</a> have commercial value (again without properly 
+explaining why or without asking me how I intend to make money), I didn't take
+what he said to heart.
+</p>
+
+<p>
+So now I think chromatic will "suffer" a similar fate in his criticisms against
+me. No, chromatic is certainly not an idiot, at least not in most regards.
+But now I know better than to take what he says to heart. I'll listen to
+what he says and read it at my free time, and often find merit in what he
+says, but he's still someone I know better than to be affected by him.
+</p>
+
+<p>
+I'm not disabling comments here, because I have a policy against it, due
+to the fact that I believe a blog post without comments is anti-social
+and defeats the point. But please be gentle, civil, rational and logical. 
+I'm still a bit hypomanic now, though it's getting better, and don't need
+any more grief. (However, I don't guarantee I'll read what you said
+immediately, or reply to it.)
+</p>
+
+<p>
+I feel this was probably the most off-topic use.perl.org journal post I ever 
+posted, but I've seen much more off-topic blog posts on use.perl.org, and
+it is relevant to open-source software, as I'm certainly not the only FOSS 
+geek who is either Bipolar or much less Unipolar/Depressive.
+</p>
+
+<p>
+And in case you wanted to suggest that: yes, I am taking medication - it
+doesn't absolutely prevent the hypomanias, but it may help (not sure
+about that). And I am seeing a Therapist, who gave me a lot of good advice.
+I should do the so-called "Cognitive Exercises" more-often, but I'm usually
+carried away with chatting or working on code or text to do them, but they
+do help a lot.
+</p>
+
+<p>
+Here's hoping we can deal with our frustrations more easily, because people
+are not perfect and the world is not perfect, but they are still pretty darned
+good.
+</p>
+
+</div>
+
+
+<div class="entry" id="freenode-catalyst-channel">
+
+<h2>2008-07-03: Freenode Channel for Catalyst - ##catalyst</h2>
+
+<p>
+Since I'd like to start working on <a href="http://svn.berlios.de/viewcvs/web-cpan/App-Freelancers-Board-Yonathan/trunk/docs/functional-spec/">a new
+Catalyst-based project</a>, and since I cannot and would rather not chat on
+irc.perl.org, and since <tt>#catalyst</tt> (with a single sharp-sign) on
+Freenode exists only to redirect people to irc.perl.org, and they don't 
+tolerate any other discussion there (which is probably against Freenode
+policy, but that's life), then I've started a new channel.
+</p>
+
+<p>
+Introducing <a href="irc://irc.freenode.net/##catalyst">##catalyst on
+Freenode</a> - the unofficial and completely non-hostile Catalyst channel. 
+We're already 5 people and one super-intelligent bot there. If you're
+interested in Catalyst, then please consider joining it too.
+</p>
+
+<p>
+<a href="http://www.youtube.com/watch?v=sW8shj0bQ0c">You and I Will
+change the world.</a>
+</p>
+
+</div>
+
+
+<div class="entry" id="perl-and-solitaire">
+
+<h2>2008-07-09: Perl and Solitaire Games</h2>
+
+<p>
+This entry will be a technical entry, but on a relatively lighter side:
+<a href="http://en.wikipedia.org/wiki/Solitaire">Solitaire games</a>. Solitaire
+games (also known as "patience" games) are any of several kinds of
+single-player games played using one or more decks of cards. Despite common
+belief, the Windows-game called "Solitaire" is actually 
+<a href="http://en.wikipedia.org/wiki/Klondike_(solitaire)">Klondike</a>,
+which is only one variant of Solitaire. <a href="http://en.wikipedia.org/wiki/FreeCell">Freecell</a> is another famous variant of Solitaire.
+</p>
+
+<p>
+So anyway, I spent some of the past two weeks working on <a 
+href="http://search.cpan.org/dist/Games-Solitaire-Verify/">Games-Solitaire-Verify</a>, which is a CPAN module to <b>verify</b> automated solutions of
+solitaire games. So far only Freecell is supported, but there's a lot of
+modularity in place for other variants. The intention of this module is
+to be used as part of the automated test suite of <a 
+href="http://fc-solve.berlios.de/">Freecell Solver</a>, which is a solver
+for several variants of Solitaire, which lacks a comprehensive test suite.
+</p>
+
+<p>
+I should note that I implemented the very first version of Freecell Solver 
+in Perl, but it was horribly slow. Of course, I did some very illogical things 
+speed-wise, like <b>(1)</b> putting all the states into an unsorted array and
+using linear search to scan it - and <b>(2)</b> constantly deserialising
+states into objects and data strcutures of individual cards, columns, and
+boards, and doing the comparison the hard way. So it was dog slow. I ended
+up re-implementing it as (saner) C code which turned out to be considerably 
+faster than the Perl version. Moreover, my next C version was faster by
+a factor of about 100 (not because I was smarter, but I was less dumb), and
+since then I incorporated many other speed optimisations. (There are also
+several C and Assembly-hosted solvers that are much faster than mine.)
+</p>
+
+<p>
+In any case, someone contacted me about the solver on Facebook, and after
+talking to him on Yahoo Messenger, we decided that he, I and another guy
+will talk on Freenode on the newly started #solitaire. There, I was quickly
+quickly joined by <a href="http://home.pacbell.net/rklement/">tybalt89</a>,
+who is a master golfer, and who decided to write <a 
+href="http://fc-solve.berlios.de/tybalt-klondike-solver/">his own solver
+for Klondike in Perl</a>. After a while he finished it and so
+<a href="http://fc-solve.berlios.de/tybalt-klondike-solver/tybalt-klondike-solver.pl">I 
+took a look at the source code</a>.
+</p>
+
+<p>
+From my impression it seems like the kind of code a golfer would write: 
+strings instead of objects (with regular expressions and other text processing
+to manipulate them), a call to shuffle() from List::Util with a random seed,
+no use warnings, lots of obscure two-letter variable names, 
+a lot of trailing "or" clauses, and it also has <tt>$hearts</tt>, 
+<tt>$clubs</tt>, etc. instead of a hash. I talked about it with another 
+master golfer and he said that "golfing rots the brain", and he said
+a program he gave as a solution to someone's problem had many golfish 
+paradigms as well.
+</p>
+
+<p>
+tybalt89 reported that his program is relatively fast, but still fails
+on many deals. 
+</p>
+
+<p>
+Meanwhile, I finished writing <a 
+href="http://search.cpan.org/dist/Games-Solitaire-Verify/">Games-Solitaire-Verify</a> and released it on the CPAN. Then I decided to test if it
+could detect than invalid solution was indeed invalid. And it turned out 
+an invalid solution was still reported as valid (!) making the reported 
+verdict useless. What I found out was that the complete
+solution analysis silently stopped after the first move or two. 
+</p>
+
+<p>
+I fixed the bug and released a better version (with more tests). Then I 
+decided to extract a few more classes 
+(<tt>Games::Solitaire::Verify::Freecells</tt> and
+<tt>Games::Solitaire::Verify::Foundations</tt>) out of the 
+relatively monolithic <tt>::State</tt> class (which represents positions
+of the board, including those at midplay), and uploaded version 0.02.
+</p>
+
+<p>
+I still need to adapt the module to verify solutions of other variants
+except Freecell, and that's what I'm planning to work on next. But it was
+good enough to add some system tests to Freecell Solver (using Perl, Test::More
+and TAP). What I hope is that tests such as this will allow me to revamp
+, refactor and enhance Freecell Solver with more confidence that I didn't 
+break anything. I'm especially looking forward to the conversion from 
+GNU Autoconf to <a href="http://www.cmake.org/HTML/index.html">CMake</a>,
+which depends on the test suite to make sure it doesn't break anything.
+</p>
+
+<p>
+Finally, I also found out that my C-based Freecell Solver program, did not
+always output things the right way, without trailing whitespace, etc.
+Since my primary motivation with Games-Solitaire-Verify was to verify the
+solutions of Freecell Solver, and because I wanted to compare to
+the precise output, I needed to emulate these mis-behaviours in my Perl
+code as well. I don't like it very much, but I guess I'd rather emulate
+Freecell Solver to test it, than fix it and risk breaking something.
+Nevertheless, my intention is to provide flags for a saner output for
+both the C and Perl programs in the future.
+</p>
+
+<p>
+Happy Solitaire!
+</p>
+
+</div>
+
+
+<div class="entry" id="fortunes-syndication-as-atom">
+
+<h2>2008-07-14: Reflections on Syndicating my Fortune Cookies as Atom</h2>
+
+<p>
+Another technical entry, on <a href="http://www.shlomifish.org/humour/fortunes/">my fortune cookies</a>' FortuneXML work again. <a 
+href="http://use.perl.org/~Shlomi+Fish/journal/36668">When I last left
+you</a>, I was able to transform the XML sources of the fortune cookies
+to XHTML and to plaintext, and ran into a nasty stack smash that prevented
+me from uploading the module to the CPAN.
+</p>
+
+<p>
+Then, I decided that now that each fortune had its own unique URL,
+and that people didn't have the time to regularly see what has changed,
+it was high time to get a 
+<a href="http://en.wikipedia.org/wiki/Web_feed">web-feed syndication</a>
+for it. I decided to use 
+<a href="http://search.cpan.org/dist/XML-Feed/">XML-Feed</a> directly,
+and to generate an Atom feed. (So far I only did RSS using XML-RSS). 
+</p>
+
+<p>
+It seemed logical that I'd simply go over all the individual <tt>id=""</tt>
+attributes in the XML files I maintained, and see which ones were added.
+Then I'll generate a feed containing the most recent 20 or so. However,
+the XML does not contain the dates where they were added. So I decided that
+for simplicity I'll record the dates all the IDs were added into a YAML file,
+which in turn will be updated there. (A database of some sort may be better
+eventually.)
+</p>
+
+<p>
+Now, how to find the most recent 20 dates from the YAML and the XMLs? One
+option would be to collect all the dates and sort them, but that seemed
+wasteful to me. Recalling my Computer Science Data Structures studies I 
+remembered that I could use a 
+<a href="http://en.wikipedia.org/wiki/Priority_queue">priority-queue</a>
+for that, and remembered there was a module for that on the CPAN.
+A search for "Priority Queue" or "PQ" yieleded nothing, but I then
+searched for Heap and found 
+<a href="http://search.cpan.org/dist/Heap/">Heap.pm, 
+which implements several Heaps that can be used as a priority queue</a>.
+</p>
+
+<p>
+Heap is a very impressive module. I remember that back when I studied at the
+Technion, it used to be the only usable sourceware (and open-source)
+implementation I found of Fibonacci heaps. I decided to use the Binary heap 
+this time, though.
+</p>
+
+<p>
+I had to write some wrapper code to get it working. I decided against writing
+automated tests before I wrote the code (= "Test-Driven Development")
+and just write the code and get it to working, because I found that I didn't
+exactly know what it would generate. Anyway, I now have the script working.
+</p>
+
+<p>
+I encountered some problems in trying to find how to render just one
+fortune element and not the entire file. After not finding anything about
+it in the XML::LibXSLT documentation, I opted to tweak the XSLT stylesheet
+and create an optional parameter for it to act upon.
+</p>
+
+<p>
+Eventually, 
+<a href="http://www.shlomifish.org/humour/fortunes/fortunes-shlomif-all.atom">I
+got an Atom feed</a>. Firefox displays it fine, but
+<a href="http://validator.w3.org/feed/check.cgi?url=http%3A%2F%2Fwww.shlomifish.org%2Fhumour%2Ffortunes%2Ffortunes-shlomif-all.atom">it
+doesn't validate</a>. Part of the problem is that I needed to trim down
+the feed entries' content from the "&lt;html&gt;" and other such tags. But
+another issue is that XML-Feed does not support all the required Atomisms.
+</p>
+
+<p>
+I've noticed both XML-Feed and 
+<a href="http://search.cpan.org/dist/XML-Atom/">XML-atom</a> have suffered
+from neglect (including the lack of support for those Atomisms), and decided to
+adopt them. I set up
+<a href="http://svn.berlios.de/svnroot/repos/web-cpan/XML-Feed/">a 
+repository for XML-Feed on BerliOS</a> and started to get into it. First
+thing I did was get rid of ExtUtils::AutoInstall, and I have also given 
+repository access to another person who is interested in revamping them.
+Thanks to <a 
+href="http://search.cpan.org/~bingos/">BingOS</a> for helping me with some
+Module::Install-ism.
+</p>
+
+<p>
+As it turns out, the
+<a href="http://rt.cpan.org/Ticket/Display.html?id=35781">XML-LibXSLT 
+bug</a> was actually <a href="https://qa.mandriva.com/show_bug.cgi?id=41993">a
+Cooker-specific bug</a>, which seems like it is caused from problematic
+compilation flags.
+</p>
+
+<p>
+So world-domination through Unix-like fortune cookies is still making
+progress. I'll probably release XML-Grammar-Fortune in its current form
+soon since the smash stack I got is highly system-dependent.
+</p>
+
+</div>
+
+
+<div class="entry" id="xml-atom-and-cpanplus-misbehaviours">
+
+<h2>2008-07-23: Overcoming Misbehaviours in Code I Did Not Write</h2>
+
+<p>
+Yesterday, when I tried to validate the RSS feed of my
+<a href="http://www.shlomifish.org/humour/fortunes/">fortune cookies</a>,
+I ran into a Unicode encoding problem. Seems like a Unicode character
+("→") was converted into its individual bytes and then encoded using
+SGML entities. After a long time of debugging it, I found out the problem
+was with <a href="http://search.cpan.org/dist/XML-Atom/">XML-Atom</a>
+and was easily fixed using:
+</p>
+
+<ecode>
+$XML::Atom::ForceUnicode = 1;
+</ecode>
+
+<p>
+This behaviour
+<a href="http://search.cpan.org/~miyagawa/XML-Atom-0.28/lib/XML/Atom/Feed.pm#UNICODE_FLAGS">is 
+documented in the XML::Atom::Feed</a> documentation, which I didn't bother
+to read because I believed XML::Feed would do the right thing. The reason
+I ran into this problem there was because I generated an Atom-based
+XML::Feed (so I can also have an Atom feed and then converted it to RSS.
+</p>
+
+<p>
+Today I encountered, a similar problem, this time with 
+<a href="http://cpanplus.dwim.org/">CPANPLUS</a>. I wanted to write a
+<a href="http://svn1.hostlocal.com/perl.org.il/site/new_site_sources/generate-cpan-distros-list.pl">script to syndicate the list of CPAN modules</a>
+for 
+a <a href="http://www.perl.org.il/israeli-projects.html">the Perl-Israel
+Israeli Perl Projects page</a>. One thing I noticed was that calling 
+<tt>$author-&gt;distributions()</tt> took a long time. After some debugging,
+I noticed that the culprit was in <a 
+href="http://search.cpan.org/perldoc?CPANPLUS::Module">CPANPLUS::Module</a>'s
+<tt>dslip()</tt> method which went over all modules list in O(N) time looking
+for modules whose prefix is the current module. This was fixed using:
+</p>
+
+<ecode>
+{
+    no warnings;
+    # This is an optimisation because dslip is incredibly slow,
+    # and it badly affects $module->clone() .
+    *CPANPLUS::Module::dslip = sub { return ' ' x 5;};
+}
+</ecode>
+
+<p>
+This made my script run much faster. Not instantaneously, but definitely
+faster.
+</p>
+
+<p>
+So this way, I was able to fix the two problems that I had. Now I'm happy
+and can go on with the rest of my life.
+</p>
+
+</div>
+
+
+<div class="entry" id="demise-of-oreilly-net">
+
+<h2>2008-07-26: The Demise of O'Reilly-Net?</h2>
+
+<p>
+I recall a time, not long ago, when the O'Reilly-Net sites:
+<a href="http://www.onlamp.com/">OnLAMP.com</a>,
+<a href="http://perl.com/">Perl.com</a>,
+<a href="http://www.linuxdevcenter.com/">LinuxDevCenter.com</a>,
+etc. used to carry weekly or close-to-weekly in-depth articles about
+various IT-related subjects, that tended to be high-quality and provided a
+lot of good information. But lately, it seems there were only a few blog
+posts on OnLAMP.com about open-source in Windows and other such 
+relatively low-interest or low-quality topics (and practically nothing on 
+Perl.com or LinuxDevCenter) and no new articles. The 
+<a href="http://www.onlamp.com/pub/a/onlamp/2008/05/20/getting-started-with-the-google-apps-engine.html">latest 
+article</a> on OnLAMP.com is from 20-May this year (over two months ago)
+and there were huge gaps between the latest articles there.
+</p>
+
+<p>
+Now, I recently sent a suggestion for an article, with an outline, to the
+Perl.com editor (chromatic) and to the OnLAMP.com editor (James Turner), and
+received no reply. I sent it again, and again received no reply. I sent the
+second message on 9-July. Now, even if they didn't like the outline, then the
+right thing to do would be to promptly reply saying that they're not interested
+in it and that I should seek other venues of publication. I'm pretty sure that
+at least chromatic is alive and has some spare time, because I've seen him
+active on use.perl.org and on @perl.org mailing lists.
+</p>
+
+<p>
+I submitted some articles to O'ReillyNet in the past and encountered a few
+delays in response, which I suppose is expected, but such a long delay
+is no longer acceptable. My guess is that I'm not the only one who sent such
+suggestions to O'Reilly-Net and received no response. 
+</p>
+
+<p>
+If the O'Reilly-Net sites would like to keep their edge, they should make
+sure they don't turn into another one of the dime-a-dozen blog sites, and
+instead start offering high-quality articles and essays again. But this will
+require a better responsiveness on the part of the editors. Would chromatic
+and/or Mr. Turner care to comment about that?
+</p>
+
+</div>
+
+
+<div class="entry" id="web-feed-mangling-blues">
+
+<h2>2008-08-05: Web Feed Mangling Blues</h2>
+
+<p>
+Back when I was looking for a way to aggregate several RSS feeds, a
+few years back, I found
+<a href="http://search.cpan.org/dist/XML-RSS-Aggregate/">XML-RSS-Aggregate</a>
+by Audrey Tang. Using it turned out to be problematic and I had to patch
+it, sub-class it, and write a lot of code above it to have it behave with
+my feeds.
+</p>
+
+<p>
+Then after I asked Audrey about it on the IRC, she told me that 
+XML-RSS-Aggregate was no longer recommended and that 
+<a href="http://search.cpan.org/dist/XML-Feed/">XML-Feed</a> was then
+the way to go. So I happily switched to using XML-Feed and even packaged
+it for Mandriva, and all was all. I wrote a 5 star review for it on CPAN
+ratings, and wrote a 1 star review on XML-RSS-Aggregate directing people
+to XML-Feed instead.
+</p>
+
+<p>
+My problems started again, when after setting up the feed for my
+<a href="http://web-cpan.berlios.de/modules/XML-Grammar-Fortune/">XML-Grammar-Fortune</a>-based 
+fortunes, I discovered that the Atom feed did not validate and the RSS feed
+had many warnings. I ended up maintaining XML-Feed in my own repository,
+and tried to <a 
+href="http://www.nntp.perl.org/group/perl.module-authors/2008/08/msg6778.html">contact 
+the author of XML-Feed</a> about becoming a co-maintainer.
+</p>
+
+<p>
+Now, yesterday, I joined #plagger on Freenode, trying to see how I can
+make progress there, and miyagawa told me about <a 
+href="http://search.cpan.org/dist/Data-Feed/">Data-Feed</a>, which is 
+a new module, which aims to be even better than XML-Feed. I thought to myself
+"Thanks God!" and decided to try to install it.
+</p>
+
+<p>
+Not wanting to pollute my system, I decided to prepare 
+<a href="http://www.shlomifish.org/open-source/packages/Mandriva/Cooker/SRPMS/?C=M;O=D">Mandriva RPMs</a> of it and its dependencies, which you can find
+in the link. I ran into a problem with its tests failing due to the fact
+what Data-Feed tried doing only worked with XML-RSS-LibXML and not with
+XML-RSS which was all I had installed. I 
+<a href="http://rt.cpan.org/Public/Bug/Display.html?id=38173">reported 
+a bug</a> about it, and am hoping for the best.
+</p>
+
+<p>
+Today, I decided to try to convert the XML-Grammar-Fortune-Synd code to
+use Data-Feed instead of XML-Feed and see if it would help me. But then
+I tried to look up some classes with which I was familiar from XML-RSS
+and realised that <a href="http://search.cpan.org/dist/Data-Feed/">Data-Feed 
+had practically non-existent documentation</a>. So I could not look up
+that information even if I wanted to. 
+</p>
+
+<p>
+So I decided to stick with XML-Feed for the time being. Right now 
+<a href="http://search.cpan.org/dist/XML-Grammar-Fortune-Synd/">XML-Grammar-Fortune-Synd</a>
+depends on XML-Feed with my downstream patches, and fails all tests, and the 
+Atom feed still does not validate. So it's only mostly broken.
+</p>
+
+<p>
+I got <a href="http://www.youtube.com/watch?v=h0rY3dn5kos">the web-feed
+manglin' Blues</a>!
+</p>
+
+</div>
+
+
+<div class="entry" id="maintperl-5.8.x-make-test-fails-on-Cooker-IPC-SysV">
+
+<h2>2008-08-09: make test in maintperl-5.8.x Fails on Linux</h2>
+
+<p>
+Due to the fact that my email to perl5-porters bounced for some reason, and
+because the email I filed using perlbug was not registered 
+<a href="http://rt.perl.org/rt3/">in the bugtracker</a> for some reason,
+I'm posting it here:
+</p>
+
+<ecode>
+It seems that on Mandriva Linux Cooker (the Mandriva bleeding edge
+distribution) on maint-perl IPC::SysV fails "make test":
+
+{{{{{{{{{{{{
+Failed 4 tests out of 1095, 99.63% okay.                                        
+        ../ext/IPC/SysV/t/ipcsysv.t                                             
+        ../ext/IPC/SysV/t/msg.t                                                 
+        ../ext/IPC/SysV/t/sem.t                                                 
+        ../ext/IPC/SysV/t/shm.t
+### Since not all tests were successful, you may want to run some of
+### them individually and examine any diagnostic messages they produce.
+### See the INSTALL document's section on "make test".
+### You have a good chance to get more information by running
+###   ./perl harness
+### in the 't' directory since most (>=80%) of the tests succeeded.
+### You may have to set your dynamic library search path,
+### LD_LIBRARY_PATH, to point to the build directory:
+###   setenv LD_LIBRARY_PATH `pwd`:$LD_LIBRARY_PATH; cd t; ./perl harness
+###   LD_LIBRARY_PATH=`pwd`:$LD_LIBRARY_PATH; export LD_LIBRARY_PATH; cd 
+t; ./perl harness
+###   export LD_LIBRARY_PATH=`pwd`:$LD_LIBRARY_PATH; cd t; ./perl harness
+### for csh-style shells, like tcsh; or for traditional/modern
+### Bourne-style shells, like bash, ksh, and zsh, respectively.
+u=5.17  s=1.62  cu=359.73  cs=35.41  scripts=1095  tests=132095
+make[2]: *** [_test_tty] Error 1
+make[2]: Leaving directory 
+`/home/shlomi/Download/unpack/perl/perl5/maint-perl/perl-5.8.x-1218190282'
+make[1]: *** [_test] Error 2
+make[1]: Leaving directory 
+`/home/shlomi/Download/unpack/perl/perl5/maint-perl/perl-5.8.x-1218190282'
+make: *** [test] Error 2
+}}}}}}}}}}}}
+
+I noticed it was the only upgrade since I updated perl-5.8.x-latest. I'll try 
+to investigate further.
+
+Regards,
+
+        Shlomi Fish
+
+[Please do not change anything below this line]
+-----------------------------------------------------------------
+---
+Flags:
+    category=library
+    severity=medium
+---
+Site configuration information for perl v5.8.8:
+
+Configured by shlomi at Fri Aug  8 13:14:33 IDT 2008.
+
+Summary of my perl5 (revision 5 version 8 subversion 8 patch 34096) configuration:
+  Platform:
+    osname=linux, osvers=2.6.26-desktop-2mnb, archname=i686-linux
+    uname='linux telaviv1.shlomifish.org 2.6.26-desktop-2mnb #1 smp wed jul 23 11:32:46 brt 2008 i686 intel(r) pentium(r) 4 cpu 2.40ghz gnulinux '
+    config_args='-de -Dprefix=/home/shlomi/apps/perl/perl-5.8.x-latest -Doptimize=-g'
+    hint=recommended, useposix=true, d_sigaction=define
+    usethreads=undef use5005threads=undef useithreads=undef usemultiplicity=undef
+    useperlio=define d_sfio=undef uselargefiles=define usesocks=undef
+    use64bitint=undef use64bitall=undef uselongdouble=undef
+    usemymalloc=n, bincompat5005=undef
+  Compiler:
+    cc='cc', ccflags ='-DDEBUGGING -fno-strict-aliasing -pipe -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -I/usr/include/gdbm',
+    optimize='-g',
+    cppflags='-DDEBUGGING -fno-strict-aliasing -pipe -I/usr/local/include -I/usr/include/gdbm'
+    ccversion='', gccversion='4.3.1 20080626 (prerelease)', gccosandvers=''
+    intsize=4, longsize=4, ptrsize=4, doublesize=8, byteorder=1234
+    d_longlong=define, longlongsize=8, d_longdbl=define, longdblsize=12
+    ivtype='long', ivsize=4, nvtype='double', nvsize=8, Off_t='off_t', lseeksize=8
+    alignbytes=4, prototype=define
+  Linker and Libraries:
+    ld='cc', ldflags =' -L/usr/local/lib'
+    libpth=/usr/local/lib /lib /usr/lib /usr/lib64
+    libs=-lnsl -lndbm -lgdbm -ldl -lm -lcrypt -lutil -lc
+    perllibs=-lnsl -ldl -lm -lcrypt -lutil -lc
+    libc=/lib/libc-2.8.so, so=so, useshrplib=false, libperl=libperl.a
+    gnulibc_version='2.8'
+  Dynamic Linking:
+    dlsrc=dl_dlopen.xs, dlext=so, d_dlsymun=undef, ccdlflags='-Wl,-E'
+    cccdlflags='-fPIC', lddlflags='-shared -g -L/usr/local/lib'
+
+Locally applied patches:
+    MAINT33934
+
+---
+@INC for perl v5.8.8:
+    /home/shlomi/apps/perl/modules/lib/perl5/site_perl/5.10.0
+    /home/shlomi/apps/perl/modules/lib/perl5/site_perl/5.8.8
+    /home/shlomi/apps/perl/modules/lib/site_perl/5.10.0
+    /home/shlomi/apps/perl/modules/lib/site_perl/5.8.8/i686-linux
+    /home/shlomi/apps/perl/modules/lib/site_perl/5.8.8
+    /home/shlomi/apps/perl/modules/lib/perl5/5.10.0
+    /home/shlomi/apps/perl/modules/lib/perl5/5.8.8
+    /home/shlomi/apps/perl/perl-5.8.x-latest/lib/5.8.8/i686-linux
+    /home/shlomi/apps/perl/perl-5.8.x-latest/lib/5.8.8
+    /home/shlomi/apps/perl/perl-5.8.x-latest/lib/site_perl/5.8.8/i686-linux
+    /home/shlomi/apps/perl/perl-5.8.x-latest/lib/site_perl/5.8.8
+    .
+
+---
+Environment for perl v5.8.8:
+    HOME=/home/shlomi
+    LANG=en_GB.UTF-8
+    LANGUAGE=en_US
+    LC_ADDRESS=en_US.UTF-8
+    LC_COLLATE=en_US.UTF-8
+    LC_CTYPE=en_US.UTF-8
+    LC_IDENTIFICATION=en_GB.UTF-8
+    LC_MEASUREMENT=en_GB.UTF-8
+    LC_MESSAGES=en_US.UTF-8
+    LC_MONETARY=en_US.UTF-8
+    LC_NAME=en_GB.UTF-8
+    LC_NUMERIC=en_GB.UTF-8
+    LC_PAPER=en_US.UTF-8
+    LC_SOURCED=1
+    LC_TELEPHONE=en_US.UTF-8
+    LC_TIME=en_GB.UTF-8
+    LD_LIBRARY_PATH=/home/shlomi/Download/unpack/gui/X/nouveau/mesa/mesa/lib
+    LOGDIR (unset)
+    PATH=/usr/java/jdk1.5.0_09/bin:/home/shlomi/Download/unpack/graphics/fop/fop-0.93:/home/shlomi/apps/perl/modules/local/bin:/home/shlomi/apps/latemp/bin:/home/shlomi/apps/file/gringotts/bin:/home/shlomi/apps/gimageview/bin:/home/shlomi/apps/test/quadpres/bin:/home/shlomi/apps/docbook-builder/local/bin:/home/shlomi/bin:/usr/local/bin:/bin:/usr/bin:/usr/games:/usr/lib/qt4/bin:/usr/bin:/opt/kde3/bin:/usr/lib/ssh:/usr/lib/qt4/bin:/usr/bin:/opt/kde3/bin
+    PERL5LIB=/home/shlomi/apps/perl/modules/lib/perl5/site_perl/5.10.0:/home/shlomi/apps/perl/modules/lib/perl5/site_perl/5.8.8:/home/shlomi/apps/perl/modules/lib/site_perl/5.10.0:/home/shlomi/apps/perl/modules/lib/site_perl/5.8.8:/home/shlomi/apps/perl/modules/lib/perl5/5.10.0:/home/shlomi/apps/perl/modules/lib/perl5/5.8.8
+    PERL_BADLANG (unset)
+    SHELL=/bin/bash        
+</ecode>
+
+<p>
+Can anyone reproduce it as well? Just do: 
+<tt>rsync -auvz rsync://ftp.linux.activestate.com/perl-5.8.x/ perl-5.8.x-latest</tt>
+and then build perl and run "make test"?
+</p>
+
+<p>
+I could not reproduce this problem by running "perl Makefile.PL" ; "make" ;
+"make test" in the latest IPC::SysV. For all the failed tests, the problem
+seems to be:
+</p>
+
+<ecode>
+shlomi:~/Download/unpack/perl/perl5/maint-perl/perl-5.8.x-1218190282/t$ ./perl -MTestInit ../ext/IPC/SysV/t/msg.t
+IPC::SysV object version 1.99_07 does not match bootstrap parameter 1.05 at ../lib/DynaLoader.pm line 250.
+Compilation failed in require at ../ext/IPC/SysV/t/msg.t line 37.
+BEGIN failed--compilation aborted at ../ext/IPC/SysV/t/msg.t line 37.
+# Looks like your test died before it could output anything.
+</ecode>
+
+</div>
+
+
+<div class="entry" id="random-hacktivity-2008-08-12">
+
+<h2>2008-08-12: Random Hacktivity Summary</h2>
+
+<p>
+This is another boring hacktivity summary, but this time mostly Perl-related
+ - so I'm posting it here.
+</p>
+
+<p>
+First order of business is <a 
+href="http://fc-solve.berlios.de/verify-code/">Games-Solitaire-Verify</a>. In
+its first versions I implemented textual return values for the 
+<tt>verify_and_perform_move()</tt> method. However, this makes it harder
+and more error-prone to programmatically understand why exactly the verifier 
+does not like your move . True to my ideals that errors that need to be
+caught and processed must be objects, I converted everything to return
+Exception::Class-subclasses. E::C really made my job easy and now my
+main gripe with everything is that my error class names have become
+unweildy. Some examples are:
+</p>
+
+<ul>
+<li><tt>Games::Solitaire::Verify::Exception::Move::Src::Col::NotEnoughCards</tt></li>
+<li><tt>Games::Solitaire::Verify::Exception::Move::Src::Col::NonSequence</tt>
+</li>
+<li><tt>Games::Solitaire::Verify::Exception::Move::Dest::Col::OnlyKingsCanFillEmpty</tt></li>
+</ul>
+
+<p>
+Oh well. In any case, now that I've converted everthing to classes, I forgot
+to add stringified versions of the errors (which Exception::Class supports), 
+so if something breaks and is reported to the shell, it may not be very 
+human-friendly. I guess it means a bit more work there.
+</p>
+
+<p>
+Afterwards, I decided to work a bit on <a 
+href="http://web-cpan.berlios.de/modules/Test-Run/">Test-Run</a>, and after
+I read its todo list, remembered that I still intended to create
+some specialised 
+<a href="http://search.cpan.org/dist/Module-Starter/">Module-Starter</a>
+plugins for it. Then I remembered that I asked about M-S' test suite,
+and found out it didn't have a comperensive one. So, I decided to
+remedy this and <a 
+href="http://code.google.com/p/module-starter/issues/detail?id=2">wrote
+a patch to add a test script</a>. For the test script I parsed the generated
+files step-by-step using a class and some test assertion methods. 
+</p>
+
+<p>
+Since I had no repository access, the first versions of the patch were written 
+by repeatedly running <tt>svn diff</tt> into files, but I decided I want a 
+more robust version control for the local host. So I looked into svk
+<a href="http://lists.bestpractical.com/pipermail/svk-users/2008-August/000312.html">but 
+it had acquired a bug on my system.</a>. Then I decided to try 
+<a href="http://bazaar-vcs.org/BzrForeignBranches/Subversion">bzr-svn</a>,
+but it had a non-starter bug. Now since I dislike git quite a bit, I searched
+for something Mercurial-based and found <a 
+href="http://pypi.python.org/pypi/hgsvn">hgsvn</a>. This worked surprisingly
+well for my purposes and I was able to version the local copy. Mercurial
+seems pretty nifty so far.
+</p>
+
+<p>
+The Module-Starter patch was not integrated into the repository yet.
+Module-Starter has been suffering from quite a lot of neglect, and rjbs (who
+performed its latest upload to the CPAN) told us on IRC he now uses a different
+solution that was written by someone else and has not been made public yet.
+I'd really like to see something better emerge, but I hope I won't have
+to fork Module::Starter under a different name.
+</p> 
+
+<p>
+I decided to stop patching it for the time being, but am getting anxious.
+It makes me frustrated to have an uncommitted patch and no repository access
+with which I can apply it.  
+</p>
+
+<p>
+As I was working on Module-Starter I talked with the 
+<a href="http://www.perlfoundation.org/perl6/index.cgi?smop">SMOP guys</a>,
+and decided to try give it a spin. After checking out the source and doing
+the <tt>make -f Makefile.cvs</tt>, <tt>./configure</tt>, <tt>make</tt>
+dance, I ran into a few missing ".pm" files error. The first one was caused
+by the lack of the rest of the pugs tree, and the later ones were easily
+installable from CPAN. But then I ran into a strange error:
+</p>
+
+<ecode>
+../../../misc/elfish/elfX/../../STD_red/STD_red_run:93: syntax error, unexpected '>'
+    whiteout = ->(s){s.gsub(/[^ \n]/,' ')};
+
+</ecode>
+
+<p>
+As it turned out, I needed Ruby-1.9.x (the development version that naturally
+is not avaialable in Mandriva or other Linux distributions), and decided
+that there's no way I'm installing it. This reminded me of
+<a href="http://www.drivl.com/posts/view/700">Drivl.com recipe on
+how to make square corners</a>, and I decided to give up on SMOP.
+</p>
+
+<p>
+After all this, I also added a lot of text to 
+<a href="http://cms.wikia.com/">the
+CMS/Web-devel-framework/Web-design Wikia</a>, which I founded
+and had neglected previously, and to
+<a href="http://stexpanded.wikia.com/wiki/User:Shlomif">the
+pages in the Star Trek "Expanded Wikia" which I maintain</a>, which were
+a nice change in scenery from all the code I wrote.
+</p>
+
+<p>
+Today I didn't do too much productive work, after having my usual 
+post-productivty disorientation, and instead spent the first half of the 
+day chatting on IRC (to a very interesting American linguist-wannabe), but
+was also able to bike, for the first time since Saturday. Oh, and I saw 
+<a href="http://www.imdb.com/title/tt0910970/">Wall-E on Sunday</a>,
+which I liked. Been a while since I've been to the cinema.
+</p>
+
+</div>
+
+
+<div class="entry" id="recent-hacktivity-2008-08-21">
+
+<h2>2008-08-21: Recent Hacktivity Summary</h2>
+
+
+<p>
+Well, I added more tests to 
+<a href="http://search.cpan.org/dist/Module-Starter/">Module-Starter</a>,
+and while I was writing the tests, I discovered some bugs in it. So now
+there's 
+<a href="http://code.google.com/p/module-starter/issues/detail?id=2">a 
+patch with the tests and the bug fixes</a> and 
+<a href="http://code.google.com/p/module-starter/issues/detail?id=3">another 
+one with only the bug fixes</a>. Both of them are unapplied.
+</p>
+
+<p>
+Having been trying to learn Ruby recently, I decided to write a 
+<a href="http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Conway's 
+Game of Life</a> implementation for it. It took me most of one evening to get  
+it working and then part of the other day to make it more idiomatic with the 
+help of the people on Freenode. It felt good in a way.
+</p>
+
+<p>
+Then I decided to finally see why my
+<a href="http://web-cpan.berlios.de/modules/Test-Run/">Test-Run</a> failed
+many tests recently. As it turns out, this was due to broken
+<a href="http://testanything.org/wiki/index.php/TAP::Parser">TAP-Parser</a>
+compatibility: the skip message in skip_all field now accepts only 
+"SKIP " and not something like "skipping: ". Fixing the Test-Run tests
+fixed it and I released new versions.
+</p>
+
+<p>
+I also noticed that many of the Test-Run-CmdLine plugin had the following
+pattern:
+</p>
+
+<ecode>
+sub _init
+{
+    my $self = shift;
+    $self->NEXT::_init(@_);
+    $self->add_to_backend_plugins("AlternateInterpreters");
+}
+</ecode>
+
+<p>
+So I overloaded the construction function, only to add a plugin. I decided to
+fix this by doing an accumulation of such plugin specifiers in every plugin,
+and so got only:
+</p>
+
+<ecode>
+sub private_backend_plugins
+{
+    my $self = shift;
+
+    return [qw(AlternateInterpreters)];
+}
+</ecode>
+
+<p>
+Which is much cleaner and less intrusive.
+</p>
+
+<p>
+Next on my plate was <a href="http://fc-solve.berlios.de/">Freecell 
+Solver</a>. I decided to work on <tt>make_pysol_freecell_board.py</tt>
+which is a Python script that generates the initial boards of PySol. The
+script was crudely written to begin with and it became even cruder as
+time went by. I decided to give it a serious face-lift. So what I did was:
+</p>
+
+<ul>
+
+<li>
+
+<p>
+Convert the columns (of the card games) from strings to arrays. Each card
+was stored there individually.
+</p>
+
+</li>
+
+<li>
+
+<p>
+Convert the cards to a class, instead of integers and strings. Create similar
+classes for managing columsn and boards.
+</p>
+
+</li>
+
+<li>
+
+<p>
+Extract many functions and methods.
+</p>
+
+</li>
+
+<li>
+
+<p>
+Create a class to manipulate the various game types, and forward the different
+logic based on it.
+</p>
+
+</li>
+
+<li>
+
+<p>
+Pythonised the script by employing some Python paradigms.
+</p>
+
+</li>
+
+</ul>
+
+<p>
+You can find 
+<a href="https://svn.berlios.de/svnroot/repos/fc-solve/trunk/fc-solve/source/board_gen/make_pysol_freecell_board.py">what
+I have so far</a> in the repository. It's much better than what I started
+with two days ago. Writing such Python code now seems more fun than I recall
+it, and I actually enjoyed it.
+</p>
+
+<p>
+In regards to 
+<a href="http://www.perlfoundation.org/perl6/index.cgi?smop">SMOP</a>, they
+convinced me to install Ruby-1.9.x under a prefix, which I did, but then
+it yelled at me for not having a Haskell cabal thingy. Turns out that
+the Pugs Makefile.PL installs it somewhere under the home-directory, which
+I didn't want to happen, because I want to keep it tidy. Again, this 
+reminded me of <a href="http://www.drivl.com/posts/view/700">Drivl.com 
+recipe on how to make square corners</a>, and I decided to give up on SMOP
+again. 
+</p>
+
+<p>
+And I should note that I was able 
+<a href="https://qa.mandriva.com/show_bug.cgi?id=41993">resolve 
+a long-standing problem I had with XML-LibXML/XML-LibXSLT</a> on my Mandriva
+system, and now I simplified the XML-Grammar-Fortune build-system.
+</p>
+
+<p>
+I also spent some time writing a backup system for some of the Israeli
+MediaWikis that I manage. This involved a bunch of Perl scripts.
+</p>
+
+<p>
+So - Perl, Ruby and Python - all in a few days work. Cheers everybody.
+</p>
+
+</div>
+
+
+<div class="entry" id="maintperl-5.8.x-IPC-SysV-failure-resolution">
+
+<h2>2008-09-04: Resolution for maintperl-5.8.x's IPC::SysV failure</h2>
+
+<p>
+As a followup to 
+<a href="http://use.perl.org/~Shlomi+Fish/journal/37138">this post
+about "make test in maintperl-5.8.x Fails on Linux"</a>, I should note that
+<a href="http://www.xray.mpe.mpg.de/mailing-lists/perl5-porters/2008-09/msg00079.html">we have investigated it on perl5-porters</a> in the past days.
+After a little investigation, I realised that there was a stray "SysV.pm" file
+in my perl-5.8.x tree, which caused all the problems. 
+</p>
+
+<p>
+As it turned out, it was not removed because I used "rsync -auvz" to
+synchronise the tree (as instructed in
+<a href="http://dev.perl.org/perl5/docs/p5p-faq.html">the perl5-porters 
+FAQ</a>) instead of "rsync -auvz --delete-after", which removes the no-longer
+present files. After running rsync with <tt>--delete-after</tt>, and
+building again - "make test" was successful.
+</p>
+
+<p>
+"Another crisis was solved!".
+</p>
+
+</div>
+
+<div class="entry" id="osdclub-tel-aviv-meeting-ori-idan-on-semantic-web">
+
+<h2>2008-09-18: OSDClub Tel Aviv Meeting: Ori Idan about the Semantic Web</h2>
+
+<p>
+<a href="http://www.cs.tau.ac.il/telux/">The Tel Aviv Open Source Developers
+Club (OSDClub)</a> (formerly the Tel Aviv Linux Club and other
+clubs such as Perl-Israel) will hold <a 
+href="http://wiki.osdc.org.il/index.php/Tel_Aviv_Meeting_on_21_September_2008">a
+meeting on 21/September (next Sunday)</a>. Ori Idan will deliver a presentation
+about <a href="http://en.wikipedia.org/wiki/Semantic_Web">the 
+Semantic Web</a>. 
+</p>
+
+<p>
+Ori is the director of the Israeli branch of the
+World-Wide-Web Consortium (W3C), and is a very good presenter, so it is
+recommended to attend. 
+</p>
+
+<p>
+The meeting will take place at 18:30 in the Schreiber
+Maths and Computer Science building of Tel Aviv University, room 008.
+Attendance is free of charge and everyone are welcome.
+</p>
+
+</div>
+
+
+<div class="entry" id="File-Find-Object-refactoring">
+
+<h2>2008-10-22: File-Find-Object Refactoring</h2>
+
+<p>
+I haven't updated this journal in a long time, and mostly been writing
+in my <a href="http://community.livejournal.com/shlomif_tech/">LiveJournal
+Technical blog</a>. I've emailed to <a href="http://perlsphere.net/">the
+Perlsphere</a> maintainer about including that blog there (once from
+my home address and once from gmail.com), but received no reply, and so far
+it is not included there.
+</p>
+
+<p>
+In any case, this post is about
+<a href="http://search.cpan.org/dist/File-Find-Object/">File-Find-Object,
+which is an object-oriented alternative to the core File::Find module</a>.
+Originally by <a href="http://search.cpan.org/~nanardon/">Nanardon</a>,
+I've maintained it since version 0.0.3.
+</p>
+
+<p>
+Recently, I've been meaning to write a project, and contemplated whether
+to use File-Find-Object or roll-out my own directory traversal logic, but
+then decided that improving F-F-O so it will do what I want was a better idea,
+<a href="http://en.wikipedia.org/wiki/Eating_one%27s_own_dog_food">in an
+"Eating one's own dog food"</a> and not-re-inventing the wheel fashion.
+So I needed to extend F-F-O to do what I want.
+</p>
+
+<p>
+While I took a closer look at the code to inspect it, I found it had some
+"bad smells", and decided to fix it by refactoring, as a necessary 
+pre-requisite for extending it.
+</p>
+
+<p>
+The first thing I did was notice that many methods accepted a <tt>$current</tt>
+parameter that was passed from one method to another, and then used. As it
+turned out, most of these simply originate from 
+<tt>$self-&gt;_current()</tt>, which I now used to retrieve the value in
+each method, without passing a parameter.
+</p>
+
+<p>
+Another fact I noticed was that there were many 
+<tt>if ($self eq $current)</tt> checks in the code. Since <tt>$current</tt>
+is dynamic, I decided to create a predicate <tt>_is_top()</tt> which will 
+encapsulate it and to create the following method maker:
+</p>
+
+<ecode>
+sub _top_it
+{
+    my ($pkg, $methods) = @_;
+
+    no strict 'refs';
+    foreach my $method (@$methods)
+    {
+        *{$pkg."::".$method} =
+            do {
+                my $m = $method;
+                my $top = "_top_$m";
+                my $non = "_non_top_$m";
+                sub {
+                    my $self = shift;
+                    return $self->_is_top()
+                        ? $self->$top(@_)
+                        : $self->$non(@_)
+                        ;
+                };
+            };
+    }
+
+    return;
+}
+</ecode>
+
+<p>
+Thus, when _is_top evaluates to true I call <tt>_top_mymethod</tt>
+and otherwise <tt>_non_top_mymethod</tt>. This is a variation on
+the <a 
+href="http://sourcemaking.com/refactoring/replace-conditional-with-polymorphism">"replace
+conditional with polymorphism" refactoring</a>.
+</p>
+
+<p>
+Now <tt>-&gt;_current()</tt> returned the 
+<tt>-&gt;_current_idx()</tt>'th item from an internal stack
+representing the directories which the object is traversing. I wanted
+to see where "_current_idx" was set and discovered it was incremented when
+an item was pushed to the stack, and decremented when an item was popped.
+As a result, I eliminated "_current_idx" completely and replaced 
+<tt>_current()</tt> with <tt>$self-&gt;_dir_stack()-&gt;[-1]</tt>. That
+removed a lot of cruft from the code.
+</p>
+
+<p>
+I also was able to do what I wanted, and make sure the paths are maintained
+as the base path for the traversal followed by a list of extra components of
+each inner directory. 
+</p>
+
+<p>
+I noticed that I flat-copied the return of a method returning
+an array reference several times (E.g: 
+<tt>[ @{$self-&gt;_components()} ]</tt>) and so created another method 
+maker - this time for "_copy" methods.
+</p>
+
+<p>
+And naturally, I extracted many methods.
+</p>
+
+<p>
+All this enabled me to create <tt>-&gt;next_obj()</tt> and 
+<tt>-&gt;item_obj()</tt> API methods that return objects instead of plain
+strings. Naturally, this is not refactoring, but extending.
+</p>
+
+<p>
+While I was in the neighbourhood, I discovered that <a 
+href="http://www.securiteam.com/unixfocus/6S00L20MUE.html">the code
+had a format-string-issue</a>, which I fixed, and released
+File-Find-Object-0.1.1 immediately.
+</p>
+
+<p>
+After the release, I received three failure reports from CPAN Testers. Two
+of them were for a missing dependency, that wasn't installed due to a bug
+in the tests' smoking setup. One of them, however, was for Win32, where it
+was a real bug. I was able to reproduce it using Strawberry Perl on my WinXP
+computer, and released File-Find-Object-0.1.2 that corrected it. The problem
+was that on non-cygwin-Win32 all inodes are returned as 0 in the calls to
+stat().
+</p>
+
+<p>
+Today, I started writing the project that required all this work on 
+File-Find-Object. So far it doesn't do much, but it's a start.
+</p>
+
+</div>
+
+<div class="entry" id="dist-zilla">
+
+<h2>2008-11-16: Why Dist-Zilla is Probably Not For Me</h2>
+
+<p>
+rjbs' <a href="http://perlbuzz.com/2008/10/distzilla-eases-management-of-your-cpan-distributions.html">introduction 
+to Dist-Zilla</a> piqued my interest, and I used CPANPLUS-Dist-Mdv to
+prepare .rpm's for it and its depenedencies and install them. However,
+I wondered about a potential problem with it, before I even tried it,
+and speaking with rjbs on IRC confirmed that it exists.
+</p>
+
+<p>
+Dist-Zilla generates the resulting .pm, scripts, etc. from templates, and 
+as a result the lines that are reported by errors and warnings are not the
+same as the ones you've edited. This makes tracing lines back to their source
+much more difficult. Since most of my times is spent debugging and handling
+errors (whether I encounter them or I find them on CPAN testers or in
+bug reports), and I want to edit the source directly, I think that Dist-Zilla
+is not for me. What instead I'd like is a way to change common, repeated
+text (like version numbers, licensing, URLs, etc.) commonly across all
+the files in a certain distribution, or in many distributions. That and
+also that module-starter (or whatever) provide scaffolding for creating
+a new .pm file.
+</p>
+
+<p>
+I appreciate rjbs's efforts, but I'm going to stick with module-starter (and
+contribute to it).
+</p>
+
+</div>
+
+
+<div class="entry" id="xml-rss-1.40-with-array">
+
+<h2>2008-12-01: XML::RSS-1.40 - Now with a Lot of Array Goodness</h2>
+
+<p>
+After going over some of the recent and not-so-recent 
+<a href="http://rt.cpan.org/Public/Dist/Display.html?Name=XML-RSS">XML::RSS 
+bugs</a>, I noticed a common pattern of people wanting support for replicable
+XML elements. What they wanted was that when two elements with identical
+names were specified (in many RSS use cases where doing this would make
+sense), then the value pointed by the keyname would become a reference
+to an array instead of just concatenated together in an unhelpful manner.
+</p>
+
+<p>
+In the past days, I decided to work on this meta-problem in one concentrated
+swoop. I naturally had to implement it in several places for both output and 
+parsing, though tended to do them in separate commits.
+</p>
+
+<p>
+<a href="http://search.cpan.org/dist/XML-RSS/">XML-RSS</a> version 1.40
+contains the result of this effort. I should note that some use-cases for
+multiple tags probably won't do the right thing, and the internal code
+has garnered some ugliness. I ended up extracting some methods, but I can still
+be happier from the quality of code. I suppose I can always refactor it later.
+</p>
+
+<p>
+All of this work reduced the number of active bugs in XML-RSS to 3, which
+I intend to deal with shortly, if all goes well.
+</p>
+
+<p>
+In other news, I released a new version of
+<a href="http://search.cpan.org/dist/WWW-Search-MSN/">WWW::Search::MSN</a>,
+which has been adapted to the new HTML generated by the MSN search. The
+hardest part in the process, was figuring out how to instruct the libwww-perl
+that the WWW::Search front-end used to send a "Language:" header to cancel
+the location-based localisation.
+</p>
+
+<p>
+That was my boring "recent hacktivity" report. You may now go on with whatever
+you did earlier.
+</p>
+
+</div>
+
+
+<div class="entry" id="perl-future-on-heise">
+
+<h2>2009-01-14: "The Perl Future" on Heise</h2>
+
+<p>
+Piers Cawley writes about the new happenings in the Perl world in
+<a href="http://www.heise-online.co.uk/open/Healthcheck-Perl-The-Perl-Future--/features/112388">"Healthcheck: 
+Perl - The Perl Future" on Heise Open Source</a>. Even though I was already 
+aware of most of what he covers there, I found it a good read, and it is
+doubly recommended for people who are not following Perl news as thoroughly
+as I do.
+</p>
+
+<p>
+Also see <a href="http://lwn.net/Articles/314514/">the LWN.net coverage</a>
+(where I've learned about it).
+</p>
+
+</div>
+
+
+<div class="entry" id="gabor-szabo-on-perl6-on-2009-03-22">
+
+<h2>2009-03-17: Gabor Szabo on High-Level Programming with Perl 6 on 22-March</h2>
+
+<p>
+The <a href="http://www.cs.tau.ac.il/telux/">Tel Aviv 
+Open Source Club</a> will host the first part of a series of talks by 
+<a href="http://www.szabgab.com/">Gábor Szabó</a>
+about "High-Level Programming Concepts Using 
+Perl 6" - on 22-March-2009.
+</p>
+
+<p>
+The meeting will take place at Tel Aviv University (in Tel Aviv, Israel), at 
+the Schreiber 
+Maths&mp;CS  building, room 008 on 18:30. More 
+information can  be found 
+<a href="http://wiki.osdc.org.il/index.php/Tel_Aviv_Meeting_on_22_March_2009">on the meeting's page on the wiki</a>.
+</p>
+
+<p>
+With any other problems, feel free to <a href="http://www.shlomifish.org/me/contact-me/">contact me</a>.
+</p>
+
+<p><b>Abstract</b></p>
+
+<p>
+High-level programming concepts using Perl 6
+</p>
+
+<p>
+A series of presentations on learning and using Perl 6 from the ground up to 
+the special features.
+</p>
+
+<p>
+Many would think that Perl 6 is just a new version of Perl and that it might 
+only be interesting for Perl programmers. However, Perl 6 is in fact a 
+compiled language running on a virtual machine that embraces many new concepts 
+not found in most programming languages.
+</p>
+
+<p>
+The presentations will be equally interesting for Perl, Java and C# 
+programmers.
+</p>
+
+<p>
+During the series of talks we will start by learning the basics of the 
+language and will get to various high level concepts. For now we plan 2 
+sessions but if we need more time we'll schedule more meetings.
+</p>
+
+<p><b>Note</b></p>
+
+<p>
+After the talk we will go to the café at the main entrance of
+the university where we can 
+continue the discussion. If people bring portable computers, we can get the 
+off the ground on the spot. VirtualBox images will be provided with everything 
+that is needed for playing with Perl 6 set up inside. So you may opt to bring
+a computer with <a href="http://www.virtualbox.org/">VirtualBox</a> installed. 
+</p>
+
+<p>
+We are always looking for presentations on interesting topics. If you have an 
+interesting idea for a talk, feel free to contact us and we'll co-ordinate a 
+date.
+</p>
+
+</div>
+
+
+<div class="entry" id="meta-filter-use-perl-org-journals">
+
+<h2>2009-05-13: Meta: Script to Filter the Master use.perl.org Blogs' Feed</h2>
+
+<p>
+As expected from the latest trend in the Perl blogosphere this post will
+be about Roles. And Moose! And Roles in Moose! And Moose in Roles! And
+Roles outside Moose…
+</p>
+
+<p>
+Seriously now, this is a post about <a href="http://svn.berlios.de/svnroot/repos/web-cpan/XML-Feed/trunk/filter-use.perl.org/">a completely non-Moosey 
+and non-Roley script I wrote to filter the use.perl.org master journals' 
+feed</a>. What this script does is fetch the Atom feed of all the use.perl.org
+journals' posts, and filters out the entries of the use.perl.org authors 
+that the invoker specified.
+</p>
+
+<p>
+Here is out to use it. First of all: <tt>svn checkout</tt> it (or otherwise
+fetch it using HTTP). Then you can simply use:
+</p>
+
+<ecode>
+perl filter-use-perl-journals.pl -o everything.atom
+</ecode>
+
+<p>
+Then you can serve <tt>everything.atom</tt> with a web-server to read it
+using your web feeds' aggregator.
+</p>
+
+<p>
+To simply create a non-filtered copy of the feed. Now let's say you want
+to get rid of posts from my journal (because it sucks). In that case, say:
+</p>
+
+<ecode>
+perl filter-use-perl-journals.pl -o non-shlomif.atom \
+    --blacklist="Shlomi Fish"
+</ecode>
+
+<p>
+Now, let's say you also want to get rid of 
+<a href="http://use.perl.org/~Ovid/journal/">Ovid's</a> posts. I have no idea
+why you'd want to do that, because his journal is great, but it's just for 
+the sake of the example. In that case, do:
+</p>
+
+<ecode>
+perl filter-use-perl-journals.pl -o non-shlomif-and-ovid.atom \
+    --blacklist="Shlomi Fish" --blacklist="Ovid"
+</ecode>
+
+<p>
+Finally, there's the <tt>--rand</tt> flag which is useful in case you're
+running the script with cron. What it does is wait for a period of
+time of random length, before fetching the feed, so the HTTP server would not
+be overloaded at regular periods. This requires a working 
+<tt>/dev/urandom</tt> for the time being.
+</p>
+
+<p>
+The script is made available under 
+<a href="http://en.wikipedia.org/wiki/MIT_License">the MIT/X11 Licence</a>
+so its use is completely unencumbered. I wrote this script today, because
+I have a personal use for it, but other people may find it useful too.
+It requires a recent version of Perl (5.8.x should be enough I think) and
+<a href="http://search.cpan.org/dist/XML-Feed/">XML-Feed</a>.
+</p>
+
+</div>
+

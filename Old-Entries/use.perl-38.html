@@ -1,0 +1,24 @@
+<p>
+As <a href="http://use.perl.org/~Shlomi+Fish/journal/31651">promised</a>, I
+wrote and released 
+<a href="http://search.cpan.org/dist/Text-Sprintf-Named/">Text-Sprintf-Named</a> 
+onto the CPAN. This is an implementation of a Python-like sprintf with named
+conversions. So you can do 
+<tt>my $formatter = Text::Sprintf::Named-&gt;new({fmt =&gt; 'Hello %(name)s! You have $%(money)04d in your bank account!');</tt> 
+and then 
+<tt>$formatter-&gt;format({args =&gt; {name =&gt; "Joey", money =&gt; 350}})</tt>
+and get 'Hello Joey! You have $0350 in your bank account!' in return.
+</p>
+
+<p>
+Now that I look at its POD again I see that the code in the synopsis is wrong. 
+I guess I'll have to release version 0.01001 soonishly. If you find
+this module useful, that's good, and if not, I hope I haven't made your
+situation any worse. I wrote it because I thought it may prove useful for 
+a Test::Run plugin, so necessity was the mother of implementation in this
+case.
+</p>
+
+<p>
+Cheers all, and a Happy Thanksgiving to all Americans.
+</p>

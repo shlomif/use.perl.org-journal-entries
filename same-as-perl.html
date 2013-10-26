@@ -1,0 +1,146 @@
+<div class="entry">
+
+<h1>2008-04-01: The Problem with the &quot;Same Terms as Perl&quot; 
+Licencing</h1>
+
+<p>
+Most modules on CPAN carry a licensing blurb saying something like
+<a href="http://search.cpan.org/search?query=%22same%20terms%20as%20perl%22&amp;mode=all">"you can distribute this software under 
+the same terms as Perl itself"</a>. This obviously begs the question what
+does it mean. Here is what it means for different Perl versions:
+</p>
+
+<ul>
+
+<li>
+<p>
+Early versions of perl, before it adopted the <a href="http://en.wikipedia.org/wiki/GNU_General_Public_License">GPL</a> were under a very restrictive 
+loosely-defined licence.
+</p>
+</li>
+
+<li>
+<p>
+After a while perl adopted the GPL exclusively.
+</p>
+</li>
+
+<li>
+<p>
+Eventually, seeing that some people and companies had problems with the GPL,
+Larry Wall phrased the so-called <a href="http://en.wikipedia.org/wiki/Artistic_License">"Artistic License"</a>, which was supposed to be more permissive than 
+the GPL, but purposely phrased vaguley, and as such was found to be 
+<a href="http://www.fsf.org/licensing/licenses/index_html#ArtisticLicense">non-free</a> 
+and ergo GPL-incompatible.
+</p>
+
+<p>
+In any case, the perl implementation was dual-licensed under the "Artistic 
+License" (version unspecified) and the GPL version 2 or any later version.
+perl5 is still licensed under these terms.
+</p>
+</li>
+
+<li>
+<p>
+For Parrot and for future work on Perl 6, the Artistic License 2.0 was created
+based on the original Artistic License. This license has been approved as
+a free software licence by the Free Software Foundation and found to be 
+compatible with the GPL version 2 or Later. Parrot now carries this licence.
+</p>
+
+<p>
+There's also the Clarified Artistic License which is an earlier effort
+to correct the original Artistic License and is the minimal set of 
+changes to make it FSF-free and GPL-compatible. I suppose that now the Artistic
+License 2.0 would be preferable.
+</p>
+</li>
+</ul>
+
+<p>
+The problem is that perl up to and including perl-5.10.0 and bleadperl 
+(which were licensed under the GPL version 2 
+<b>or above</b> but only the "Artistic License" not the "Artistic License
+version 1.0 or above". I've already noted that the Artistic License is
+problematic, but the GPL has 
+<a href="http://en.wikipedia.org/wiki/GNU_General_Public_License#Criticism">its
+own share of potential problems</a> (see also 
+<a href="http://www.gnu.org/licenses/gpl-faq.html">its FAQ</a>), and is
+otherwise widely mis-understood, over-hyped (both positively and negatively)
+and disputed. For example, unlike the Artistic License, it does not allow
+(at least by linking or normal function calls) non-GPL-compatible code,
+including all non-open-source code, to make use of it.
+</p>
+
+<p>
+Now, since both the "GPL version 2 or above" and the original 
+"Artistic License" are problematic, and the term "under the same terms as
+Perl" may probably mean just that if it's a perl5 module (although who knows
+what it would means if someone would ever write a compatible Perl 5 
+implementation under a different software licence), then licensing a module
+as such is probably no longer such a good idea. There are several alternatives: 
+</p>
+
+<ol>
+
+<li>
+Explicitly allow the Artistic License 2.0 (or possibly above) in the
+licensing.
+</li>
+
+<li>
+License as Artistic 2.0 or above exclusively. Without the GPL as it is
+generally no longer needed.
+</li>
+
+<li>
+Use a more permissive, 
+<a href="http://en.wikipedia.org/wiki/Copyleft">non-copyleft</a> licence,
+that allows re-licensing into different licences. The MIT X11 licence 
+explicitly allows "sub-licencing" by third-parties and as such is a good 
+choice. By doing that you are making the licence more permissive than the
+GPL or the Artistic licences, so you have been warned.
+</li>
+</ol>
+
+<p>
+So my suggestion is that you use one of these licencing phrasings for your
+future work, and to re-license your old CPAN or Perl work 
+(copyright ownership permitting) under such phrasing. It remains to be seen
+what will happen with perl5 itself which has 
+<a href="http://search.cpan.org/src/RGARCIA/perl-5.10.0/AUTHORS">905 authors 
+as of perl-5.10.0</a> many bringing in their own ownerships of the code.
+The Linux kernel now faces a similar problem if it would wish to adopt
+a different licence than the GPL version 2 (and no later version).
+</p>
+
+<p>
+I suppose you can still make most use of perl5-like licensed code, in
+your own open-source , proprietary or in-house code, without getting sued, so I 
+wouldn't worry too much. But it's still would be a good
+idea to convert newer code (and code that can be easily converted) to 
+licensing terms that are less ambigious, more usable, and that would play
+better with future versions of Perl.
+</p>
+
+<p>
+This entry was adapted from 
+<a href="http://use.perl.org/~Aristotle/journal/36022">some 
+comments I wrote</a> for a different, mostly orthogonal, journal post. I
+hope it's not too flamebait. If you have something to say, please try to
+be civil and good-natured.
+</p>
+
+<p>
+For the record, most of my Perl and non-Perl open-source code is either
+Public Domain or MIT X11-licensed (which are both extremely permissive and
+allow sub-licensing), or if it is derived from a different code, then
+under the same licencing terms, but while disclaiming my explicit or implicit
+ownership (to allow the originator to relicence future versions of the code).
+The latter applies to my (relatively limited) contributions to perl5 where I am
+listed in the AUTHORS file.
+</p>
+
+</div>
+

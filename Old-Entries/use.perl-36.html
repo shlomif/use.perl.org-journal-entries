@@ -1,0 +1,53 @@
+<p>
+I recently released the first non-developer releases of the 
+<a href="http://qa.yi.org/index.php/Test::Run">Test::Run</a> modules. I still
+don't guarantee that everything is stable, but at least now one can fetch
+them from CPAN with ease.
+</p>
+
+<p>
+I got a few "Warning: prerequisite Test::Run::Obj 0 not found.", but hopefully
+it is resolved now after I changed the <tt>$VERSION</tt> of the module itself
+to a non-underscored one.
+</p>
+
+<p>
+Next on my agenda is finishing the 
+<tt>Test::Run::Plugin::FailSummaryComponents</tt> plugin, which still doesn't
+have the appropriate command line front-end. I decided to abandon my original
+if's upon if's plan and instead allow customisations using templates or
+mini-templates. For this I decided a sprintf-like template only
+with named conversions (e.g: <tt>"Hello %(name)s! Happy new %(year)d!"</tt>)
+would be ideal. I could not find anything for this on CPAN, but 
+<a href="http://docs.python.org/lib/typesseq-strings.html">Python has
+    them</a>, so I'd like to prepare an equivalent Perl implementation and
+put it on CPAN. 
+</p>
+
+<p>
+After that I'd like to start getting to writing the XML/HTML output. My plans
+for it are the following:
+</p>
+
+<ol>
+    <li>
+    Write a plugin for Test::Run that will collect the relevant statistics 
+    from the run (instead of just outputting them to the screen) and store 
+    them in a Perl data structure.
+    </li>
+
+    <li>
+    Write a plugin using it that at the end of the run will serialise the data 
+    collected to XML.
+    </li>
+
+    <li>
+    Write an XSLT stylesheet that will transform the XML to HTML.
+    </li>
+</ol>
+
+<p>
+Lately, I've had to invest time in other priorities, and Test::Run has been
+pretty low on my todo list, but hopefully I can return to it.
+</p>
+

@@ -1,0 +1,93 @@
+<p>
+I discovered 
+<a href="http://rt.perl.org/rt3/Public/Bug/Display.html?id=40995">a segfault</a>
+in the perl-5.8.x compilation stage. I discovered it by accident: I was
+refactoring some code, and added a function, and then it segfaulted. After
+reducing the code to a minimal form that still exhibited the problem, I found 
+it had a syntax error which triggered the segfault.
+</p>
+
+<p>
+The following code when run by perl-5.8.x triggers the segfault:
+</p>
+
+<ecode>
+sub
+{
+    my ($i, $j) = @_;
+    sub { [ $i->f(); ] };
+}
+</ecode>
+
+<p>
+It doesn't segfault perl-5.6.2. Since it is also no longer exhibited in
+bleadperl, it was closed as "resolved". However, I wrote the following on what
+should still be done:
+</p>
+
+<ol>
+<li>
+Add this as a test-case to the perl 5 test-suite.
+</li>
+<li>
+Write a patch for the perl-5.8.x line. (Which is still heavily 
+ used).
+</li>
+<li>
+Investigate the crash, and see if it poses security risks. (Other than the
+obvious DoS that is caused by the segfault of evaluating such code.)
+</li>
+</ol>
+
+<p>
+I hope it will be dealt with appropriately. And finally here's some IRC
+conversation about this:
+</p>
+
+<ecode>
+ <rindolf> Hi all.
+ <rindolf> buu: can I try to crash buubot?
+     <buu> rindolf: Be my guest. Just do it in #buubot
+ <rindolf> buu: OK.
+
+And later on on #buubot:
+
+ <rindolf> Hi all.
+    <MUBA> hi rindolf - the fun thing is, no-one so 
+           far has been able to crash it :)
+ <rindolf> MUBA: OK.
+    <MUBA> at least not that I know of
+ <rindolf> eval: sub func1{my ($i, $j) = @_; 
+           sub { return [ $i->func2(); ]; };}
+  <buubot> (eval):23: [BUG] Segmentation fault ruby 
+           1.8.5 (2006-08-25) [i486-linux]  rindolf: 
+ <rindolf> Hmmm... there was a segfault. I guess it forked 
+           or something.
+ <rindolf> eval: 5+6
+  <buubot> rindolf:  11 
+ <rindolf> buu: it's a perl bug I discovered.
+     <buu> Of course it forks
+     <buu> But nice segfault.
+    <MUBA> I don't get the error... you make a sub that 
+           returs a sub that returns the result of a method 
+           on a non-initialized object inside an arrayref? 
+           But you never call any of those? How can it crash?
+ <rindolf> MUBA: it's in the compilation stage.
+ <rindolf> MUBA: notice that I have [ $i->func2() ; ]. A 
+           semicolon inside an array ref is illegal.
+    <MUBA> ooh that is what causes the crash?
+    <MUBA> eval: [3;
+  <buubot> MUBA: Error: syntax error at eval line 1, at 
+           EOF Missing right curly or square bracket at
+           eval line 1, at end of line  
+    <MUBA> eval: [3;]
+  <buubot> MUBA: Error: syntax error at eval line 1, at 
+           EOF  
+    <MUBA> not that alone
+ <rindolf> MUBA: no, it requires more sophisticated code.
+</ecode>
+
+<p>
+"Nice segfault"... ;-)
+</p>
+

@@ -1,0 +1,52 @@
+<p>
+Well, here is an update on 
+<a href="http://search.cpan.org/dist/File-Find-Object/">File-Find-Object</a>.
+As it turned out the has-a network was somewhat more complicated: every
+directory object contained a reference to the root object, and to the main
+directory object. And like I said each one of them is-a File-Find-Object.
+</p>
+
+<p>
+After a medium amount of refactoring, what happens now is that every directory
+object is independant, and does not contain a link to either the main object
+or the directory above it. It still, however, is-a File-Find-Object, and I 
+have yet to successfully work around it.
+</p>
+
+<p>
+I recall trying to do too much refactoring at once at everytime, and failed
+miserably. The tests did not run from some reason. Then when I did a little
+refactoring each time, I was more successful. I still think it is wrong for
+the directory class (File-Find-Object-internal) to be is-a of the main class,
+but when I tried to do it the other way around I failed. I guess I'd have to
+find a way to refactor it bit by bit.
+</p>
+
+<p>
+Next on the agenda:
+</p>
+
+<ol>
+<li>
+Converting everything to File::Spec.
+</li>
+<li>
+Adding more required features like pruning, customised sorting, etc.
+</li>
+<li>
+Normalising the functions - which should be part of the API and which should
+be preceded by an underscore. Add POD to everything that's part of the API.
+</li>
+<li>
+More kwalitee improvements.
+</li>
+<li>
+Integrating into File-Find-Rule and friends instead or in addition to
+File::Find.
+</li>
+</ol>
+
+<p>
+Hopefully I'll get do some of it tomorrow. Too little time, too many things to
+do.
+</p>

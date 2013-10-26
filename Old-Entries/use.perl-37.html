@@ -1,0 +1,110 @@
+<p>
+For <a href="http://search.cpan.org/dist/WWW-Form/">WWW-Form</a>, it was
+decided that the test scripts should use Test::More, but if it isn't 
+available on the system (say because of an older Perl, then the test script
+will exit immediately with an empty plan. To do that I wrote the following
+code in a module called <tt>CondTestMore.pm</tt> (short for 
+"Conditional Test::More"):
+</p>
+
+<ecode>
+# This is an assisting module. It makes sure Test::More is present, and if not
+# gracefully exists. Otherwise it behaves the same as Test::More.
+# 
+
+package CondTestMore;
+
+use vars qw(@ISA);
+
+@ISA=qw(Test::More);
+
+BEGIN
+{
+    eval {
+       require Test::More;
+    };
+    if ($@)
+    {
+        warn "You don't have Test::More. Terminating";
+        print "1..0\n";
+        exit 0;
+    }
+}
+
+1;
+</ecode>
+
+<p>
+This worked fine at the time. However, recently someone on the IRC asked
+me why CondTestMore did not work anymore. I tested it with perl-5.8.8 and it
+indeed didn't work. It still worked with perl-5.8.7 and other versions 
+however. A closer inspection showed that the problem was caused by recent
+versions of Test::More.
+</p>
+
+<p>
+As it turned out Test::More converted to using Test::Builder::Module, from
+which in turn inherits from the "Exporter" module, and supplies its own
+<tt>import</tt> function, which looks like this:
+</p>
+
+<ecode>
+sub import {
+    my($class) = shift;
+
+    my $test = $class->builder;
+
+    my $caller = caller;
+
+    $test->exported_to($caller);
+
+    $class->import_extra(\@_);
+    my(@imports) = $class->_strip_imports(\@_);
+
+    $test->plan(@_);
+
+    $class->$_export_to_level(1, $class, @imports);
+}
+</ecode>
+
+<p>
+Pretty funky, no? Well, Since CondTestMore inherits from Test::More it broke
+the Exporter logic, and so the <tt>ok()</tt> <tt>is()</tt> etc. methods were
+not exported. After playing a bit with my Perl code, I eventually was able to
+implement CondTestMore like this, so it will work with the newer Test::More:
+</p>
+
+<ecode>
+package CondTestMore;
+
+BEGIN
+{
+    eval {
+        require Test::More;
+    };
+    if ($@)
+    {
+        warn "You don't have Test::More. Terminating";
+        print "1..0\n";
+        exit 0;
+    }
+    Test::More->import();
+    @ISA = qw(Test::More);
+    *EXPORT = \@Test::More::EXPORT;
+}
+
+1;
+</ecode>
+
+<p>
+Here, I import the Test::More symbols into the CondTestMore package, and 
+also make CondTestMore's <tt>@EXPORT</tt> point there, so
+Test::Builder::Module will like it this way. This seems to work for what
+I need to do.
+</p>
+
+<p>
+So it's a regression, but I'm not sure anyone was supposed to inherit from
+Test::More in this way.
+</p>
+

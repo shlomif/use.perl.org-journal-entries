@@ -1,0 +1,146 @@
+Your mission should you choose to accept it: get your homesite and Test::Run
+to run under perl-5.9.4, which is the latest development version of perl.
+
+Mission accepted!
+
+----------------------
+
+rsyncing bleadperl:
+
+
+----------------------
+
+Unpacking.
+
+----------------------
+
+Building.
+
+<<<<<<<<<<<
+$ cat /home/cpan/conf/build/perl-bleadperl.sh
+#!/bin/sh
+rm -f config.sh Policy.sh
+sh Configure -de -Dprefix=$HOME/apps/perl/bleadperl -Dusedevel
+>>>>>>>>>>>>
+
+make
+
+make test
+
+Passed all tests.
+
+Tried again with bleadperl - worked this time.
+
+-----------------
+
+Ran "perl -MCPAN -e shell". 
+
+It configured itself except for the urllist.
+
+Tried to "install Test::Reporter". This asked me whether to follow the
+pre-requisites.
+
+Meanwhile, trying to install Term::ReadLine::Gnu
+    - installation failed because libncurses.a was not present.
+        - urpmi ncurses-devel
+        - urpmi libreadline-devel
+
+    - Fails with the following errors:
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<
+PERL_DL_NONLAZY=1 /home/cpan/apps/perl/bleadperl/bin/perl5.9.5 "-MExtUtils::Command::MM" "-e" "test_harness(0, 'blib/lib', 'blib/arch')" t/*.t
+t/callback....Use of uninitialized value in pattern match (m//) at t/callback.t line 37.
+t/callback....ok
+t/history.....Use of uninitialized value in pattern match (m//) at t/history.t line 74.
+Use of uninitialized value in numeric eq (==) at t/history.t line 86.
+Use of uninitialized value in numeric eq (==) at t/history.t line 88.
+Use of uninitialized value in numeric eq (==) at t/history.t line 90.
+Use of uninitialized value in string eq at t/history.t line 92.
+Use of uninitialized value in string eq at t/history.t line 94.
+Use of uninitialized value in string eq at t/history.t line 96.
+Use of uninitialized value $version in numeric gt (>) at t/history.t line 98.
+Use of uninitialized value in string eq at t/history.t line 105.
+Use of uninitialized value in numeric eq (==) at t/history.t line 109.
+Use of uninitialized value $history_length in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $history_base in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $i in numeric lt (<) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $history_length in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $history_base in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $i in numeric lt (<) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $history_length in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $history_base in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $i in numeric lt (<) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $history_length in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $history_base in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $i in numeric lt (<) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value in numeric eq (==) at t/history.t line 148.
+Use of uninitialized value in numeric eq (==) at t/history.t line 156.
+Use of uninitialized value in numeric eq (==) at t/history.t line 162.
+Use of uninitialized value in numeric eq (==) at t/history.t line 169.
+Use of uninitialized value in numeric eq (==) at t/history.t line 175.
+Use of uninitialized value $history_length in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $history_length in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $history_length in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $history_length in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $history_length in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $history_length in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $history_length in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $history_length in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+Use of uninitialized value $history_length in addition (+) at /home/cpan/.cpan/build/Term-ReadLine-Gnu-1.16/blib/lib/Term/ReadLine/Gnu/XS.pm line 325.
+t/history.....FAILED tests 5, 8-10, 12, 16-19, 21-24, 26, 63-67, 80
+        Failed 20/82 tests, 75.61% okay
+t/readline....Compilation failed in require at t/readline.t line 27.
+BEGIN failed--compilation aborted at t/readline.t line 27.
+t/readline....dubious
+        Test returned status 9 (wstat 2304, 0x900)
+DIED. FAILED tests 1-104
+        Failed 104/104 tests, 0.00% okay
+Failed Test  Stat Wstat Total Fail  List of Failed
+-------------------------------------------------------------------------------
+t/history.t                82   20  5 8-10 12 16-19 21-24 26 63-67 80
+t/readline.t    9  2304   104  207  1-104
+Failed 2/3 test scripts. 124/193 subtests failed.
+Files=3, Tests=193,  0 wallclock secs ( 0.13 cusr +  0.02 csys =  0.15 CPU)
+Failed 2/3 test programs. 124/193 subtests failed.
+make: *** [test_dynamic] Error 9
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+forced install.
+
+-----------------------------------------------------------------------------
+
+* Installed Test::Reporter 
+    - Installation went fine.
+
+-----------------------
+
+* install CPAN::Reporter
+    - Installation went fine
+
+-----------------------
+
+* reload cpan
+
+-----------------------
+
+* o conf prerequisites_policy follow
+* o conf init test_report
+    - answered questions
+* o conf commit
+
+------------------------------------------------------------------------
+
+install Task::Sites::ShlomiFish
+
+Failed during this command:
+  SHLOMIF/HTML-Latemp-NavLinks-GenHtml-0.1.8.tar.gz: make_test NO
+  SHLOMIF/XML-Grammar-ProductsSyndication-0.02.tar.gz: make_test NO
+  SHLOMIF/Template-Preprocessor-TTML-0.0101.tar.gz: make_test NO
+  TONYC/Imager-0.54.tar.gz                     : make_test NO
+  STEVAN/Moose-0.15.tar.gz                     : make_test NO
+  JASONK/WWW-Google-SiteMap-1.09.tar.gz        : make_test NO
+  STEVAN/Class-MOP-0.36.tar.gz                 : make_test NO
+  SHLOMIF/Task-Sites-ShlomiFish-0.0201.tar.gz  : make_test NO 4 dependencies missing (XML::Grammar::ProductsSyndication,Template::Preprocessor::TTML,WWW::Google::SiteMap,Task::Latemp)
+  ABW/Template-Toolkit-2.15.tar.gz             : make NO
+  SHLOMIF/Task-Latemp-0.0100.tar.gz            : make_test NO 2 dependencies missing (HTML::Latemp::NavLinks::GenHtml::Text,Template)
+  MIROD/XML-Twig-3.26.tar.gz                   : make_test NO

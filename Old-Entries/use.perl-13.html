@@ -1,0 +1,84 @@
+<p>
+We didn't have a bugtracker at work, and since we needed it pretty badly, I
+volunteered to install <a href="http://www.bugzilla.org/">bugzilla</a>. After
+I got the root password, I was able to start the installation.
+</p>
+
+<p>
+I downloaded the bugzilla 2.22 which is the latest stable version. And read
+the QUICKSTART guide. I ran checksetup.pl repeatedly to look for uninstalled
+CPAN modules, and installed them using <a href="http://search.cpan.org/dist/Ovid/">Ovid (the CPAN-to-RPM gateway, not Curtis "Ovid" Poe)</a> and rpm. Then
+I set up a database.
+</p>
+
+<p>
+I encountered a problem where Apache just displayed the code of the CGI scripts
+instead of running them. This was resolved by uncommenting an Apache
+directive from httpd.conf (it was pointed at the QUICKSTART guide by I
+assumed it was OK on our server). Then I tried to login with the password
+of the admin account. It did not work.
+</p>
+
+<p>
+I changed the password, it did not work again. So I had to investigate. Turns
+out that the code for crypting the password is the following:
+</p>
+
+<pre>
+my @saltchars = (0..9, 'A'..'Z', 'a'..'z', '.', '/');
+my $salt = '';
+for ( my $i=0 ; $i &lt; 8 ; ++$i ) {
+    $salt .= $saltchars[rand(64)];
+}
+my $cryptedpassword = crypt($password, $salt);
+</pre>
+
+<p>
+Now the rand() call is interesting. If we want it to be determinstic, than 
+either srand() should be called previously or we can assume it will yield
+the same values on each invocation of Perl.
+</p>
+
+<p>
+However, this happens:
+</p>
+
+<pre>
+$ perl -le 'print int(rand(10))'
+8
+$ perl -le 'print int(rand(10))'
+5
+</pre>
+
+<p>
+And a grep for <tt>srand()</tt> on the bugzilla code yielded no result.
+</p>
+
+<p>
+I added a call to srand() at the beginning of the module with a number I chose,
+and then it worked.
+</p>
+
+<p>
+I wonder why the call to srand() is absent, and its need is not documented
+anywhere. There are also other possible problems with the portability of
+<tt>rand()</tt> and <tt>crypt()</tt>. In order to not completely slander 
+bugzilla here, I'd like to add that except for the <tt>srand()</tt> issue,
+setting up bugzilla was very straightforward, and starting to administrate
+the bugs database was also a very pleasant experience. It truly is a fine,
+powerful and easy to use and setup product.
+</p>
+
+<p>
+I recall that in the early DOS and XT-ROM versions of BASIC, the random number
+generator generated the same numbers on every invocation. Maybe that was
+also the case for perl5, but it obviously no longer is, so I wonder how
+come Bugzilla was not adapted yet.
+</p>
+
+<p>
+And BTW, in case you're not monitoring Gabor Szabo's journal or the perl-qa 
+mailing, you should check out 
+<a href="http://use.perl.org/~gabor/journal/29937">this entry in his journal
+    about slides for software testing with Perl</a>.
+</p>
