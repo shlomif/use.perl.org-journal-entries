@@ -1,5 +1,5 @@
 <p>
-If you've been following <a href="http://shlomif.livejournal.com/">my 
+If you've been following <a href="http://shlomif.livejournal.com/">my
     more personal and/or general purpose blog at LiveJournal</a>, you know
 that I've started to work for a company as a grunt PHP 5 programmer. Not only
 that, but I had also contributed to a volunteer project (not open-source at the
@@ -7,7 +7,7 @@ moment, just not exactly for pay) for a friend which is written in PHP 4.
 </p>
 
 <p>
-There is <a href="http://czth.net/pH/PHPSucks">enough antagonism against 
+There is <a href="http://czth.net/pH/PHPSucks">enough antagonism against
     PHP</a> in the Perl world and elsewhere, so I'm not going to add a lot of
 one-sided anti-PHP criticism here. Instead, I'm going to say some good things
 and bad things about it.
@@ -26,22 +26,22 @@ shouldn't be done, (<a href="http://www.joelonsoftware.com/">Joel on Software
 </p>
 
 <p>
-At the moment, we're in the midst of converting the old code to 
-<a href="http://www.symfony-project.com/">Symfony</a>, which is a PHP 
+At the moment, we're in the midst of converting the old code to
+<a href="http://www.symfony-project.com/">Symfony</a>, which is a PHP
 web development framework similar to Ruby-on-Rails (or Jifty or whatever), but
 not quite. My impressions of Symfony at the moment are positive. It
 has excellent documentation and examples, is very easy to setup, and is easy
-to learn and hack on. Some of which are more than I can say about 
+to learn and hack on. Some of which are more than I can say about
 Ruby-on-Rails, for example. In any case, Symfony is probably better for most
 big Model-View-Controller tasks than using plain PHP scripts.
 </p>
 
 <p>
 Symfony has its own Object-Relational-Mapping called Propel. It's not bad,
-but some tasks  are impossible to do using it without resorting to raw SQL. 
-For example, it is impossible to set a column to the value of an SQL function. 
+but some tasks  are impossible to do using it without resorting to raw SQL.
+For example, it is impossible to set a column to the value of an SQL function.
 (e.g: "UPDATE mytable SET time=now() WHERE id = 5"). I'm not sure it can be
-done in Perl's Class::DBI either, though, but maybe in more sophisticated 
+done in Perl's Class::DBI either, though, but maybe in more sophisticated
 ORM's. (Note: I haven't tried or looked into DBIx::Class, yet).
 </p>
 
@@ -61,10 +61,10 @@ Now for some observations about PHP:
     </p>
     <p>
     Plus, the PHP 5 object system has this public/private/protected mechanism
-    for limiting the accessibility of methods or variables. Being used to 
+    for limiting the accessibility of methods or variables. Being used to
     Perl 5, I've made everything <tt>public</tt> until now, but then my
     conscience started to hurt, and I wondered whether I should make some
-    things <tt>protected</tt> or (&lt;gusp /&gt;) <tt>private</tt>. 
+    things <tt>protected</tt> or (&lt;gusp /&gt;) <tt>private</tt>.
     </p>
     <p>
     When I worked with C++ I made everything either <tt>protected</tt>
@@ -80,8 +80,8 @@ Now for some observations about PHP:
     <p>
     At the moment, I still find writing Perl code more natural than writing
     PHP code, where I have to consult a lot of functions and their manuals,
-    and often get things wrong. I was especially dismayed to 
-    <a href="http://shlomif.livejournal.com/9789.html">discover that the 
+    and often get things wrong. I was especially dismayed to
+    <a href="http://shlomif.livejournal.com/9789.html">discover that the
         associativity of the <tt>?:</tt> operator there was different from Perl
         or C</a>. All of this slows me down quite considerably, but I believe
     my productivity is still pretty good.
@@ -97,26 +97,26 @@ Now for some observations about PHP:
     I still haven't find a good way to debug my scripts except by using prints
     echo's or logs statements. I found a certain server-side debugger (even with
     PHP Eclipse integration) but did not get to set it up, and it interferes
-    with eAccelerator. 
+    with eAccelerator.
     </p>
     </li>
     <li>
     <p>
-    Despite everything I am still able to produce code I'm happy with and 
+    Despite everything I am still able to produce code I'm happy with and
     which I find to be nice, modular and clean. So it's not impossible to
-    write good or readable code in PHP (just as it's not impossible to 
-    write good or readable code in Perl 5, which people spread FUD about). 
+    write good or readable code in PHP (just as it's not impossible to
+    write good or readable code in Perl 5, which people spread FUD about).
     My style of using PHP is different because of some of its limitations
-    or dark corners I'm not familiar with. For example, I'm using a lot 
-    of loops instead of 
-    <a href="http://www.shlomifish.org/Vipe/lecture/Perl/Newbies/lecture2/useful_funcs/">the 
+    or dark corners I'm not familiar with. For example, I'm using a lot
+    of loops instead of
+    <a href="http://www.shlomifish.org/Vipe/lecture/Perl/Newbies/lecture2/useful_funcs/">the
         Perl pipeline</a>.
     </p>
     </li>
     <li>
     <p>
     PHP has some good quoting and interpolation mechanisms: it has double
-    quotes and single quoted strings (not <tt>q{ ... }</tt> and 
+    quotes and single quoted strings (not <tt>q{ ... }</tt> and
     <tt>qq{ .... }</tt> and friends, though), and it has here documents.
     Interpolation of variables works nicely most of the time. All of these
     are more than I can say about Python, whose excuse for interpolation is
@@ -124,7 +124,7 @@ Now for some observations about PHP:
     </p>
     <p>
     PCRE Regular Expression should be placed delimited by
-    "/"'s or a different delimiters <b>inside</b> strings. Like 
+    "/"'s or a different delimiters <b>inside</b> strings. Like
     <tt>"/hello *world/"</tt>. This is so the modifiers can be placed
     at the end without introducing extra syntax to the core language.
     </p>
@@ -138,20 +138,20 @@ Now for some observations about PHP:
     One thing PHP got right, was not in the language, that sort of evolved
     but still isn't quite right, but in the implementation and standard
     built in library. PHP has a good common denominator where one can easily
-    easily deploy and install scripts and even 
-    <a href="http://opensourcecms.com/">complex web 
+    easily deploy and install scripts and even
+    <a href="http://opensourcecms.com/">complex web
         applications</a> on various limited
     hostings and expect them to work. While this is less of an issue if
     you have a shell account with a lot of space (and hopefully an admin
     you can contact about installing more modules) or your own virtual server,
-    (or better yet, a dedicated server), it still makes deploying PHP 
+    (or better yet, a dedicated server), it still makes deploying PHP
     applications in variable environments much easier.
     </p>
     <p>
     I understand the perl5 maintainers' motivation for trying to keep the core
     as limited as possible while expecting it to be complemented by the CPAN
-    and the <a href="http://www.cpan.org/ports/">various third party perl5 
-        distributions</a>. It's a trade-off, but it is still an advantage for 
+    and the <a href="http://www.cpan.org/ports/">various third party perl5
+        distributions</a>. It's a trade-off, but it is still an advantage for
     PHP from this specific aspect.
     </p>
     </li>
@@ -162,19 +162,19 @@ I was gonna rant on a certain badly written code I found in our codebase,
 and then refactored to be more Perl-like, but it's getting late, so I may
 delay it to later on (and possibly ask permission for my supervisor). If
 you're interested to read more about my PHP experiences you can read
-my LiveJournal blog. I'm trying the relevant entries using my entries using 
+my LiveJournal blog. I'm trying the relevant entries using my entries using
 my <a href="http://shlomif.livejournal.com/tag/php">php tag</a> but I may
 forget to add it right away. Plus, some of my posts contain several different
 topics.
 </p>
 
 <p>
-I wonder how big a discussion this post will start. Even if you do have 
+I wonder how big a discussion this post will start. Even if you do have
 something to say remember: 1. Be civil and informative. 2. The burden of
-proof is on the one who makes the claim. 3. Avoid making 
+proof is on the one who makes the claim. 3. Avoid making
 <a href="http://www.nizkor.org/features/fallacies/">logical fallacies</a>
-and especially try to avoid the 
-<a href="http://www.nizkor.org/features/fallacies/ad-hominem.html">Ad 
+and especially try to avoid the
+<a href="http://www.nizkor.org/features/fallacies/ad-hominem.html">Ad
     hominem fallacy</a>. Have fun Bashing PHP and PHPing Bash!
 </p>
 

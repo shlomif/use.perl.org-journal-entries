@@ -7,27 +7,27 @@ some regressions into XML::RSS that had to be fixed.
 </p>
 
 <p>
-The first problem I encountered was that I got empty 
+The first problem I encountered was that I got empty
 <tt>&lt;pubDate&gt;&lt;/pubDate&gt;</tt> code. Looking at the XML::RSS code,
 I saw that the appropriate fields were still initialised to an empty string
 instead of undef, which caused them to be outputted. And the code in general
-was in an intermediate state than my changes. After merging my "datetime" 
+was in an intermediate state than my changes. After merging my "datetime"
 local branch, I also had to fix some markup injection attacks that I found,
-since I didn't escape some of the tags' contents. Here's the 
-<a href="http://rt.cpan.org/Public/Bug/Display.html?id=23435">issue with 
+since I didn't escape some of the tags' contents. Here's the
+<a href="http://rt.cpan.org/Public/Bug/Display.html?id=23435">issue with
     my patch for the whole enchilada</a>.
 </p>
 
 <p>
 The next errors had to do with "guid". In XML::RSS "permaLink" holds the guid
-URL if isPermaLink is true, and "guid" holds it if it is false. However, 
+URL if isPermaLink is true, and "guid" holds it if it is false. However,
 permaLink was equal to 1. As it turned out the parsing logic was out-dated,
 and had to be fixed. The fix along with testcases is in my local repository.
 </p>
 
 <p>
 Next I found out that some of the items were missing the date time stamp. I
-noticed that it happened with an RSS 1.0 feed, and as it turned out the 
+noticed that it happened with an RSS 1.0 feed, and as it turned out the
 <tt>&lt;dc:date&gt;</tt> items were not handled correctly. A close inspection
 revelead that XML::Feed initialised XML::RSS with <tt>version =&gt; "2.0"</tt>
 and so the modules as a result were not defined during the parsing, due

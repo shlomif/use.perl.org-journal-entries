@@ -1,16 +1,16 @@
 <p>
 For <a href="http://search.cpan.org/dist/WWW-Form/">WWW-Form</a>, it was
-decided that the test scripts should use Test::More, but if it isn't 
+decided that the test scripts should use Test::More, but if it isn't
 available on the system (say because of an older Perl, then the test script
 will exit immediately with an empty plan. To do that I wrote the following
-code in a module called <tt>CondTestMore.pm</tt> (short for 
+code in a module called <tt>CondTestMore.pm</tt> (short for
 "Conditional Test::More"):
 </p>
 
 <ecode>
 # This is an assisting module. It makes sure Test::More is present, and if not
 # gracefully exists. Otherwise it behaves the same as Test::More.
-# 
+#
 
 package CondTestMore;
 
@@ -37,7 +37,7 @@ BEGIN
 <p>
 This worked fine at the time. However, recently someone on the IRC asked
 me why CondTestMore did not work anymore. I tested it with perl-5.8.8 and it
-indeed didn't work. It still worked with perl-5.8.7 and other versions 
+indeed didn't work. It still worked with perl-5.8.7 and other versions
 however. A closer inspection showed that the problem was caused by recent
 versions of Test::More.
 </p>
@@ -97,7 +97,7 @@ BEGIN
 </ecode>
 
 <p>
-Here, I import the Test::More symbols into the CondTestMore package, and 
+Here, I import the Test::More symbols into the CondTestMore package, and
 also make CondTestMore's <tt>@EXPORT</tt> point there, so
 Test::Builder::Module will like it this way. This seems to work for what
 I need to do.

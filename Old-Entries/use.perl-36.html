@@ -1,5 +1,5 @@
 <p>
-I recently released the first non-developer releases of the 
+I recently released the first non-developer releases of the
 <a href="http://qa.yi.org/index.php/Test::Run">Test::Run</a> modules. I still
 don't guarantee that everything is stable, but at least now one can fetch
 them from CPAN with ease.
@@ -12,16 +12,16 @@ to a non-underscored one.
 </p>
 
 <p>
-Next on my agenda is finishing the 
+Next on my agenda is finishing the
 <tt>Test::Run::Plugin::FailSummaryComponents</tt> plugin, which still doesn't
 have the appropriate command line front-end. I decided to abandon my original
 if's upon if's plan and instead allow customisations using templates or
 mini-templates. For this I decided a sprintf-like template only
 with named conversions (e.g: <tt>"Hello %(name)s! Happy new %(year)d!"</tt>)
-would be ideal. I could not find anything for this on CPAN, but 
+would be ideal. I could not find anything for this on CPAN, but
 <a href="http://docs.python.org/lib/typesseq-strings.html">Python has
     them</a>, so I'd like to prepare an equivalent Perl implementation and
-put it on CPAN. 
+put it on CPAN.
 </p>
 
 <p>
@@ -31,13 +31,13 @@ for it are the following:
 
 <ol>
     <li>
-    Write a plugin for Test::Run that will collect the relevant statistics 
-    from the run (instead of just outputting them to the screen) and store 
+    Write a plugin for Test::Run that will collect the relevant statistics
+    from the run (instead of just outputting them to the screen) and store
     them in a Perl data structure.
     </li>
 
     <li>
-    Write a plugin using it that at the end of the run will serialise the data 
+    Write a plugin using it that at the end of the run will serialise the data
     collected to XML.
     </li>
 

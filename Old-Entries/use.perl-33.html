@@ -10,31 +10,31 @@ I delved into the debugger internals and found that it gets the contents of
 the file from a variable called <tt>@{main::_&lt;myfile.pl}</tt> (which
 as I found out was populated for it by the perl interpreter). And as it
 turned out, by printing this value within the debugger after I reproduced
-the problem, I got a small number of completely different lines. I searched 
-for them in the perl source tree, and found they belonged inside an 
-<tt>eval ""</tt>  call in a Test::Builder function. And as I saw this eval 
-call had a <tt>#line myfile.pl</tt> directive.  And writing a short program 
-which did an eval with such a line as its filename reproduced the bug in a 
+the problem, I got a small number of completely different lines. I searched
+for them in the perl source tree, and found they belonged inside an
+<tt>eval ""</tt>  call in a Test::Builder function. And as I saw this eval
+call had a <tt>#line myfile.pl</tt> directive.  And writing a short program
+which did an eval with such a line as its filename reproduced the bug in a
 self-contained form.
 </p>
 
 <p>
-So 
+So
 <a href="http://www.xray.mpe.mpg.de/mailing-lists/perl5-porters/2006-11/msg00415.html">I
     reported this bug</a>. I eventually found out (by grepping the perl 5
-source) that it 
-<a href="http://www.xray.mpe.mpg.de/mailing-lists/perl5-porters/2006-11/msg00481.html">was 
+source) that it
+<a href="http://www.xray.mpe.mpg.de/mailing-lists/perl5-porters/2006-11/msg00481.html">was
     caused by some code that was added to toke.c</a> between perl 5.8.7 and
 perl 5.8.8, and which was disabled in a Perl using ithreads support.
-Then <a href="http://www.xray.mpe.mpg.de/mailing-lists/perl5-porters/2006-11/msg00493.html">RGS 
+Then <a href="http://www.xray.mpe.mpg.de/mailing-lists/perl5-porters/2006-11/msg00493.html">RGS
     fixed the bug</a> (at least in bleadperl now).
 </p>
 
 <p>
-But he didn't add a regression test. Since I had an idea for writing such a 
+But he didn't add a regression test. Since I had an idea for writing such a
 test, I
 <a href="http://www.xray.mpe.mpg.de/mailing-lists/perl5-porters/2006-11/msg00531.html">wrote one and sent it along</a>. It still is not ready for inclusion into
-the perl 5 core, because it does not follow the conventions of the tests 
+the perl 5 core, because it does not follow the conventions of the tests
 there. But it's a start.
 </p>
 

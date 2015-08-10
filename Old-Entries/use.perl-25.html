@@ -6,33 +6,33 @@
 * XML-Grammar-ProductsSyndication.
 -->
 <p>
-I've been intending to have Test-Run use 
+I've been intending to have Test-Run use
 <a href="http://search.cpan.org/dist/TAPx-Parser/">TAPx-Parser</a> instead
-of what it is using now for a long time now. A few days ago, I got into 
+of what it is using now for a long time now. A few days ago, I got into
 actually doing that. So in one large refactoring, I converted
 Test::Run::Straps to make use of TAPx::Parser. In the process I removed
 its support for
 <a href="http://www.mail-archive.com/perl-qa@perl.org/msg06701.html">the
-    deprecated todo tests in the test plan</a>, and fixed 
+    deprecated todo tests in the test plan</a>, and fixed
 <a href="http://rt.cpan.org/Public/Bug/Display.html?id=21379">a bug in
     TAPx::Parser</a>, which took a very long time to find, until I decided to
 check whether TAPx::Parser could be the problem.
 </p>
 
 <p>
-In any case, TAPx::Parser is not integrated with Test::Run, which I'll 
+In any case, TAPx::Parser is not integrated with Test::Run, which I'll
 probably make a new release of soon. While I was in the neighbourhood, I
-decided to try to 
-<a href="http://www.mail-archive.com/perl-qa@perl.org/msg06751.html">integrate 
+decided to try to
+<a href="http://www.mail-archive.com/perl-qa@perl.org/msg06751.html">integrate
     Test::Run into Module::Build</a>. This turned out to be much easier than I
-feared it would be, and now I can type "./Build runtest" or 
+feared it would be, and now I can type "./Build runtest" or
 "./Build distruntest" and get the summary line in colour. I guess I can try to
 do the same for ExtUtils::MakeMaker, but I guess it will be somewhat harder.
 </p>
 
 <p>
-In other news, I've did some work on 
-<a href="http://search.cpan.org/dist/File-Find-Object/">File-Find-Object</a>. 
+In other news, I've did some work on
+<a href="http://search.cpan.org/dist/File-Find-Object/">File-Find-Object</a>.
 Now the is-a relationship is gone (factoring it out turned out to be quite
 easy the second time I tried), and several cleanups were made. Next I'd like to
 add more tests to it and also enhance it in several respects, and also try to
@@ -41,24 +41,24 @@ convert to eventually allow a choice of either.)
 </p>
 
 <p>
-The biggest news however is 
-<a href="http://search.cpan.org/dist/XML-Grammar-ProductsSyndication/">XML-Grammar-Products-Syndication</a>, 
-which is an XML-based framework for generating categorised lists of 
+The biggest news however is
+<a href="http://search.cpan.org/dist/XML-Grammar-ProductsSyndication/">XML-Grammar-Products-Syndication</a>,
+which is an XML-based framework for generating categorised lists of
 recommended media items (such as books, CDs or movies). It involved a lot of
-work of DTD, XSLT and Perl hacking, with a lot of test-driven development. 
-After reading the 
-<a href="http://www.zvon.org/xxl/XSLTutorial/Output/index.html">Zvon 
+work of DTD, XSLT and Perl hacking, with a lot of test-driven development.
+After reading the
+<a href="http://www.zvon.org/xxl/XSLTutorial/Output/index.html">Zvon
     XSLT Tutorial</a> I think I finally got the hang of XSLT, and was able to
 write the XSLT stylesheet for compiling the products syndication grammar into
-XHTML on my own without any help from the outside. 
+XHTML on my own without any help from the outside.
 </p>
 
 <p>
 Notice that I've decided to put it under the CPAN XML-Grammar-* namespace,
 which I believe should contain modules for dealing with specific XML grammars,
-and leave the main XML-* namespace for generic XML modules. The module may 
-still not be ready for general consumption, for various reasons, but 
-<a href="http://www.shlomifish.org/art/recommendations/music/">it's good 
+and leave the main XML-* namespace for generic XML modules. The module may
+still not be ready for general consumption, for various reasons, but
+<a href="http://www.shlomifish.org/art/recommendations/music/">it's good
     enough for what I need</a>.
 </p>
 

@@ -52,7 +52,7 @@ Tried again with bleadperl - worked this time.
 
 -----------------
 
-Ran "perl -MCPAN -e shell". 
+Ran "perl -MCPAN -e shell".
 
 It configured itself except for the urllist.
 
@@ -173,7 +173,7 @@ Failed during this command:
   MIROD/XML-Twig-3.26.tar.gz                   : make_test NO
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-* Seems like perl5.9.4 segfaults with 
+* Seems like perl5.9.4 segfaults with
 
     perl5.9.4 -I blib/lib/ t/test_additional.t  | grep '^not'
 

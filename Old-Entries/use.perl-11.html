@@ -1,6 +1,6 @@
 <p>
-Ever since the Perl mailing lists web archive system got switched from 
-the old develooper format to <a href="http://www.nntp.perl.org/">the new 
+Ever since the Perl mailing lists web archive system got switched from
+the old develooper format to <a href="http://www.nntp.perl.org/">the new
     one at www.nntp.perl.org</a>, I have been irritated from the lack of
 threading and other navigation features that I came to expect from most
 mail archives.
@@ -16,41 +16,41 @@ a better interface a long time ago, and got a reply for some requirements.
 <p>
 A few weeks ago, I got my act together, and started working on a better
 web-based newsreader. After a few days of hacking, I came up with the
-first working version of 
-<a href="http://search.cpan.org/dist/CGI-Application-NetNewsIface/">CGI-Application-NetNewsIface</a>, 
+first working version of
+<a href="http://search.cpan.org/dist/CGI-Application-NetNewsIface/">CGI-Application-NetNewsIface</a>,
 which I uploaded to CPAN. Version 0.0100_01 contained most of the features
 of the www.nntp.perl.org version except for RSS support.
 </p>
 
 <p>
-In order to implement threading efficiently, I decided to implement a local 
-cache using the <a href="http://dbi.perl.org/">perl DBI</a> and 
+In order to implement threading efficiently, I decided to implement a local
+cache using the <a href="http://dbi.perl.org/">perl DBI</a> and
 <a href="http://search.cpan.org/dist/DBD-SQLite/">DBD-SQLite</a>. In the
 process, I bugged the DBD-SQLite maintainer about two bugs I ran into in
 the past and present. He fixed one of them, and one of them is luckily just
-a warning, and one which I provided a patch to the sources for a way to 
+a warning, and one which I provided a patch to the sources for a way to
 disable. (Which I'll hope will get applied.)
 </p>
 
 <p>
 So, Version 0.0100_02 of CGI-Application-NetNewsIface which I uploaded to CPAN
 today, (and which
-<a href="http://www.shlomifish.org/Files/files/code/perl/CGI-Application-NetNewsIface-0.0100_02.tar.gz">is 
+<a href="http://www.shlomifish.org/Files/files/code/perl/CGI-Application-NetNewsIface-0.0100_02.tar.gz">is
     temporarily available here</a>) displays the current thread in the active
 message, which should be a huge improvement.
 </p>
 
 <p>
 My goal is to make CGI-App-NNI a viable alternative for the current
-www.nntp.perl.org web-interface, and as an NNTP web interface for 
-other sites that would like to implement similar interfaces. There is 
+www.nntp.perl.org web-interface, and as an NNTP web interface for
+other sites that would like to implement similar interfaces. There is
 still quite a lot to do, but it should be doable.
 </p>
 
 <p>
 It would be nice if you try to set it up on your web server and let me know
-if it works. Patches are also welcome, of course. (see the Subversion 
-repository). We waited too much for a decent web-interface to the Perl 
+if it works. Patches are also welcome, of course. (see the Subversion
+repository). We waited too much for a decent web-interface to the Perl
 mailing lists, and I don't want to wait much longer.
 </p>
 

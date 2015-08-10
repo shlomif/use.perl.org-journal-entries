@@ -1,5 +1,5 @@
 <p>
-Well, here is an update on 
+Well, here is an update on
 <a href="http://search.cpan.org/dist/File-Find-Object/">File-Find-Object</a>.
 As it turned out the has-a network was somewhat more complicated: every
 directory object contained a reference to the root object, and to the main
@@ -9,7 +9,7 @@ directory object. And like I said each one of them is-a File-Find-Object.
 <p>
 After a medium amount of refactoring, what happens now is that every directory
 object is independant, and does not contain a link to either the main object
-or the directory above it. It still, however, is-a File-Find-Object, and I 
+or the directory above it. It still, however, is-a File-Find-Object, and I
 have yet to successfully work around it.
 </p>
 

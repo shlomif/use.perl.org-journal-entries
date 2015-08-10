@@ -8,30 +8,30 @@ it in order to learn it better.
 So I began to write it. It took me two or three days and right
 now I only have a record display page, an edit form and an addition form
 for one of the tables. Part of it is because I'm not very familiar with
-Class::DBI and other technologies Catalyst is making use of. 
+Class::DBI and other technologies Catalyst is making use of.
 Hopefully I'll become more familiar with everything as I invest more time.
 </p>
 <p>
 Meanwhile, I discovered a misbehaviour in the Catalyst core: trailing slashes
 in the PATH_INFO are ignored. So <tt>/myapp/path1/</tt> would be reported the
 same as <tt>/myapp/path1</tt>. This may break a lot of relative URLs.
-I traced the problem to a line containing 
+I traced the problem to a line containing
 <code>split /\//, $c-&gt;req-&gt;path</code>, which throws away components
-that are empty from the end. A Patch I wrote to change it to 
-<code>split /\//, $c-&gt;req-&gt;path, -1</code> <a href="http://www.loglibrary.com/show_page/view/141?Multiplier=3600&Interval=6&StartTime=1118148545">was 
-    rejected</a> after I was told some people may depend on this erroneous 
+that are empty from the end. A Patch I wrote to change it to
+<code>split /\//, $c-&gt;req-&gt;path, -1</code> <a href="http://www.loglibrary.com/show_page/view/141?Multiplier=3600&Interval=6&StartTime=1118148545">was
+    rejected</a> after I was told some people may depend on this erroneous
 behaviour.
 </p>
 <p>
 I was instructed to write a Plugin instead, which I did. A problem I
-encountered was that this call to split appeared right at the beginning of a 
+encountered was that this call to split appeared right at the beginning of a
 much larger function. I wrote another patch, to extract a method with this,
 but it was rejected because they did not want to clutter the API.
 </p>
 <p>
-Thus, 
+Thus,
 <a href="http://search.cpan.org/dist/Catalyst-Plugin-SanitizeUrl/">Catalyst-Plugin-SanitizeUrl</a>
-has to duplicate the code of the function, extract a method out of it, and 
+has to duplicate the code of the function, extract a method out of it, and
 then override this method. &lt;sigh /&gt; But it works&tm;.
 </p>
 

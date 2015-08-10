@@ -4,26 +4,26 @@ Hi Ovid!
 
 <p>
 I just returned from work when I saw your message and I can understand it
-and relate to it. There may be one of the so-called 
+and relate to it. There may be one of the so-called
 <a href="http://en.wikipedia.org/wiki/Anti-pattern">"anti-patterns"</a> about
 this, but since there are quite a few of them, I'm not sure if it will be
 easy to find. I'm not much of a pattern/anti-pattern freak myself (as I like
-to think of good solutions to problems when they are needed, and not waste 
+to think of good solutions to problems when they are needed, and not waste
 precious memory remembering tons of patterns), but there are people who
-are more into this kind of thing. I can try asking someone I know (even IRL) 
+are more into this kind of thing. I can try asking someone I know (even IRL)
 and see if he can recall anything.
 </p>
 
 <p>
 While this is obviously a bad pattern, I think that refactoring is generally
-touted to be done in small steps where none of the steps break the 
+touted to be done in small steps where none of the steps break the
 behaviour of the program. Martin Fowler's "Refactoring" book contains some
 large-scale refactorings which aren't like that, but that's usually a rare
 case.
 </p>
 
 <p>
-I think the main problem here is not in coding, but in management. If the 
+I think the main problem here is not in coding, but in management. If the
 management does not allocate enough time for programmers to finish
 refactoring, then it's a problem with the management. I'm pretty sure there's
 a "We-shouldn't-do-any-refactoring" or "We don't have time for refactoring"
@@ -34,18 +34,18 @@ anti-pattern. Usually such management will get the project to crash and burn.
 I personally believe that as long as the code works and is mostly bug-free,
 it can almost always be salvated (i.e: refactored and then extended). There
 were some successful rewrites, mainly in the open-source world, but I was never
-involved in that particular stage of one to know if they were completely 
+involved in that particular stage of one to know if they were completely
 justified.
 </p>
 
 <p>
 One pattern I've been doing to some extent, which is different than that is
-something I call "lazy refactoring" or "just-in-time" refactoring. (for not 
+something I call "lazy refactoring" or "just-in-time" refactoring. (for not
 knowing the correct terminology). What I do
 is refactor the program just enough to accomodate for a change while leaving
 other (none-critical) issues in place. I've successfully used this to develop
 <a href="http://fc-solve.berlios.de/">Freecell Solver</a>, which I wrote from
-scratch in C, and then heavily extended, enhanced and optimised in future 
+scratch in C, and then heavily extended, enhanced and optimised in future
 releases. While sometimes I did a lot of refactoring, I often did just enough
 refactoring or generalisation to later implement a certain enhancement.
 </p>
@@ -53,20 +53,20 @@ refactoring or generalisation to later implement a certain enhancement.
 <p>
 At present, the code still has some issues, but it's still in a shape that
 can accomodate later changes. I've received some negative criticism about it
-from people who read it and tried to understand it claiming it was badly 
+from people who read it and tried to understand it claiming it was badly
 written. To my critique, I agree that it's unreadable and sometimes possibly
 over-optimised (possibly even over-micro-optimised), but it is still in good
-shape. 
+shape.
 </p>
 
 <p>
 BTW, today we discussed the pro's and cons of the proliferation of programming
 languages on Freenode's #web channel. One item we touched upon is that
-there's a lot of "legacy" code out there, which may be too costy to rewrite. 
+there's a lot of "legacy" code out there, which may be too costy to rewrite.
 So for example there's a lot of COBOL code, which is still maintained, because
 people are afraid to rewrite it in something better. (albeit IMO rewriting
 COBOL code in Perl would be much easier than rewriting Python (for example)
-or even C code in Perl, because you can do much more in one statement of Perl 
+or even C code in Perl, because you can do much more in one statement of Perl
 than in one statement of COBOL). But still it's probably easier to maintain
 the code in COBOL at least for the short term.
 </p>
@@ -75,10 +75,10 @@ the code in COBOL at least for the short term.
 On the other hand, there's a lot of code in Perl and a lot of code in Python,
 and no-one wants to rewrite it from the "legacy" language to the "better" one,
 because it is easier to maintain it and extend it as is. As languages evolve
-and more powerful and more succint languages come up 
-(I.e: C&rarr;Awk&rarr;Perl&rarr;Ruby&rarr;Perl 6), you still have the inertia 
-not to re-implement all the code in the new language that's only slightly 
-better. And eventually we get a COBOL-vs.-Perl 5 situation which seems 
+and more powerful and more succint languages come up
+(I.e: C&rarr;Awk&rarr;Perl&rarr;Ruby&rarr;Perl 6), you still have the inertia
+not to re-implement all the code in the new language that's only slightly
+better. And eventually we get a COBOL-vs.-Perl 5 situation which seems
 incredibly ridicolous.
 </p>
 

@@ -34,7 +34,7 @@ my $cryptedpassword = crypt($password, $salt);
 </pre>
 
 <p>
-Now the rand() call is interesting. If we want it to be determinstic, than 
+Now the rand() call is interesting. If we want it to be determinstic, than
 either srand() should be called previously or we can assume it will yield
 the same values on each invocation of Perl.
 </p>
@@ -62,7 +62,7 @@ and then it worked.
 <p>
 I wonder why the call to srand() is absent, and its need is not documented
 anywhere. There are also other possible problems with the portability of
-<tt>rand()</tt> and <tt>crypt()</tt>. In order to not completely slander 
+<tt>rand()</tt> and <tt>crypt()</tt>. In order to not completely slander
 bugzilla here, I'd like to add that except for the <tt>srand()</tt> issue,
 setting up bugzilla was very straightforward, and starting to administrate
 the bugs database was also a very pleasant experience. It truly is a fine,
@@ -77,8 +77,8 @@ come Bugzilla was not adapted yet.
 </p>
 
 <p>
-And BTW, in case you're not monitoring Gabor Szabo's journal or the perl-qa 
-mailing, you should check out 
+And BTW, in case you're not monitoring Gabor Szabo's journal or the perl-qa
+mailing, you should check out
 <a href="http://use.perl.org/~gabor/journal/29937">this entry in his journal
     about slides for software testing with Perl</a>.
 </p>

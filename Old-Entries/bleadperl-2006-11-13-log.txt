@@ -33,7 +33,7 @@ Tried again with bleadperl - worked this time.
 
 -----------------
 
-Ran "perl -MCPAN -e shell". 
+Ran "perl -MCPAN -e shell".
 
 It configured itself except for the urllist.
 
@@ -109,7 +109,7 @@ forced install.
 
 -----------------------------------------------------------------------------
 
-* Installed Test::Reporter 
+* Installed Test::Reporter
     - Installation went fine.
 
 -----------------------

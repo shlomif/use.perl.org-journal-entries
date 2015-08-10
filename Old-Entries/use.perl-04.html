@@ -1,26 +1,26 @@
 <p>
 Well, upon uploading the first version of Test::Shlomif::Harness to CPAN,
-I had to pick a good name for it. I brainstormed with people on 
+I had to pick a good name for it. I brainstormed with people on
 <a href="irc://irc.freenode.net/perl/">Freenode's #perl channel</a>,
 and eventually thought about something like Test::RunTests. Then I checked
 if there was already a module named "Test::Run" and guess what - there wasn't!
 </p>
 
 <p>
-As a result, Test-Run is the new name and 
+As a result, Test-Run is the new name and
 <a href="http://search.cpan.org/dist/Test-Run/">it is now on CPAN</a>.
 Test::Run itself is just an API, and is not meant to be called from
 the command line directly (for prove or for "make test"). To do that, I also
-started to work on 
+started to work on
 <a href="http://search.cpan.org/dist/Test-Run-CmdLine/">Test-Run-CmdLine</a>.
 </p>
 
 <p>
-Finally, to achieve the summary line in colour (which if you recall was my 
-original motivation for this hacktivity), I wrote 
+Finally, to achieve the summary line in colour (which if you recall was my
+original motivation for this hacktivity), I wrote
 <a href="http://search.cpan.org/dist/Test-Run-CmdLine-Drivers-ColorSummary/">Test-Run-CmdLine-Drivers-ColorSummary</a>.
-The latter is now functional and 
-<a href="http://www.flickr.com/photos/81969889%40N00/68430623/">actually 
+The latter is now functional and
+<a href="http://www.flickr.com/photos/81969889%40N00/68430623/">actually
 works</a>. It weights in at 27 lines (excluding comments and POD), but part
 of it is quite sub-optimal at the moment, and may be implemented better with
 some refactoring of Test::Run.
@@ -33,10 +33,10 @@ Now for some issues:
 <ol>
 <li>
 <p>
-I couldn't figure out how to set tags for the image I posted to 
+I couldn't figure out how to set tags for the image I posted to
 <a href="http://www.flickr.com/">Flickr</a>. I thought I have set tags when
 I uploaded it, but they weren't being set and the image does not appear on a
-<a href="http://www.flickr.com/photos/tags/perl/">lookup of the 
+<a href="http://www.flickr.com/photos/tags/perl/">lookup of the
 "perl" tag</a>.
 </p>
 </li>
@@ -46,7 +46,7 @@ I discovered Test::Harness' tests have not tested for the correct output (even
 the most elementary stuff like "All tests successful"). After my refactoring
 broke some stuff, I had to add some tests like that on my own. I
 <a href="http://www.nntp.perl.org/group/perl.qa/5116">submitted the extra
-    tests</a>, and talked with Andy about it in AIM, but he said that he'd 
+    tests</a>, and talked with Andy about it in AIM, but he said that he'd
 rather not add these, because the output itself is "getting redone".
 </p>
 <p>
@@ -61,7 +61,7 @@ refactoring without good test coverage can be dangerous.
 <p>
 At the moment, Test::Run itself depends on Class::Accessor. Is it a bad thing?
 Should a module like Test::Run that aims to be in the core eventually, have no
-dependencies except those that are distributed in perl? 
+dependencies except those that are distributed in perl?
 </p>
 <p>
 On the other hand, I can lobby for the inclusion of Class::Accessor into the
@@ -70,12 +70,12 @@ core. In my humble opinion, it's high time that it was included.
 </li>
 <li>
 <p>
-While I've been thinking that as far as code quality is concerned Test::Run is 
+While I've been thinking that as far as code quality is concerned Test::Run is
 in pretty good shape, (much more so in comparison to Test::Harness), I often
 discover a piece of code there that just cries "refactor me". It is usually
 a function that's just too long for its own good. So I end up refactoring it.
-But I still appreciate the fact that 
-<a href="http://www.joelonsoftware.com/articles/fog0000000348.html">I started 
+But I still appreciate the fact that
+<a href="http://www.joelonsoftware.com/articles/fog0000000348.html">I started
 from a working code</a>.
 </p>
 </li>
@@ -104,8 +104,8 @@ thin wrapper module that just invokes the appropriate sub-classed front-end.
 <li>
 <p>
 "Documentation? We don't need no stinkin' documentation!" Or at least we don't
-need an up-to-date documentation. At the moment, most of the documentation 
-of Test::Run was preserved almost verbatim from that of Test::Harness and 
+need an up-to-date documentation. At the moment, most of the documentation
+of Test::Run was preserved almost verbatim from that of Test::Harness and
 was not updated to reflect the newer changes. It needs to be updated.
 </p>
 </li>
@@ -113,7 +113,7 @@ was not updated to reflect the newer changes. It needs to be updated.
 <p>
 Naturally, if someone writes one enhancement to Test::Run::Obj as a sub-class,
 and someone (else or the same) writes another one, why the two of them
-shouldn't be combined? This probably calls for plug-ins like I saw in 
+shouldn't be combined? This probably calls for plug-ins like I saw in
 Catalyst. This may mean we'll have to use Module::Pluggable and also the
 <tt>NEXT::</tt> meta-class. I don't remember at which major perl 5 version it
 was introduced, but in this case, it may mean some enhancements will not be
@@ -123,23 +123,23 @@ available in some older perls.
 </ol>
 
 <p>
-Finally, how you can help: first of all you can submit patches to the 
+Finally, how you can help: first of all you can submit patches to the
 documentation to update it to the newer code. Or write new documentation for
 all them method extractions. Also, if you feel like refactoring one of the
-places which is still quite hairy - go for it. You can find the code 
-<a href="http://developer.berlios.de/svn/?group_id=2352">in the Subversion 
-repository</a>. A few patches like that and you'll become a commiter. 
+places which is still quite hairy - go for it. You can find the code
+<a href="http://developer.berlios.de/svn/?group_id=2352">in the Subversion
+repository</a>. A few patches like that and you'll become a commiter.
 </p>
 
 <p>
 A second thing you can do is suggest ways in which you'd like to see Test::Run
-(or Test::Harness) enhanced or customised. You can create drivers now, but 
-they may become broken even in the not-so-far future, as I didn't settle on the 
+(or Test::Harness) enhanced or customised. You can create drivers now, but
+they may become broken even in the not-so-far future, as I didn't settle on the
 API and the Subclassing API yet.
 </p>
 
 <p>
-And last, but not least, if you find my effort noteworthy, please 
+And last, but not least, if you find my effort noteworthy, please
 <a href="http://www.shlomifish.org/meta/donate/">consider donating</a>. The
 more money I receive by donations, the more financially-worthy it would be
 for me to work on Test-Run. If you make a donation
@@ -151,7 +151,7 @@ did it, so I can try to invest some more time on that particular cause.
 Issues:
 
 + * Flickr tags.
-+ * Plugins (using Module::Pluggable and "NEXT::") vs. Traits/Roles, etc. to 
++ * Plugins (using Module::Pluggable and "NEXT::") vs. Traits/Roles, etc. to
 + have the functionality of more than one class.
 + * Test::Harness tests not testing for the correct output, and my refactoring
 + breaking the tests.
@@ -159,7 +159,7 @@ Issues:
 + * Refactoring of the code - I discovered there's still a lot that I needed
 + to do.
 + * Reading parameters from the command line + environment.
-+     - Should the Test::Run::Obj derived class handle it by itself, or 
++     - Should the Test::Run::Obj derived class handle it by itself, or
 +     should a command line front-end be sub-classed, and then process the
 +     arguments and pass them to the T::R::O class in style?
 + * Updating the documentation.
@@ -167,7 +167,7 @@ Issues:
 +     - Patches for the documentation. (give me a couple and I'll make you a
 +     commiter).
 +     - Interesting functionality you'd like to see in Test::Run:
-+         - You can create drivers now, but they may become broken even 
-+         in the not-so-far future. I didn't settle on the API and the 
++         - You can create drivers now, but they may become broken even
++         in the not-so-far future. I didn't settle on the API and the
 +         Subclassing API yet.
 -->
